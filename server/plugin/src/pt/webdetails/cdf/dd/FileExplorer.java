@@ -82,6 +82,7 @@ public class FileExplorer {
 	
 	public String getJSON(final String dir, final String fileExtensions, final String access,  IPentahoSession userSession){
 	  ISolutionFile[] files = RepositoryAccess.getRepository(userSession).getFileList(dir, fileExtensions, access, userSession);
+    
 	  return toJSON(dir, files);
 	}
 

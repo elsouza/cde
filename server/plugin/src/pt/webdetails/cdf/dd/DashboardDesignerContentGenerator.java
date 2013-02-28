@@ -205,6 +205,8 @@ public class DashboardDesignerContentGenerator extends SimpleContentGenerator
     out.write(engine.getDefinitions().getBytes());
   }
 
+
+
   /**
    * Re-initializes the designer back-end.
    *
@@ -478,6 +480,7 @@ public class DashboardDesignerContentGenerator extends SimpleContentGenerator
 
     final String resource = ResourceManager.getInstance().getResourceAsString(DESIGNER_RESOURCE, tokens);
 
+
     // Cache the output - Disabled for security check reasons
     // setCacheControl();
 
@@ -532,19 +535,30 @@ public class DashboardDesignerContentGenerator extends SimpleContentGenerator
     final String folder = requestParams.getStringParameter("dir", null);
     final String fileExtensions = requestParams.getStringParameter("fileExtensions", null);
     final String permission = requestParams.getStringParameter("access", null);
-    final String outputType = requestParams.getStringParameter("outputType" , null);
-    
-    if ( outputType != null && outputType.equals( "json") ){
+    final String outputType = requestParams.getStringParameter("outputType", null);
+
+    if (outputType != null && outputType.equals("json"))
+    {
       writeOut(out, FileExplorer.getInstance().getJSON(folder, fileExtensions, permission, userSession));
-    } else {
+    }
+    else
+    {
       writeOut(out, FileExplorer.getInstance().getJqueryFileTree(folder, fileExtensions, permission, userSession));
     }
+
+  }
+  
+    @Exposed(accessLevel = AccessLevel.PUBLIC)
+  public void getCDEplugins(final OutputStream out) throws IOException
+  {
     
+      writeOut(out, CdePluginManager.getInstance().pluginsToJSON());
+    
+    
+    
+
   }
 
-  
-  
-  
   /**
    * List CDA datasources for given dashboard.
    */
@@ -587,8 +601,7 @@ public class DashboardDesignerContentGenerator extends SimpleContentGenerator
     }
 
   }
-  
-  
+
   @Exposed(accessLevel = AccessLevel.PUBLIC)
   public void deleteFile(OutputStream out) throws PentahoAccessControlException, IOException
   {
@@ -596,12 +609,14 @@ public class DashboardDesignerContentGenerator extends SimpleContentGenerator
     String path = requestParams.getStringParameter(MethodParams.PATH, null);
     RepositoryAccess access = RepositoryAccess.getRepository(userSession);
     if (access.hasAccess(path, FileAccess.DELETE) && access.removeFileIfExists(path))
-      writeOut(out, "file  " +  path + " removed ok");
+    {
+      writeOut(out, "file  " + path + " removed ok");
+    }
     else
+    {
       writeOut(out, "Error removing " + path);
+    }
   }
-  
-  
 
   @Exposed(accessLevel = AccessLevel.PUBLIC)
   public void writeFile(OutputStream out) throws PentahoAccessControlException, IOException
@@ -746,10 +761,12 @@ public class DashboardDesignerContentGenerator extends SimpleContentGenerator
       String filePath = normalizePathSeparators(file.getAbsolutePath());
       final String basePath = normalizePathSeparators(absPathBase);
       File base = new File(basePath);
-      
+
       //relative path - must use canonical path - this will break with symlinks
-      if (filePath.contains("..")) 
+      if (filePath.contains(".."))
+      {
         filePath = file.getCanonicalPath();
+      }
       return filePath.startsWith(normalizePathSeparators(base.getCanonicalPath()));
     }
     catch (Exception e)
@@ -816,7 +833,6 @@ public class DashboardDesignerContentGenerator extends SimpleContentGenerator
     }
   }
 
-  
   private String getCdfContext()
   {
     InterPluginCall cdfContext = new InterPluginCall(InterPluginCall.CDF, "Context");

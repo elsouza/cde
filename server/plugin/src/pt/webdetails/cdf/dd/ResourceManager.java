@@ -10,9 +10,11 @@ import org.pentaho.platform.api.engine.IPluginResourceLoader;
 import org.pentaho.platform.engine.core.system.PentahoSystem;
 
 import java.io.File;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.HashSet;
+import net.sf.json.JSON;
 
 /**
  * User: pedro
@@ -121,5 +123,13 @@ public class ResourceManager {
 
     cacheContainer.clear();
   }
+  
+    /**
+   * CDE-Compatible plugins search
+   * This will search for "cde-compatible" tag on settings.xml file
+   * A list will be made and returnedl
+   */
+  
+
 
 }

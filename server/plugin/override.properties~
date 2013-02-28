@@ -1,0 +1,4 @@
+plugin.local.install.user = joe
+plugin.local.install.pass = password
+plugin.local.server.dir =  C:/Users/Luis/Pentaho/target-dist/server
+plugin.local.install.solutions.dir = C:/Users/Luis/Pentaho/project-bare/solution

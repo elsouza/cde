@@ -14,6 +14,7 @@ import java.util.List;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import net.sf.json.JSON;
 import org.apache.commons.jxpath.JXPathContext;
 import org.apache.commons.jxpath.Pointer;
@@ -28,6 +29,7 @@ import org.pentaho.platform.api.engine.IFileFilter;
 import org.pentaho.platform.api.engine.ISolutionFile;
 import org.pentaho.platform.engine.core.system.PentahoSystem;
 
+import org.pentaho.platform.repository.solution.filebased.FileSolutionFile;
 import pt.webdetails.cdf.dd.CdeSettings;
 import pt.webdetails.cdf.dd.DashboardDesignerContentGenerator;
 import pt.webdetails.cdf.dd.render.datasources.CdaDatasource;
@@ -36,6 +38,7 @@ import pt.webdetails.cdf.dd.util.Utils;
 import pt.webdetails.cpf.PluginSettings;
 import pt.webdetails.cpf.repository.RepositoryAccess;
 import pt.webdetails.cpf.repository.RepositoryAccess.FileAccess;
+import sun.management.FileSystem;
 
 /**
  *
@@ -58,6 +61,7 @@ public class ComponentManager
   protected ComponentManager()
   {
     init();
+
   }
 
   public static synchronized ComponentManager getInstance()
@@ -66,6 +70,7 @@ public class ComponentManager
     {
       _engine = new ComponentManager();
     }
+
     return _engine;
   }
 
@@ -103,6 +108,7 @@ public class ComponentManager
     File dir = new File(Utils.joinPath(this.basePath, BASE_COMPONENTS_DIR));
     FilenameFilter xmlFiles = new FilenameFilter()
     {
+
       public boolean accept(File dir, String name)
       {
         return !name.startsWith(".") && name.endsWith(".xml");
@@ -208,6 +214,7 @@ public class ComponentManager
 
     ISolutionFile[] systemFolders = systemDir.listFiles(new IFileFilter()
     {
+
       public boolean accept(ISolutionFile file)
       {
         return file.isDirectory();
@@ -220,6 +227,7 @@ public class ComponentManager
     {
       ISolutionFile[] sett = sysFolder.listFiles(new IFileFilter()
       {
+
         public boolean accept(ISolutionFile file)
         {
           return file.getFileName().equals("settings.xml");
@@ -286,6 +294,21 @@ public class ComponentManager
       }
       return new ArrayList<String>(0);
     }
+
+    public List<String> getTagLocations(String tag)
+    {
+      List<Element> pathElements = getSettingsXmlSection(tag);
+      if (pathElements != null)
+      {
+        ArrayList<String> solutionPaths = new ArrayList<String>(pathElements.size());
+        for (Element pathElement : pathElements)
+        {
+          solutionPaths.add(pathElement.getText());
+        }
+        return solutionPaths;
+      }
+      return new ArrayList<String>(0);
+    }
   }
 
   private void indexCustomComponents(String dirPath)
@@ -297,6 +320,7 @@ public class ComponentManager
 
     FilenameFilter subFolders = new FilenameFilter()
     {
+
       public boolean accept(File systemFolder, String name)
       {
         File plugin = new File(Utils.joinPath(systemFolder.getPath(), name, COMPONENT_FILE));
@@ -324,6 +348,7 @@ public class ComponentManager
 
     FilenameFilter widgetComponents = new FilenameFilter()
     {
+
       public boolean accept(File systemFolder, String name)
       {
         return !name.startsWith(".") && name.endsWith(".component.xml");
@@ -412,6 +437,7 @@ public class ComponentManager
     indexBaseComponents();
     indexCustomComponents();
     indexWidgetComponents();
+
   }
 
   private BaseComponent rendererFromClass(String className)
@@ -488,4 +514,11 @@ public class ComponentManager
   {
     return cdaSettings;
   }
+
+  /**
+   * CDE-Compatible plugins search
+   * This will search for "cde-compatible" tag on settings.xml file
+   * A list will be made and returnedl
+   */
+
 }
