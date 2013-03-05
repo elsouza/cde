@@ -106,12 +106,12 @@ div.outside {
   background-image: url("../images/NAV/down_onclick.png");
 }
 
-.pluginHeaderButton:hover > *{
+.pluginHeaderButton:hover > a{
   background-image: url("../images/NAV/down_mouseover.png");
   
 }
 
-.pluginHeaderButton:active > *{
+.pluginHeaderButton:active > a{
   background-image: url("../images/NAV/down_onclick.png");
   
 }
@@ -127,6 +127,11 @@ div.outside {
   text-align: left;
   background: #253545;
   border: 2px solid #152530;
+}
+
+.item{
+  font-size: 12px;
+  text-shadow: none;
 }
 
 .save-pulldown .pulldown .item {
@@ -991,4 +996,19 @@ div.treeTableNewJqi.save-as-widget input.folderexplorerfileinput {
 
 div.treeTableNewJqi.save-as-widget button {
   width: 65px;
+}
+
+
+.ui-dialog-title{
+  color: #0B99D5;
+  font-size: 16px;
+
+}
+
+.ui-widget-content li:hover {
+  background: none;
+}
+
+.ui-dialog {
+  border: 1px solid #194e65 !important;
 }
