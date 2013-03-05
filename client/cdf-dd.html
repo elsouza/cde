@@ -140,6 +140,9 @@
 <script language="javascript" type="text/javascript" src="getJsResource/resources/ace/src/theme-twilight.js"></script>
 <script language="javascript" type="text/javascript" src="getJsResource/resources/ace/src/theme-eclipse.js"></script>
 <script language="javascript" type="text/javascript" src="getJsResource/js/cdf-dd-aceWrapper.js"></script>
+
+
+
 <!-- Layout formats -->
 <script type="text/javascript">
 function refitEditor() {
@@ -167,25 +170,13 @@ $( function(){
 
 
 var initPlugins = function (result) {
-  /*
-  var footer = $("#footer");
-  var newDiv = document.createElement("div");
 
-  newDiv.setAttribute("class","span-3 button cdfdd-documentation last");
-  newDiv.setAttribute("id","installedPlugins");
-  newDiv.innerHTML = "Installed CDE Plugins: ";
-  */
 
   result.map(function(plugin){
     
-    //newDiv.innerHTML += "["+plugin.title+"] ";
-    
-    
-    
-
+    //newDiv.innerHTML += "["+plugin.title+"] "; //Optional - This displays a footer note with all the CDE compatible plugins
     $.getScript("../"+plugin.pluginId+plugin.jsPath)
   });
-  //footer.append(newDiv);
 }
 
 
@@ -194,7 +185,7 @@ $.ajax({
   dataType: 'json',
   data: [],
   error : function(){
-    //*This function looks at you and sighs*
+    //*This function is bored*
   },
   success : initPlugins
 });

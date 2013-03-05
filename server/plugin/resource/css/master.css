@@ -4,7 +4,76 @@ body {
 
 a {
   outline: none;
+  text-decoration: none;
+}
+
+.headerButton{
+  -moz-transition: all 0.5s ease 0s;
+  color: #8A8A8A;
+  cursor: pointer;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 100;
+  letter-spacing: 0.07em;
+  line-height: 20px;
+  margin-top: 10px;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 0 3px #111111, 0 0 3px #111111;
+  vertical-align: middle;
+  font-family: arial;
+  position: relative;
+  padding-left: 10px;
+}
+.headerButtonWithPulldown{
+  -moz-transition: all 0.5s ease 0s;
+  color: #8A8A8A;
+  cursor: pointer;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 100;
+  letter-spacing: 0.07em;
+  line-height: 20px;
+  margin-top: 10px;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 0 3px #111111, 0 0 3px #111111;
+  vertical-align: middle;
+  font-family: arial;
+  position: relative;
+  padding-left: 10px;
+  top:1px;
+  /*left:-30px;
+
+  width: 100px;*/
+
+  /*background: url("../images/NAV/down.png") no-repeat 82px 6px;*/
+  background: url("../images/NAV/down.png") no-repeat 66px;
+}
+
+.headerButtonWithPulldown:hover{
+  outline: none;
   text-decoration:  none;
+  position:relative;
+
+
+  color: #0098C4;
+  text-shadow: 0 0 12px #0AC5FB, 0 0 12px #0B99D5;
+
+  background-image: url("../images/NAV/down_mouseover.png");
+
+}
+
+.headerButtonWithPulldown:active{
+  background-image: url("../images/NAV/down_onclick.png");
+}
+
+.headerButton:hover {
+  outline: none;
+  text-decoration:  none;
+  position:relative;
+  color: #0098C4;
+  text-shadow: 0 0 12px #0AC5FB, 0 0 12px #0B99D5;
 }
 
 li {
@@ -27,8 +96,8 @@ div.outside {
   width:19px;
   height:19px;
   position: relative;
-  top: -10px;
-  background-image: url("../images/NAV/down.png");
+  top: -1px;
+  background: url("../images/NAV/down.png") no-repeat;
 }
 .save-pulldown:hover {
   background-image: url("../images/NAV/down_mouseover.png");
@@ -36,6 +105,17 @@ div.outside {
 .save-pulldown:active {
   background-image: url("../images/NAV/down_onclick.png");
 }
+
+.pluginHeaderButton:hover > *{
+  background-image: url("../images/NAV/down_mouseover.png");
+  
+}
+
+.pluginHeaderButton:active > *{
+  background-image: url("../images/NAV/down_onclick.png");
+  
+}
+
 
 .save-pulldown .pulldown {
   position: absolute;
@@ -56,6 +136,14 @@ div.outside {
 .save-pulldown .pulldown .item:hover {
   color: #0098c8;
 }
+
+.headerButton{
+  display: inline-block;
+  width: 75px;
+  position:relative;
+  top: -5px;
+}
+
 
 div.padder {
   padding: 5px;
@@ -115,6 +203,7 @@ div.cdfdd-modes {
 div.cdfdd-main {
   margin-top:35px;
 }
+
 
 #keyboard_shortcuts_help{
 

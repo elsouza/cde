@@ -15,37 +15,32 @@
     <div class="cdfdd-toolbar-logo"></div>
     <div class="cdfdd-toolbar span-24 last">
     <div id = "header" class="span-11 cdfdd-main prepend-2">
-    <a onclick="cdfdd.newDashboard()" class="tooltip">
-      <img src="images/NAV/Xnew.png"
-          onmouseover="Panel.setHover(this)"
-          onmouseout="Panel.unsetHover(this)"
-      >
-    </a>
-    <a onclick="cdfdd.save()" class="tooltip">
-      <img src="images/NAV/Xsave.png"
-          onmouseover="Panel.setHover(this)"
-          onmouseout="Panel.unsetHover(this)"
-      >
-    </a>
-    <a onclick="cdfdd.saveAs()" class="tooltip">
-      <img src="images/NAV/Xsave_as.png"
-          onmouseover="Panel.setHover(this)"
-          onmouseout="Panel.unsetHover(this)"
-      >
-    </a>
-    <a class='save-pulldown'>&nbsp;</a>
-    <a id="cdfdd-main-Reload" href="javascript:Panel.enableThisButton(this);cdfdd.reload()" class="tooltip">
-      <img src="images/NAV/Xreload.png"
-          onmouseover="Panel.setHover(this)"
-          onmouseout="Panel.unsetHover(this)"
-      >
-    </a>
-    <a onclick="cdfdd.saveSettings()" class="tooltip">
-      <img src="images/NAV/Xsettings.png"
-          onmouseover="Panel.setHover(this)"
-          onmouseout="Panel.unsetHover(this)"
-      >
-    </a>
+      <div class="headerButton">
+        <a onclick="cdfdd.newDashboard()" class="headerButton">
+          New
+        </a>
+      </div>
+      <div class="headerButton">
+        <a onclick="cdfdd.save()" class="headerButton">
+          Save
+        </a>
+      </div>
+      <div class="headerButton">
+        <a onclick="cdfdd.saveAs()" class="headerButton">
+          Save as...
+        </a>
+      </div>
+      <a class='save-pulldown'>&nbsp;</a>
+      <div class="headerButton">
+        <a id="cdfdd-main-Reload" href="javascript:Panel.enableThisButton(this);cdfdd.reload()" class="headerButton">
+          Reload
+        </a>
+      </div>
+      <div class="headerButton">
+        <a onclick="cdfdd.saveSettings()" class="headerButton">
+          Settings
+        </a>
+      </div>
   </div>
       <!-- Modes -->
       <div class="span-9 cdfdd-modes">
@@ -172,23 +167,25 @@ $( function(){
 
 
 var initPlugins = function (result) {
+  /*
   var footer = $("#footer");
   var newDiv = document.createElement("div");
 
   newDiv.setAttribute("class","span-3 button cdfdd-documentation last");
   newDiv.setAttribute("id","installedPlugins");
   newDiv.innerHTML = "Installed CDE Plugins: ";
+  */
 
   result.map(function(plugin){
     
-    newDiv.innerHTML += "["+plugin.title+"] ";
+    //newDiv.innerHTML += "["+plugin.title+"] ";
     
     
     
 
     $.getScript("../"+plugin.pluginId+plugin.jsPath)
   });
-  footer.append(newDiv);
+  //footer.append(newDiv);
 }
 
 
