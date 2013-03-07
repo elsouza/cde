@@ -417,11 +417,12 @@ var CDFDD = Base.extend({
 
   newDashboard: function(){
     var myself = this;
-    $.prompt('Are you sure you want to start a new dashboard?<br/>Unsaved changes will be lost.',{
+    $.prompt('Are you sure you want to start a new dashboard?<br/><span class="description">Unsaved changes will be lost.</span>',{
       buttons: {
         Ok: true,
         Cancel: false
-      } ,
+      }, 
+      prefix: "popup",
       callback: function(v,m,f){
         if(v) myself.saveAs(true);
       }
@@ -480,16 +481,16 @@ var CDFDD = Base.extend({
         Cancel: false
       },
       opacity: 0.2,
-      prefix: 'treeTableNewJqi',
+      prefix: 'popup',
       callback: function(v,m,f){
         if(v){
 
           if(selectedFile.indexOf(".") != -1 && (selectedFile.length < 5 || selectedFile.lastIndexOf(".wcdf") != selectedFile.length-5))
-            $.prompt('Invalid file extension. Must be .wcdf');
+            $.prompt('Invalid file extension. Must be .wcdf',{prefix:"popup"});
           else if(selectedFolder.length == 0)
-            $.prompt('Please choose destination folder.');
+            $.prompt('Please choose destination folder.',{prefix:"popup"});
           else if(selectedFile.length == 0)
-            $.prompt('Please enter the file name.');
+            $.prompt('Please enter the file name.',{prefix:"popup"});
 
           else if(selectedFile.length > 0){
             if(selectedFile.indexOf(".wcdf") == -1) selectedFile += ".wcdf";
@@ -691,7 +692,8 @@ var CDFDD = Base.extend({
       buttons: {
         Ok: true,
         Cancel: false
-      } ,
+      },
+      prefix: "popup",
       callback: function(v,m,f){
         if(v) window.location.reload();
       }
@@ -789,6 +791,7 @@ var CDFDD = Base.extend({
         Save: true,
         Cancel: false
       },
+      prefix: "popup",
       submit: function(){
         wcdf.title = $("#titleInput").val();
         wcdf.author = $("#authorInput").val();
@@ -840,14 +843,14 @@ var CDFDD = Base.extend({
         Cancel: false
       },
       opacity: 0.2,
-      prefix: 'treeTableNewJqi',
+      prefix: 'popup',
       classes: 'save-as-widget',
       callback: function(v,m,f){
         if(v){
 
           /* Reject file names where an extension is provided, which is different from .wcdf */
           if(selectedFile.indexOf(".") > -1 && !/\.wcdf$/.test(selectedFile))
-            $.prompt('Invalid file extension. Must be .wcdf');
+            $.prompt('Invalid file extension. Must be .wcdf',{prefix: "popup"});
           else if(selectedFile.length > 0){
             if(selectedFile.indexOf(".wcdf") == -1) selectedFile += ".wcdf";
 
@@ -1317,9 +1320,9 @@ $(function() {
 
 templates = {};
 templates.savePulldown = Mustache.compile(
-  "<ul class='pulldown'>" +
-  " <li class='item save-as-dashboard'>Save As Dashboard</li>" +
-  " <li class='item save-as-widget'>Save As Widget</li>" +
+  "<ul class='controlOptions'>" +
+  " <li class='item popup'>Save As Dashboard</li>" +
+  " <li class='item popup'>Save As Widget</li>" +
   "</ul>"
 );
 

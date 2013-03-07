@@ -1,9 +1,0 @@
-<version>
-        <branch>TRUNK</branch>
-		<version>TRUNK-SNAPSHOT</version>
-		<name>Trunk</name>
-		<package_url> http://ci.analytical-labs.com/job/Webdetails-CDE/lastSuccessfulBuild/artifact/server/plugin/dist/pentaho-cdf-dd-TRUNK-SNAPSHOT.zip </package_url>
-		<samples_url>http://ci.analytical-labs.com/job/Webdetails-CDE/lastSuccessfulBuild/artifact/server/plugin/dist/pentaho-cdf-dd-solution-TRUNK-SNAPSHOT.zip </samples_url>
-		<description>Trunk Snapshot. Get the latest, edgy, still work in progress features here....</description>
-		<build_id>manual-20130305</build_id>
-		</version>	

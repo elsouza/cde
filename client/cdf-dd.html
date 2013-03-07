@@ -15,33 +15,40 @@
     <div class="cdfdd-toolbar-logo"></div>
     <div class="cdfdd-toolbar span-24 last">
     <div id = "header" class="span-11 cdfdd-main prepend-2">
-      <div class="headerButton">
-        <a onclick="cdfdd.newDashboard()" class="headerButton">
-          New
-        </a>
+      <div id = "headerLinks" class="headerLinks">
+          
+          
+        <div class="headerButton">
+          <a onclick="cdfdd.newDashboard()" class="headerButton">
+            New
+          </a>
+        </div>
+        <div class="headerButton">
+          <a onclick="cdfdd.save()" class="headerButton">
+            Save
+          </a>
+        </div>
+        <div class="headerButton">
+          <a href="#" class="headerButton" id="SaveAs" style="width: 90px;">Save as...<div class="buttonImage"></div>
+          <ul class="controlOptions" id="SaveAsOptions" style="z-index: 10;">
+            <li class="item popupIcon" onclick="cdfdd.saveAs()">Save as Dashboard</li>
+            <li class="item popupIcon" onclick="cdfdd.saveAsWidget()">Save as Widget</li>
+          </ul>
+          </a>
+        </div>
+        <div class="headerButton">
+          <a id="cdfdd-main-Reload" href="javascript:Panel.enableThisButton(this);cdfdd.reload()" class="headerButton">
+            Reload
+          </a>
+        </div>
+        <div class="headerButton">
+          <a onclick="cdfdd.saveSettings()" class="headerButton">
+            Settings
+          </a>
+        </div>
       </div>
-      <div class="headerButton">
-        <a onclick="cdfdd.save()" class="headerButton">
-          Save
-        </a>
-      </div>
-      <div class="headerButton">
-        <a onclick="cdfdd.saveAs()" class="headerButton">
-          Save as...
-        </a>
-      </div>
-      <a class='save-pulldown'>&nbsp;</a>
-      <div class="headerButton">
-        <a id="cdfdd-main-Reload" href="javascript:Panel.enableThisButton(this);cdfdd.reload()" class="headerButton">
-          Reload
-        </a>
-      </div>
-      <div class="headerButton">
-        <a onclick="cdfdd.saveSettings()" class="headerButton">
-          Settings
-        </a>
-      </div>
-  </div>
+    </div>
+      <!---->
       <!-- Modes -->
       <div class="span-9 cdfdd-modes">
         <a onclick="Panel.enableThisButton(this);cdfdd.layout.switchTo()" class="tooltip">
@@ -143,8 +150,25 @@
 
 
 
+
 <!-- Layout formats -->
 <script type="text/javascript">
+
+var controlOptionsRepositioning = function(){
+  var $controlOptions = $(".controlOptions");
+  var $controlParent;
+  for(var i=0;i<$controlOptions.size();i++){
+    var $controlButton = $("#"+$controlOptions[i].id);
+    
+    $controlParent = $controlButton.parent();
+    var xOffset = $controlParent.offset().left;
+    var yOffset = $controlParent.offset().top;
+
+    $controlButton.offset({top: yOffset+20,left: xOffset-($controlButton.width()/2)+($controlParent.width()/2)});
+  }
+
+}
+
 function refitEditor() {
   for (i=1; i <25; i++) {
     if ($('.span-' + i).css) {
@@ -155,9 +179,12 @@ function refitEditor() {
     }
   }
   $('.container').css({width:"100%"});
+
+  controlOptionsRepositioning();
+
 };
 
-$(".save-pulldown").click(function(evt){
+$(".controlOptions").click(function(evt){
   cdfdd.savePulldown(this,evt);
 });
 $( function(){
@@ -169,12 +196,71 @@ $( function(){
 
 
 
+var saveAsControlOptions = function(){
+    $('#SaveAs').click(function(event) {
+      event.stopPropagation();
+      if(!($("#SaveAsOptions").is(':visible'))){
+        var divWidth = $('#header').width();
+        var leftSpace = (150-divWidth)/2;
+        $('#SaveAsOptions').css({'display':'block', 'width':'170px', 'left':-leftSpace});
+        $('#SaveAs').addClass('linkActive');
+      } else {
+        $('#SaveAsOptions').css('display','none');
+        $('#SaveAs').removeClass('linkActive');
+      }
+      controlOptionsRepositioning();
+    });
+}
+
+$('body').click(function(){
+  $('#SaveAsOptions').css('display','none');
+  $('#SaveAs').removeClass('linkActive');
+});
+
+$(document).ready(function() {
+    saveAsControlOptions();
+    var popupActive = false;
+    $('#popupExample, #commitTrack').click(function() {
+      if(popupActive == false) {
+        $('#popupExample1').css({'display':'block'});
+        $('#SaveAsOptions').css('display','none');
+        $('#SaveAs').removeClass('linkActive');
+        versionControlActive = false;
+        popupActive = true;
+      } else {
+        $('#popupExample1').css({'display':'none'});
+        popupActive = false;
+      }
+    });
+    
+    var saveActive = false;
+    $('#saveAs').click(function() {
+      if(saveActive == false) {
+        $('#popupSave').css({'display':'block'});
+        saveActive = true;
+      } else {
+        $('#popupSave').css({'display':'none'});
+        saveActive = false;
+      }
+    });
+    
+    $('.popup .closePopup, .popup .button#cancel').click(function() {
+      $('.popup').css({'display':'none'});
+      popupActive = false;
+      saveActive = false;
+    });
+  });
+
+
+
+
+
+
+
 var initPlugins = function (result) {
 
 
   result.map(function(plugin){
-    
-    //newDiv.innerHTML += "["+plugin.title+"] "; //Optional - This displays a footer note with all the CDE compatible plugins
     $.getScript("../"+plugin.pluginId+plugin.jsPath)
   });
 }
@@ -184,9 +270,6 @@ $.ajax({
   url : "getCDEplugins",
   dataType: 'json',
   data: [],
-  error : function(){
-    //*This function is bored*
-  },
   success : initPlugins
 });
 
