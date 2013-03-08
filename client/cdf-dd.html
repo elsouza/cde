@@ -258,11 +258,11 @@ $(document).ready(function() {
 
 
 var initPlugins = function (result) {
-
-
+  
   result.map(function(plugin){
     $.getScript("../"+plugin.pluginId+plugin.jsPath)
   });
+
 }
 
 
