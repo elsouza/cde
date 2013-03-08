@@ -417,7 +417,7 @@ var CDFDD = Base.extend({
 
   newDashboard: function(){
     var myself = this;
-    $.prompt('Are you sure you want to start a new dashboard?<br/><span class="description">Unsaved changes will be lost.</span>',{
+    $.prompt('<h2>New Dashboard</h2><hr/>Are you sure you want to start a new dashboard?<br/><span class="description">Unsaved changes will be lost.</span>',{
       buttons: {
         Ok: true,
         Cancel: false
@@ -436,7 +436,7 @@ var CDFDD = Base.extend({
     var selectedTitle = this.getDashboardWcdf().title;
     var selectedDescription = this.getDashboardWcdf().description;
     var myself = this;
-    var content = '<div class="saveaslabel">Save as:</div>\n' +
+    var content = '<h2>Save as:</h2><hr style="background:none;"/>\n' +
 '               <div id="container_id" class="folderexplorer" width="400px"></div>\n' +
 '                 <span class="folderexplorerfilelabel">File Name:</span>\n' +
 '                 <span class="folderexplorerfileinput"><input id="fileInput"  type="text"></input></span>\n' +
@@ -688,7 +688,7 @@ var CDFDD = Base.extend({
   reload: function(){
     this.logger.warn("Reloading dashboard... ");
 
-    $.prompt('Are you sure you want to reload? Unsaved changes will be lost.',{
+    $.prompt('<h2>Reload</h2><hr/>Are you sure you want to reload? Unsaved changes will be lost.',{
       buttons: {
         Ok: true,
         Cancel: false
@@ -763,16 +763,16 @@ var CDFDD = Base.extend({
           return {parameter: val, selected: _.contains(currentParams, val)};
         });
     content = '\n' +
-      '<span><b>Settings:</b></span><br/><hr/>\n' +
-      '<span>Title:</span><br/><input class="cdf_settings_input" id="titleInput" type="text" value="{{title}}"></input><br/>\n' +
-      '<span>Author:</span><br/><input class="cdf_settings_input" id="authorInput" type="text" value="{{author}}"></input>\n' +
-      '<span>Description:</span><br/><textarea class="cdf_settings_textarea" id="descriptionInput">{{description}}</textarea>\n' +
-      '<span>Style:</span><br/><select class="cdf_settings_input" id="styleInput">\n' +
+      '<span><h2>Settings:</h2></span><hr style="background: none;"/>\n' +
+      '<span class="title">Title:</span><br/><input class="cdf_settings_input" id="titleInput" type="text" value="{{title}}"></input><br/>\n' +
+      '<span class="title">Author:</span><br/><input class="cdf_settings_input" id="authorInput" type="text" value="{{author}}"></input><hr style="background:none;"/>\n' +
+      '<span class="title">Description:</span><br/><textarea class="cdf_settings_textarea" id="descriptionInput">{{description}}</textarea>\n' +
+      '<span class="title">Style:</span><br/><select class="cdf_settings_input" id="styleInput">\n' +
       '{{#styles}}' +
       '   <option value="{{style}}" {{#selected}}selected{{/selected}}>{{style}}</option>\n' +
       '{{/styles}}' +
       '</select>'+
-      '<span>Dashboard Type:</span><br/><select class="cdf_settings_input" id="rendererInput">\n' +
+      '<hr style="background:none;"/><span class="title">Dashboard Type:</span><br/><select class="cdf_settings_input" id="rendererInput">\n' +
       '{{#renderers}}' +
       '   <option value="{{renderer}}" {{#selected}}selected{{/selected}}>{{renderer}}</option>\n' +
       '{{/renderers}}' +
@@ -1327,11 +1327,11 @@ templates.savePulldown = Mustache.compile(
 );
 
 templates.saveAsWidget = Mustache.compile(
-  '<div class="saveaslabel">Save as Widget:</div>\n' +
+  '<h2>Save as Widget:</h2><hr/>\n' +
   ' <span class="folderexplorerfilelabel">File Name:</span>\n' +
-  ' <input id="fileInput" class="folderexplorerfileinput" type="text"></input>\n' +
+  ' <input id="fileInput" class="folderexplorerfileinput" type="text" style="width:100%;"></input>\n' +
   ' <hr class="filexplorerhr"/>\n' +
-  ' <span class="folderexplorerextralabel" >Extra Information:</span><br/>\n' +
+  ' <span class="folderexplorerextralabel" >-Extra Information-</span><br/>\n' +
   ' <span class="folderexplorerextralabels" >Title:</span>' +
   ' <input id="titleInput" class="folderexplorertitleinput" type="text" value="{{title}}"></input><br/>\n' +
   ' <span class="folderexplorerextralabels" >Description:</span>'+

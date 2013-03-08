@@ -164,8 +164,6 @@ var controlOptionsRepositioning = function(){
     var xOffset = $controlParent.offset().left;
     var yOffset = $controlParent.offset().top;
 
-    alert(""+yOffset);
-
     $controlButton.offset({top: yOffset+20,left: xOffset-($controlButton.width()/2)+($controlParent.width()/2)});
   }
 
@@ -272,9 +270,6 @@ $.ajax({
   url : "getCDEplugins",
   dataType: 'json',
   data: [],
-  error : function(){
-    //*This function is bored*
-  },
   success : initPlugins
 });
 

@@ -95,10 +95,10 @@ div.outside {
 }
 
 .headerButton{
-  display: inline-block;
+  display: inline;
   width: 75px;
   position:relative;
-  top: -5px;
+  top: 5px;
 }
 
 
@@ -258,6 +258,10 @@ li.ui-state-hover {
 
 hr.hr-hidden{
   background:#2D2D2D;
+}
+
+hr {
+  background: none!important;
 }
 
 div.spacer {
@@ -1066,6 +1070,7 @@ a:active > .buttonImage {
 /*ul*/
 ul.controlOptions {
   list-style: none;
+  color: #999;
   position: absolute;
   top: 20px;
   background: #222;
@@ -1097,7 +1102,7 @@ ul.controlOptions li.popupIcon:active {
   background-repeat: no-repeat; 
 }
 
-ul.controlOptions li:last-child {
+ul.controlOptions li.separator {
   border-top: 1px #12a2d8 solid;
 }
 
@@ -1136,6 +1141,8 @@ ul.controlOptions li:active {
   line-height: 20px;
   font-size: 15px;
   font-weight: bold;
+  position: relative;
+  top: -10px;
 }
 
 div.popup .popupcontainer{ 
@@ -1220,7 +1227,7 @@ div.popup button.popupdefaultbutton{
 .popup .title {
   font-weight: bold;
   display: block;
-  width: 15%; 
+  width: 100%; 
   margin-top: 10px;
   list-style: none;
   font-size: 13px;

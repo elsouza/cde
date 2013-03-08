@@ -83,6 +83,7 @@ div.outside {
 .item{
   font-size: 12px;
   text-shadow: none;
+  list-style: none;
 }
 
 .save-pulldown .pulldown .item {
@@ -94,10 +95,10 @@ div.outside {
 }
 
 .headerButton{
-  display: inline-block;
+  display: inline;
   width: 75px;
   position:relative;
-  top: -5px;
+  top: 5px;
 }
 
 
@@ -257,6 +258,10 @@ li.ui-state-hover {
 
 hr.hr-hidden{
   background:#2D2D2D;
+}
+
+hr {
+  background: none!important;
 }
 
 div.spacer {
@@ -951,18 +956,27 @@ div.treeTableNewJqi.save-as-widget button {
 
 
 .ui-dialog-title{
-  color: #0B99D5;
-  font-size: 16px;
+  float: left;
+  color: #12a2d8;
+  line-height: 20px;
+  font-size: 15px;
+  font-weight: bold;
 
 }
+
+
 
 .ui-widget-content li:hover {
   background: none;
 }
 
-.ui-dialog {
-  border: 1px solid #194e65 !important;
+.ui-widget-content {
+  border: none!important;
 }
+
+
+
+
 
 @charset "utf-8";
 /* CSS Document */
@@ -1056,6 +1070,7 @@ a:active > .buttonImage {
 /*ul*/
 ul.controlOptions {
   list-style: none;
+  color: #999;
   position: absolute;
   top: 20px;
   background: #222;
@@ -1087,7 +1102,7 @@ ul.controlOptions li.popupIcon:active {
   background-repeat: no-repeat; 
 }
 
-ul.controlOptions li:last-child {
+ul.controlOptions li.separator {
   border-top: 1px #12a2d8 solid;
 }
 
@@ -1106,21 +1121,17 @@ ul.controlOptions li:active {
   color: #fff;
 }
 
+/* impromptu starts here*/
 .popup {
-  width: 400px;
-  height: 250px;
-  background: #222; 
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-top: -125px;
-  margin-left: -200px;
-  display: none;
-  border: 2px #12a2d8 solid;
-  padding: 10px;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
+  width: auto;
+  max-width: 80%; 
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; 
+  position: absolute; 
+  background-color: #222; 
+  font-size: 11px; 
+  text-align: left; 
+  border: solid 2px #12a2d8;
+  padding: 7px;
 }
 
 
@@ -1130,7 +1141,66 @@ ul.controlOptions li:active {
   line-height: 20px;
   font-size: 15px;
   font-weight: bold;
+  position: relative;
+  top: -10px;
 }
+
+div.popup .popupcontainer{ 
+  font-weight: bold;
+  background: #222; 
+}
+div.popup .popupclose{ 
+  float: right;
+  font-weight: bold;
+  border: 2px solid #12a2d8;
+  height: 20px;
+  width: 20px;
+  text-align: center; 
+  background: url(../images/close.png);
+  z-index: 100;
+  color: transparent;
+}
+div.popup .popupclose:hover{ 
+  color: transparent;
+  cursor: pointer;
+  background-image: url(../images/close_mouseover.png);
+  background-color: #12a2d8;
+}
+div.popup .popupclose:active{ 
+  background: url(../images/close_onclick.png);
+  background-color: #12a2d8;
+  color: transparent;
+}
+div.popup .popupmessage{ 
+  padding: 10px; 
+  line-height: 20px; 
+  color: #999;
+  background: #222; 
+
+}
+div.popup .popupbuttons{ 
+  text-align: right; 
+  padding: 5px 0 5px 0;  
+  background-color: #222;
+}
+div.popup button{ 
+  padding: 3px 10px; 
+  background-color: #222; 
+  border: solid 2px #12a2d8; 
+  color: #999; 
+  font-size: 12px; 
+  float: right;
+}
+div.popup button:hover{ 
+  background-color: #12a2d8!important;
+  color: #222!important;
+}
+div.popup button.popupdefaultbutton{ 
+  /*background-color: #8DC05B;*/
+  background-color: #222;
+}
+
+/* impromptu ends here*/
 
 .closePopup {
   float: right;
@@ -1157,8 +1227,10 @@ ul.controlOptions li:active {
 .popup .title {
   font-weight: bold;
   display: block;
-  width: 100px; 
+  width: 100%; 
   margin-top: 10px;
+  list-style: none;
+  font-size: 13px;
 }
 
 .popup img {
@@ -1166,10 +1238,12 @@ ul.controlOptions li:active {
 }
 
 .popup .description {
-  margin-left: 5px;
   font-size:20px;
   line-height:1;
   margin-bottom:0.5em;
+  list-style: none;
+  font-weight: 100;
+
 }
 
 .popup textarea {
