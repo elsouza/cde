@@ -95,12 +95,35 @@ div.outside {
 }
 
 .headerButton{
-  display: inline;
-  width: 75px;
-  position:relative;
-  top: 5px;
+  -moz-transition: all 0.5s ease 0s;
+  color: #8A8A8A;
+  cursor: pointer;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 100;
+  letter-spacing: 0.07em;
+  line-height: 20px;
+  margin-top: 10px;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 0 3px #111111, 0 0 3px #111111;
+  vertical-align: middle;
+  font-family: arial;
+  position: relative;
+  padding-left: 10px;
 }
 
+.headerButton:hover {
+  outline: none;
+  text-decoration:  none;
+  position:relative;
+  color: #0098C4;
+  text-shadow: 0 0 12px #0AC5FB, 0 0 12px #0B99D5;
+}
+
+.headerButton:active{
+  color:#FFFFFF;
+}
 
 div.padder {
   padding: 5px;
@@ -978,9 +1001,6 @@ div.treeTableNewJqi.save-as-widget button {
 
 
 
-@charset "utf-8";
-/* CSS Document */
-
 html {margin:0;padding:0;border:0;}
 body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, dialog, figure, footer, header, hgroup, nav, section {margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:middle;}
 article, aside, dialog, figure, footer, header, hgroup, nav, section {display:block;}
@@ -1132,6 +1152,10 @@ ul.controlOptions li:active {
   text-align: left; 
   border: solid 2px #12a2d8;
   padding: 7px;
+  max-width: 75%;
+  max-height: 75%;
+  overflow-x: auto;
+  min-width: 5%;
 }
 
 
