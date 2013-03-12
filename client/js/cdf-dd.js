@@ -812,6 +812,177 @@ var CDFDD = Base.extend({
     });
   },
 
+    combinedSaveAs: function(fromScratch){
+
+    var selectedTitle="", selectedDescription="", selectedFile="",selectedFolder="";
+    var radioButtons = "<form>"
+                            +"<span class='title'>Select the format: </span><div><input type='radio' name='saveAsRadio' value='dashboard' id='dashRadio' checked><span class='folderexplorerfilelabel' style='top: -2px; left: 0px;'>Dashboard</span></div>"
+                            +"<div><input type='radio' name='saveAsRadio' value='widget' id='widgetRadio'><span class='folderexplorerfilelabel' style='top: -2px; left: 0px;'>Widget</span></div>"
+                      +"</form>";
+
+    var fileInfo = '<div id="container_id" class="folderexplorer" width="400px"></div>\n' +
+'                 <span class="folderexplorerfilelabel">File Name:</span>\n' +
+'                 <span class="folderexplorerfileinput"><input id="fileInput"  type="text" value="" style="width: 70%;"></input></span>\n' +
+'               <hr class="filexplorerhr"/>\n' +
+'               <span class="folderexplorerextralabel" >Extra Information:</span><br/>\n' +
+'                 <span class="folderexplorerextralabels" >Title:</span><input id="titleInput" class="folderexplorertitleinput" type="text" value="' + selectedTitle+'" style="width: 70%;"></input>\n' +
+'                 <br/><span class="folderexplorerextralabels" >Description:</span><input id="descriptionInput"  class="folderexplorerdescinput" type="text" value="' + selectedDescription +'" style="width: 70%;"></input>';
+    
+    var content = "<h2>Save as...</h2><hr/><div style=''>"+radioButtons+fileInfo+"</div>";
+
+    $.prompt(content,{
+      prefix:"popup",
+      buttons: {
+        Ok: 1,
+        Cancel: 0
+      },
+      loaded: function(){
+
+        $("#popup").css("width","auto");
+
+        $('#container_id').fileTree(
+        {
+          root: '/',
+          script: CDFDDDataUrl.replace("Syncronize","ExploreFolder?fileExtensions=.wcdf&access=create"),
+          expandSpeed: 1000,
+          collapseSpeed: 1000,
+          multiFolder: false,
+          folderClick:
+          function(obj,folder){
+            if($(".selectedFolder").length > 0)$(".selectedFolder").attr("class","");
+            $(obj).attr("class","selectedFolder");
+            selectedFolder = folder;
+            $("#fileInput").val("");
+          }
+        },
+        function(file) {
+          $("#fileInput").val(file.replace(selectedFolder,""));
+          selectedFile = $("#fileInput").val();
+        });
+
+        $("#dashRadio").click(function(event){
+          $("#container_id").show();
+        });
+
+        $("#widgetRadio").click(function(event){
+          $("#container_id").hide();
+        });
+      },
+      submit: function(v,m,f){
+        if(v==1){
+          
+          /*In case of Dashboards
+              the propper means will be used
+          */
+          if($('input[name=saveAsRadio]:checked').val()=="dashboard"){
+            selectedFile = $('#fileInput').val();
+            selectedTitle = cdfdd.getDashboardWcdf().title;
+            selectedDescription = cdfdd.getDashboardWcdf().description;
+
+            if(selectedFile.indexOf(".") != -1 && (selectedFile.length < 5 || selectedFile.lastIndexOf(".wcdf") != selectedFile.length-5)){
+              $.prompt('Invalid file extension. Must be .wcdf',{prefix:"popup"});
+            }
+            else if(selectedFolder.length == 0){
+              $.prompt('Please choose destination folder.',{prefix:"popup"});
+            }
+            else if(selectedFile.length == 0){
+              $.prompt('Please enter the file name.',{prefix:"popup"});
+            }
+
+            if(selectedFile.indexOf(".wcdf") == -1) selectedFile += ".wcdf";
+
+            CDFDDFileName = selectedFolder + selectedFile;
+            cdfdd.dashboardData.filename = CDFDDFileName;
+
+
+            var saveAsParams = {
+              operation: fromScratch  ? "newFile" : "saveas",
+              file: selectedFolder + selectedFile,
+              title: selectedTitle,
+              description: selectedDescription,
+              cdfstructure: JSON.stringify(cdfdd.dashboardData,"",2) // TODO: shouldn't it strip, like save does?
+            };
+
+            $.post(CDFDDDataUrl, saveAsParams, function(result) {
+              var json = eval("(" + result + ")");
+              if(json.status == "true"){
+                if(selectedFolder[0] == "/") selectedFolder = selectedFolder.substring(1,selectedFolder.length);
+                var solutionPath = selectedFolder.split("/");
+                cdfdd.initStyles(function(){
+                  //cdfdd.setExitNotification(false);
+                  window.location = '../pentaho-cdf-dd/Edit?solution=' + solutionPath[0] + "&path=" + solutionPath.slice(1).join("/") + "&file=" + selectedFile;
+                });
+              }
+              else
+                $.notifyBar({
+                  html: "Errors saving file: " + json.result
+                });
+            });
+
+
+          }/*In case of Widgets
+              the propper means will be used
+            */
+          else if($('input[name=saveAsRadio]:checked').val()=="widget"){
+            selectedFolder = "cde/widgets/";
+            selectedFile = $('#fileInput').val();
+            selectedTitle = cdfdd.getDashboardWcdf().title;
+            selectedDescription = cdfdd.getDashboardWcdf().description;
+
+            if($("#titleInput").val()!=""){
+              selectedTitle = $("#titleInput").val();
+            }
+
+            if($("#descriptionInput").val()!=""){
+              selectedDescription = $("#descriptionInput").val();
+            }
+
+            if(selectedFile.indexOf(".") > -1 && !/\.wcdf$/.test(selectedFile)){
+              $.prompt('Invalid file extension. Must be .wcdf');
+            }
+            if(selectedFile.indexOf(".wcdf") == -1) selectedFile += ".wcdf";
+
+            CDFDDFileName = selectedFolder + selectedFile;
+            cdfdd.dashboardData.filename = CDFDDFileName;
+
+            var saveAsParams = {
+              operation: fromScratch  ? "newFile" : "saveas",
+              file: selectedFolder + selectedFile,
+              title: selectedTitle,
+              description: selectedDescription,
+              cdfstructure: JSON.stringify(cdfdd.dashboardData,"",2)
+            };
+
+            $.post(CDFDDDataUrl, saveAsParams, function(result) {
+              var json = JSON.parse(result);
+              if(json.status == "true") {
+                if(selectedFolder[0] == "/") selectedFolder = selectedFolder.substring(1,selectedFolder.length);
+                var solutionPath = selectedFolder.split("/");
+                var wcdf = cdfdd.getDashboardWcdf();
+                wcdf.widget = true;
+                cdfdd.saveSettingsRequest(wcdf);
+                cdfdd.initStyles(function(){
+                  window.location = '../pentaho-cdf-dd/Edit?solution=' + solutionPath[0] + "&path=" + solutionPath.slice(1).join("/") + "&file=" + selectedFile;
+                });
+              }
+              else
+                $.notifyBar({
+                  html: "Errors saving file: " + json.result
+                });
+            });
+
+
+
+            alert("all went well");
+
+          }
+          
+          return false;
+        }
+      }
+    });
+
+  },
   saveAsWidget: function(fromScratch){
 
     var selectedFolder = "cde/widgets/",

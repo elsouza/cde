@@ -112,6 +112,7 @@ div.outside {
   font-family: arial;
   position: relative;
   padding-left: 10px;
+  display: inline-block;
 }
 
 .headerButton:hover {
@@ -978,6 +979,12 @@ div.treeTableNewJqi.save-as-widget button {
   width: 65px;
 }
 
+div.folderexplorer{
+  overflow: auto!important;
+  height: 30%!important;
+  width: 99%!important;
+}
+
 
 .ui-dialog-title{
   float: left;
@@ -1145,7 +1152,6 @@ ul.controlOptions li:active {
 /* impromptu starts here*/
 .popup {
   width: auto;
-  max-width: 80%; 
   font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; 
   position: absolute; 
   background-color: #222; 
@@ -1155,7 +1161,6 @@ ul.controlOptions li:active {
   padding: 7px;
   max-width: 75%;
   max-height: 75%;
-  overflow-x: auto;
   min-width: 5%;
 }
 
