@@ -981,8 +981,7 @@ div.treeTableNewJqi.save-as-widget button {
 
 div.folderexplorer{
   overflow: auto!important;
-  height: 30%!important;
-  width: 99%!important;
+  height: 170px!important;
 }
 
 
@@ -1162,6 +1161,7 @@ ul.controlOptions li:active {
   max-width: 75%;
   max-height: 75%;
   min-width: 5%;
+  overflow-x:auto;
 }
 
 
