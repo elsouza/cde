@@ -191,62 +191,6 @@ $( function(){
 
 
 
-var saveAsControlOptions = function(){
-    $('#SaveAs').click(function(event) {
-      event.stopPropagation();
-      if(!($("#SaveAsOptions").is(':visible'))){
-        var divWidth = $('#header').width();
-        var leftSpace = (150-divWidth)/2;
-        $('#SaveAsOptions').css({'display':'block', 'width':'170px', 'left':-leftSpace});
-        $('#SaveAs').addClass('linkActive');
-      } else {
-        $('#SaveAsOptions').css('display','none');
-        $('#SaveAs').removeClass('linkActive');
-      }
-      controlOptionsRepositioning();
-    });
-}
-
-$('body').click(function(){
-  $('#SaveAsOptions').css('display','none');
-  $('#SaveAs').removeClass('linkActive');
-});
-
-$(document).ready(function() {
-    saveAsControlOptions();
-    var popupActive = false;
-    $('#popupExample, #commitTrack').click(function() {
-      if(popupActive == false) {
-        $('#popupExample1').css({'display':'block'});
-        $('#SaveAsOptions').css('display','none');
-        $('#SaveAs').removeClass('linkActive');
-        versionControlActive = false;
-        popupActive = true;
-      } else {
-        $('#popupExample1').css({'display':'none'});
-        popupActive = false;
-      }
-    });
-    
-    var saveActive = false;
-    $('#saveAs').click(function() {
-      if(saveActive == false) {
-        $('#popupSave').css({'display':'block'});
-        saveActive = true;
-      } else {
-        $('#popupSave').css({'display':'none'});
-        saveActive = false;
-      }
-    });
-    
-    $('.popup .closePopup, .popup .button#cancel').click(function() {
-      $('.popup').css({'display':'none'});
-      popupActive = false;
-      saveActive = false;
-    });
-  });
-
-
 
 
 
