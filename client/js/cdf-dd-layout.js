@@ -787,8 +787,10 @@ var LayoutApplyTemplateOperation = ApplyTemplateOperation.extend({
 							$.prompt('Are you sure you want to load the template? ',{ buttons: { Ok: true, Cancel: false} ,
 									callback: function(v,m,f){
 										if(v){
-											cdfdd.dashboardData.layout = selectTemplate.structure.layout;
+											cdfdd.dashboardData = selectTemplate.structure;
 											cdfdd.layout.init();
+											cdfdd.components.init();
+											cdfdd.datasources.init();
 										}}});
 						}};
 					
