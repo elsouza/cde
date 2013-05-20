@@ -58,7 +58,7 @@
         type="xml"
         title="Echo Service"
         description="A sample webservice that echos an input"
-        class="pt.webdetails.cdf.ws.dd.CdeWebServices"/>
+        class="pt.webdetails.cdf.dd.ws.CdeWebServices"/>
 
 	<menu-items>
 		<menu-item id="wcdf" anchor="file-new-submenu" label="CDE Dashboard" command="content/pentaho-cdf-dd/NewDashboard" type="MENU_ITEM" how="LAST_CHILD"/>
