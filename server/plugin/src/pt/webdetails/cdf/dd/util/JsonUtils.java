@@ -4,19 +4,30 @@
  */
 package pt.webdetails.cdf.dd.util;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.PrintWriter;
+import java.util.Scanner;
+
 import net.sf.json.JSON;
 import net.sf.json.JSONObject;
 import net.sf.json.JSONSerializer;
 
-import java.io.*;
-
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * @author pedro
  */
 public class JsonUtils {
+
+  private static Log logger = LogFactory.getLog(JsonUtils.class);
 
   public static JSON readJsonFromInputStream(final InputStream input) throws IOException {
     
@@ -58,5 +69,35 @@ public class JsonUtils {
 	  }
 
 	  return "\"" + content + "\"";
+  }
+  
+  public static JSON getFileAsJson(String path) {
+      InputStream fileInputStream = getFileInputStream(path);
+      if (fileInputStream == null) {
+          return null;
+      }
+
+      StringBuilder builder = new StringBuilder();
+      Scanner scanner = new Scanner(fileInputStream);
+      while (scanner.hasNextLine()) {
+          builder.append(scanner.nextLine());
+      }
+
+      return JSONSerializer.toJSON(builder.toString());
+  }
+
+  private static InputStream getFileInputStream(String path) {
+      if (StringUtils.isBlank(path)) {
+          return null;
+      }
+
+      File file = new File(path);
+
+      try {
+          return file.exists() ? new FileInputStream(file) : null;
+      } catch (FileNotFoundException e) {
+          logger.warn("File not found: " + path);
+          return null;
+      }
   }
 }

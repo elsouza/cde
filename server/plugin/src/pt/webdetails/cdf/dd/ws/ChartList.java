@@ -3,31 +3,17 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 package pt.webdetails.cdf.dd.ws;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
 import java.util.Iterator;
-import java.util.Scanner;
 
 import net.sf.json.JSON;
 import net.sf.json.JSONObject;
-import net.sf.json.JSONSerializer;
 
 import org.apache.commons.jxpath.JXPathContext;
-import org.apache.commons.lang.StringUtils;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 
-import pt.webdetails.cdf.dd.DashboardDesignerContentGenerator;
-import pt.webdetails.cdf.dd.render.RenderComponents;
+import pt.webdetails.cdf.dd.util.JsonUtils;
 
 
 public class ChartList {
-
-    private static final String JSON_FILE_DOES_NOT_EXIST = "{\"error\": \"file does not exist\"}";
-
-    private static Log logger = LogFactory.getLog(DashboardDesignerContentGenerator.class);
 
     private final String fileName;
 
@@ -37,9 +23,9 @@ public class ChartList {
 
     @SuppressWarnings("rawtypes")
     public String toJSON() {
-        JSON json = getFileAsJson();
+        JSON json = JsonUtils.getFileAsJson(this.fileName);
         if (json == null) {
-            return JSON_FILE_DOES_NOT_EXIST;
+            return WebServiceCommons.JSON_FILE_DOES_NOT_EXIST;
         }
 
         StringBuilder builder = new StringBuilder("[");
@@ -85,48 +71,4 @@ public class ChartList {
         }
         return idaAndTile;
     }
-
-
-    private JSON getFileAsJson() {
-        InputStream fileInputStream = getFileInputStream();
-        if (fileInputStream == null) {
-            return null;
-        }
-
-        StringBuilder builder = new StringBuilder();
-        Scanner scanner = new Scanner(fileInputStream);
-        while (scanner.hasNextLine()) {
-            builder.append(scanner.nextLine());
-        }
-
-        return JSONSerializer.toJSON(builder.toString());
-    }
-
-    private InputStream getFileInputStream() {
-        if (StringUtils.isBlank(this.fileName)) {
-            return null;
-        }
-
-        File file = new File(this.fileName);
-
-        try {
-            return file.exists() ? new FileInputStream(file) : null;
-        } catch (FileNotFoundException e) {
-            logger.warn("File not found: " + this.fileName);
-            return null;
-        }
-    }
-
-	public String getScript(String componentId) {
-		try {
-	        JSON json = getFileAsJson();
-	        if (json == null) {
-	            return JSON_FILE_DOES_NOT_EXIST;
-	        }
-			return new RenderComponents().render(JXPathContext.newContext(json), "bla"); //TODO wtf esse parametro?
-		} catch (Exception e) {
-			throw new RuntimeException(e);
-		}
-	}
-
 }
