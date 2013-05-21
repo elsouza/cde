@@ -1,0 +1,79 @@
+{
+  "layout":{
+    "title":"CDF - Sample structure",
+    "rows":[
+
+    ],
+    "components":{
+      "rows":[
+        {
+          "id":"SELECTORS",
+          "name":"Selects",
+          "type":"Label",
+          "typeDesc":"<i>Group</i>",
+          "parent":"UnIqEiD",
+          "properties":[
+            {
+              "name":"Group",
+              "value":"Selects",
+              "type":"Label"
+            }
+          ]
+        },
+        {
+          "id":"CHARTS",
+          "name":"Charts",
+          "type":"Label",
+          "typeDesc":"<i>Group</i>",
+          "parent":"UnIqEiD",
+          "properties":[
+            {
+              "name":"Group",
+              "value":"Charts",
+              "type":"Label"
+            }
+          ]
+        },
+        {
+          "id":"bc6a4c88-337d-3342-95fc-9c873f5285e5",
+          "type":"ComponentscccPieChart",
+          "typeDesc":"CCC Pie Chart",
+          "meta_cdwSupport":"true",
+          "parent":"CHARTS",
+          "properties":[
+            {
+              "name":"name",
+              "value":"socialPie",
+              "type":"Id"
+            },
+            {
+              "name":"title",
+              "value":"Social Pie Chart",
+              "type":"String"
+            }
+          ]
+        },
+        {
+          "id":"8ac4a633-7120-f781-82fc-20ab4428595e",
+          "type":"ComponentscccBarChart",
+          "typeDesc":"CCC Bar Chart",
+          "meta_cdwSupport":"true",
+          "parent":"CHARTS",
+          "properties":[
+            {
+              "name":"name",
+              "value":"socialBar",
+              "type":"Id"
+            },
+            {
+              "name":"title",
+              "value":"Social Bar Chart",
+              "type":"String"
+            }
+          ]
+        }
+      ]
+    },
+    "filename":"/SyncBR3/Lab10/training.cdfde"
+  }
+}
