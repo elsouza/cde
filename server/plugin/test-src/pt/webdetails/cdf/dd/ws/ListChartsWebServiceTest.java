@@ -14,38 +14,38 @@ public class ListChartsWebServiceTest {
 
     @Test
     public void listOneChart() {
-        ChartList ws = new ChartList(this.testDirPath, "test-one-chart");
+        ChartList ws = new ChartList(this.testDirPath + "test-one-chart.cdfde");
         Assert.assertEquals("[{\"id\":\"socialPie\", \"title\":\"Social Pie Chart\"}]", ws.toJSON());
     }
 
     @Test
     public void listTwoCharts() {
-        ChartList ws = new ChartList(this.testDirPath, "test-two-charts");
+        ChartList ws = new ChartList(this.testDirPath + "test-two-charts.cdfde");
         Assert.assertEquals("[{\"id\":\"socialPie\", \"title\":\"Social Pie Chart\"}, "
         		+ "{\"id\":\"socialBar\", \"title\":\"Social Bar Chart\"}]", ws.toJSON());
     }
 
     @Test
     public void listNocharts() {
-        ChartList ws = new ChartList(this.testDirPath, "test-no-charts");
+        ChartList ws = new ChartList(this.testDirPath + "test-no-charts.cdfde");
         Assert.assertEquals("[]", ws.toJSON());
     }
 
     @Test
     public void listFileDoesNotExist() {
-        ChartList ws = new ChartList(this.testDirPath, "no-existent-file");
+        ChartList ws = new ChartList(this.testDirPath + "no-existent-file.cdfde");
         Assert.assertEquals("{\"error\": \"file does not exist\"}", ws.toJSON());
     }
 
     @Test
     public void listWithEmptyFileName() {
-        ChartList ws = new ChartList(this.testDirPath, "");
+        ChartList ws = new ChartList("");
         Assert.assertEquals("{\"error\": \"file does not exist\"}", ws.toJSON());
     }
 
     @Test
     public void listWithNullFileName() {
-        ChartList ws = new ChartList(this.testDirPath, null);
+        ChartList ws = new ChartList(null);
         Assert.assertEquals("{\"error\": \"file does not exist\"}", ws.toJSON());
     }
 }

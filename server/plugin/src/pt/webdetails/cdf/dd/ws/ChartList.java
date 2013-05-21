@@ -6,7 +6,6 @@ package pt.webdetails.cdf.dd.ws;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FilenameFilter;
 import java.io.InputStream;
 import java.util.Iterator;
 import java.util.Scanner;
@@ -27,12 +26,9 @@ public class ChartList {
 
     private static Log logger = LogFactory.getLog(DashboardDesignerContentGenerator.class);
 
-    private String templateDir;
-
     private final String fileName;
 
-    public ChartList(String templateDir, String fileName) {
-        this.templateDir = templateDir;
+    public ChartList(String fileName) {
         this.fileName = fileName;
     }
 
@@ -108,16 +104,10 @@ public class ChartList {
             return null;
         }
 
-        File defaultTemplatesDir = new File(this.templateDir);
-        final FilenameFilter jsonFilter = new FilenameFilter() {
-            public boolean accept(final File dir, final String name) {
-                return name.endsWith(ChartList.this.fileName + ".cdfde");
-            }
-        };
+        File file = new File(this.fileName);
 
-        File[] jsonFiles = defaultTemplatesDir.listFiles(jsonFilter);
         try {
-            return jsonFiles != null && jsonFiles.length > 0 ? new FileInputStream(jsonFiles[0]) : null;
+            return file.exists() ? new FileInputStream(file) : null;
         } catch (FileNotFoundException e) {
             logger.warn("File not found: " + this.fileName);
             return null;

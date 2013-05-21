@@ -3,8 +3,6 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 package pt.webdetails.cdf.dd.ws;
 
-import pt.webdetails.cdf.dd.CdfTemplates;
-
 public class CdeWebServices {
 
     public String test(String echo) {
@@ -17,7 +15,7 @@ public class CdeWebServices {
     }
 
     protected ChartList getChartList(String file) {
-        ChartList list = new ChartList(CdfTemplates.DEFAULT_TEMPLATE_DIR, file);
+        ChartList list = new ChartList(file);
         return list;
     }
 }
