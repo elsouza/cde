@@ -25,6 +25,8 @@ import pt.webdetails.cdf.dd.render.RenderComponents;
 
 public class ChartList {
 
+    private static final String JSON_FILE_DOES_NOT_EXIST = "{\"error\": \"file does not exist\"}";
+
     private static Log logger = LogFactory.getLog(DashboardDesignerContentGenerator.class);
 
     private final String fileName;
@@ -37,7 +39,7 @@ public class ChartList {
     public String toJSON() {
         JSON json = getFileAsJson();
         if (json == null) {
-            return "{\"error\": \"file does not exist\"}";
+            return JSON_FILE_DOES_NOT_EXIST;
         }
 
         StringBuilder builder = new StringBuilder("[");
@@ -119,7 +121,7 @@ public class ChartList {
 		try {
 	        JSON json = getFileAsJson();
 	        if (json == null) {
-	            return "{\"error\": \"file does not exist\"}";
+	            return JSON_FILE_DOES_NOT_EXIST;
 	        }
 			return new RenderComponents().render(JXPathContext.newContext(json), "bla"); //TODO wtf esse parametro?
 		} catch (Exception e) {

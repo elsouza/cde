@@ -10,23 +10,12 @@ public class CdeWebServices {
     }
 
 	public String getScript(String file, String componentId) {
-		ChartList list = getChartList(file);
+		ChartList list = new ChartList(file);
 		return list.getScript(componentId);
 	}
 
     public String listCharts(String file) {
-        ChartList list = getChartList(file);
+        ChartList list = new ChartList(file);
         return list.toJSON();
     }
-
-<<<<<<< HEAD
-    protected ChartList getChartList(String file) {
-        ChartList list = new ChartList(file);
-        return list;
-=======
-    private ChartList getChartList(String file) {
-        return new ChartList(CdfTemplates.DEFAULT_TEMPLATE_DIR, file);
->>>>>>> 3d7972257c70bb8ec9df1430cc324f11be9915d4
-    }
-
 }
