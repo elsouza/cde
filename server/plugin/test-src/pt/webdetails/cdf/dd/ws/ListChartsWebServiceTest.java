@@ -4,6 +4,7 @@
 package pt.webdetails.cdf.dd.ws;
 
 import junit.framework.Assert;
+
 import org.junit.Test;
 
 
@@ -12,8 +13,14 @@ public class ListChartsWebServiceTest {
     private final String testDirPath = getClass().getClassLoader().getResource("").getPath();
 
     @Test
-    public void listCharts() {
-        ChartList ws = new ChartList(this.testDirPath, "test");
+    public void listOneChart() {
+        ChartList ws = new ChartList(this.testDirPath, "test-one-chart");
+        Assert.assertEquals("[{\"id\":\"socialPie\", \"title\":\"Social Pie Chart\"}]", ws.toJSON());
+    }
+
+    @Test
+    public void listTwoCharts() {
+        ChartList ws = new ChartList(this.testDirPath, "test-two-charts");
         Assert.assertEquals("[{\"id\":\"socialPie\", \"title\":\"Social Pie Chart\"}, "
         		+ "{\"id\":\"socialBar\", \"title\":\"Social Bar Chart\"}]", ws.toJSON());
     }
