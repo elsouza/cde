@@ -21,6 +21,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import pt.webdetails.cdf.dd.DashboardDesignerContentGenerator;
+import pt.webdetails.cdf.dd.render.RenderComponents;
 
 
 public class ChartList {
@@ -103,7 +104,7 @@ public class ChartList {
         return JSONSerializer.toJSON(builder.toString());
     }
 
-    protected InputStream getFileInputStream() {
+    private InputStream getFileInputStream() {
         if (StringUtils.isBlank(this.fileName)) {
             return null;
         }
@@ -123,5 +124,17 @@ public class ChartList {
             return null;
         }
     }
+
+	public String getScript(String componentId) {
+		try {
+	        JSON json = getFileAsJson();
+	        if (json == null) {
+	            return "{\"error\": \"file does not exist\"}";
+	        }
+			return new RenderComponents().render(JXPathContext.newContext(json), "bla"); //TODO wtf esse parametro?
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+	}
 
 }

@@ -3,16 +3,6 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 package pt.webdetails.cdf.dd.ws;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-
-import net.sf.json.JSONObject;
-
-import org.apache.commons.jxpath.JXPathContext;
-
-import pt.webdetails.cdf.dd.render.RenderComponents;
-import pt.webdetails.cdf.dd.util.JsonUtils;
-
 import pt.webdetails.cdf.dd.CdfTemplates;
 
 public class CdeWebServices {
@@ -21,22 +11,9 @@ public class CdeWebServices {
         return "This is my echo: " + (echo == null ? "null" : echo);
     }
 
-
-	public String getScriptForComponentId(String dashboardName, String componentId) {
-		
-		try {
-			FileInputStream streamDashboard = new FileInputStream(dashboardName);
-			final JSONObject json = (JSONObject) JsonUtils.readJsonFromInputStream(streamDashboard);
-			final JXPathContext doc = JXPathContext.newContext(json);
-			
-			return new RenderComponents().render(doc, ""); //TODO oq é o ALIAS?
-			
-		} catch (IOException ex) {
-			throw new RuntimeException(ex);
-		} catch (Exception ex) {
-			throw new RuntimeException(ex);
-		}
-		
+	public String getScript(String file, String componentId) {
+		ChartList list = getChartList(file);
+		return list.getScript(componentId);
 	}
 
     public String listCharts(String file) {
@@ -44,9 +21,8 @@ public class CdeWebServices {
         return list.toJSON();
     }
 
-    protected ChartList getChartList(String file) {
-        ChartList list = new ChartList(CdfTemplates.DEFAULT_TEMPLATE_DIR, file);
-        return list;
+    private ChartList getChartList(String file) {
+        return new ChartList(CdfTemplates.DEFAULT_TEMPLATE_DIR, file);
     }
 
 }
