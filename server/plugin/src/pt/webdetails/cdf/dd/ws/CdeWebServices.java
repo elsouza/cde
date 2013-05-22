@@ -10,12 +10,10 @@ public class CdeWebServices {
     }
 
 	public String getScript(String file, String componentId) {
-		ChartScript script = new ChartScript(file);
-		return script.getScript(componentId);
+		return new ChartScript(file).getScript(componentId);
 	}
 
     public String listCharts(String file) {
-        ChartList list = new ChartList(file);
-        return list.toJSON();
+        return new ChartList(file).toJSON();
     }
 }

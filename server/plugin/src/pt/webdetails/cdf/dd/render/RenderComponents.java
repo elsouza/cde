@@ -2,14 +2,16 @@ package pt.webdetails.cdf.dd.render;
 
 import java.util.Iterator;
 import java.util.Map;
-import net.sf.json.JSONException;
+
 import net.sf.json.JSONObject;
+
 import org.apache.commons.jxpath.JXPathContext;
 import org.apache.commons.jxpath.Pointer;
 import org.json.JSONArray;
+
 import pt.webdetails.cdf.dd.Widget;
-import pt.webdetails.cdf.dd.render.components.ComponentManager;
 import pt.webdetails.cdf.dd.render.components.BaseComponent;
+import pt.webdetails.cdf.dd.render.components.ComponentManager;
 
 @SuppressWarnings("unchecked")
 public class RenderComponents extends Renderer
@@ -31,84 +33,100 @@ public class RenderComponents extends Renderer
     return render(doc, null);
   }
 
-  public String render(JXPathContext doc, String alias) throws Exception
-  {
-    setDoc(doc);
-    Map<String, Widget> widgets = getWidgets(alias);
-    StringBuffer widgetContent = new StringBuffer(),
-            result = new StringBuffer(newLine + "<script language=\"javascript\" type=\"text/javascript\">" + newLine);
+	public String renderComponent(JXPathContext doc, String alias, String componentId) throws Exception {
 
-    final JSONObject settings = (JSONObject) doc.getValue("/settings");
-    result.append("wcdfSettings = ");
-    result.append(settings.toString(2));
-    result.append(';');
-    Iterator<Pointer> components = doc.iteratePointers("/components/rows");
+		setDoc(doc);
+		Map<String, Widget> widgets = getWidgets(alias);
+		StringBuffer widgetContent = new StringBuffer();
+		StringBuffer result = new StringBuffer(newLine
+				+ "<script language=\"javascript\" type=\"text/javascript\">"
+				+ newLine);
 
-    String componentsIds = "";
-    ComponentManager engine = ComponentManager.getInstance();
-    while (components.hasNext())
-    {
+		final JSONObject settings = (JSONObject) doc.getValue("/settings");
 
-      Pointer pointer = components.next();
-      JXPathContext context = doc.getRelativeContext(pointer);
-      Object metaWidget = context.getValue("meta_widget"),
-              htmlObject;
+		if (settings != null) {
+			result.append("wcdfSettings = ");
+			result.append(settings.toString(2));
+			result.append(';');
+		}
 
-      /* If the htmlObject doesn't exist, looking for it will throw an exception. */
-      try
-      {
-        htmlObject = context.getValue("properties[name='htmlObject']/value");
+		Iterator<Pointer> components = doc.iteratePointers("/components/rows");
 
-      }
-      catch (Exception e)
-      {
-        htmlObject = null;
-      }
-      boolean isWidget = metaWidget != null && metaWidget.toString().equals("true");
-      String id = htmlObject != null ? htmlObject.toString().replaceAll("\\$\\{.*:(.*)\\}", "$1") : "";
-      if (isWidget && widgets.containsKey(id))
-      {
-        /* Detect whether we're handling a Widget Component (which has a
-         * single-property parameter blob) or a generated component, which
-         * will have a separate property per parameter
-         */
-        if (context.getValue("meta_wcdf") != null)
-        {
-          getDiscreteParameters(widgetContent, widgets, context, id, alias);
-        }
-        else
-        {
-          getParameterBlob(widgetContent, widgets, context, id, alias);
-        }
-      }
-      else
-      {
-        BaseComponent renderer = engine.getRenderer(context);
-        if (renderer != null)
-        {
-          // Discard everything that's not an actual renderable component
-          renderer.setAlias(alias);
-          renderer.setNode(context);
-          if (renderer.getId().startsWith("render_"))
-          {
-            componentsIds += renderer.getId().length() > 0 ? renderer.getId() + "," : "";
-          }
-          result.append(newLine);
-          result.append(renderer.render(context));
-        }
-      }
-    }
-    if (componentsIds.length() > 0)
-    {
-      result.append(newLine + "Dashboards.addComponents([" + componentsIds.replaceAll(",$", "]") + ");");
-    }
+		String componentsIds = "";
+		ComponentManager engine = ComponentManager.getInstance();
+		while (components.hasNext()) {
 
-    result.append(newLine);
-    result.append("</script>");
-    result.append(newLine);
-    result.append(widgetContent);
-    return result.toString();
-  }
+			Pointer pointer = components.next();
+			JXPathContext context = doc.getRelativeContext(pointer);
+			Object metaWidget = context.getValue("meta_widget");
+			Object htmlObject;
+
+			/*
+			 * If the htmlObject doesn't exist, looking for it will throw an
+			 * exception.
+			 */
+			try {
+				htmlObject = context
+						.getValue("properties[name='htmlObject']/value");
+			} catch (Exception e) {
+				htmlObject = null;
+			}
+
+			boolean isWidget = metaWidget != null
+					&& metaWidget.toString().equals("true");
+			String id = htmlObject != null ? htmlObject.toString().replaceAll(
+					"\\$\\{.*:(.*)\\}", "$1") : "";
+			if (isWidget && widgets.containsKey(id)) {
+				/*
+				 * Detect whether we're handling a Widget Component (which has a
+				 * single-property parameter blob) or a generated component,
+				 * which will have a separate property per parameter
+				 */
+				if (context.getValue("meta_wcdf") != null) {
+					getDiscreteParameters(widgetContent, widgets, context, id,
+							alias);
+				} else {
+					getParameterBlob(widgetContent, widgets, context, id, alias);
+				}
+			} else {
+				BaseComponent renderer = engine.getRenderer(context);
+				if (renderer != null) {
+					// Discard everything that's not an actual renderable component
+					renderer.setAlias(alias);
+					renderer.setNode(context);
+					logger.warn("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" + componentId);
+					logger.warn("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" + renderer.getId());
+					if (shouldAddComponent(componentId, renderer)) { 
+						if (renderer.getId().startsWith("render_")) {
+							componentsIds += 
+									renderer.getId().length() > 0 ? renderer.getId() + "," : "";
+						}
+						result.append(newLine);
+						result.append(renderer.render(context));
+					}
+				}
+			}
+		}
+		if (componentsIds.length() > 0) {
+			result.append(newLine + "Dashboards.addComponents(["
+					+ componentsIds.replaceAll(",$", "]") + ");");
+		}
+
+		result.append(newLine);
+		result.append("</script>");
+		result.append(newLine);
+		result.append(widgetContent);
+		return result.toString();
+	}
+
+	private boolean shouldAddComponent(String componentId, BaseComponent renderer) {
+		return componentId == null || componentId.equals(renderer.getId());
+	}
+  
+	public String render(JXPathContext doc, String alias) throws Exception {
+		return this.renderComponent(doc, alias, null);
+	}
+
 
   @Override
   public String getRenderClassName(String type)

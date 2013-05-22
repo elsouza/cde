@@ -24,7 +24,15 @@ public class ChartScript {
             if (json == null) {
                 return WebServiceCommons.JSON_FILE_DOES_NOT_EXIST;
             }
-            return new RenderComponents().render(JXPathContext.newContext(json), "bla"); //TODO wtf esse parametro?
+            
+            String alias = "mydashboard";
+            
+			return new RenderComponents().renderComponent(
+					JXPathContext.newContext(json), alias,
+					"render_" + alias + "_" + componentId); 
+			
+			// FIXME ta trazendo mais coisas do que deveira
+			
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

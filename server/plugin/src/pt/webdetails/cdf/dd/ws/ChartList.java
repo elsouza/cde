@@ -33,10 +33,7 @@ public class ChartList {
         
         while (it.hasNext()) {
             JSONObject row = (JSONObject) it.next();
-
-            String[] idaAndTile = getIdAndTitle(row);
-
-            appendIdAndTitle(builder, idaAndTile);
+            appendIdAndTitle(builder, getIdAndTitle(row));
         }
         builder.append("]");
 
