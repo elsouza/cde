@@ -26,6 +26,15 @@ public class ListChartsWebServiceTest {
     }
 
     @Test
+    public void listComplete() {
+        ChartList ws = new ChartList(this.testDirPath + "test-complete.cdfde");
+		Assert.assertEquals("[{\"id\":\"socialPie\", \"title\":\"Torta Social\"}," +
+				" {\"id\":\"socialBar\", \"title\":\"Barra social\"}, {\"id\":\"socialLine\", \"title\":\"Linha social\"}]",
+				ws.toJSON());
+    }
+
+    
+    @Test
     public void listNocharts() {
         ChartList ws = new ChartList(this.testDirPath + "test-no-charts.cdfde");
         Assert.assertEquals("[]", ws.toJSON());

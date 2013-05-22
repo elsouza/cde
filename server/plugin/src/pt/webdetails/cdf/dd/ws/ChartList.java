@@ -29,8 +29,8 @@ public class ChartList {
         }
 
         StringBuilder builder = new StringBuilder("[");
-        Iterator it = JXPathContext.newContext(json).iterate("layout/components/rows[@parent='CHARTS']");
-
+        Iterator it = JXPathContext.newContext(json).iterate("components/rows[@parent='CHARTS']");
+        
         while (it.hasNext()) {
             JSONObject row = (JSONObject) it.next();
 

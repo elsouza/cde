@@ -82,7 +82,7 @@ public class JsonUtils {
       while (scanner.hasNextLine()) {
           builder.append(scanner.nextLine());
       }
-
+      
       return JSONSerializer.toJSON(builder.toString());
   }
 
