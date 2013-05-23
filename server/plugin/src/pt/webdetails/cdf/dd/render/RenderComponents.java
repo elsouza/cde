@@ -94,8 +94,6 @@ public class RenderComponents extends Renderer
 					// Discard everything that's not an actual renderable component
 					renderer.setAlias(alias);
 					renderer.setNode(context);
-					logger.warn("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" + componentId);
-					logger.warn("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" + renderer.getId());
 					if (shouldAddComponent(componentId, renderer)) { 
 						if (renderer.getId().startsWith("render_")) {
 							componentsIds += 

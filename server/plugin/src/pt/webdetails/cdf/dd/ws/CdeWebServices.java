@@ -9,8 +9,8 @@ public class CdeWebServices {
         return "This is my echo: " + (echo == null ? "null" : echo);
     }
 
-	public String getScript(String file, String componentId) {
-		return new ChartScript(file).getScript(componentId);
+	public String getScript(String file, String componentId, String newHtmlObject) {
+		return new ChartScript(file).getScript(componentId, newHtmlObject);
 	}
 
     public String listCharts(String file) {

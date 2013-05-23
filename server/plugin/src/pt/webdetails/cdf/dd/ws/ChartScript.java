@@ -18,7 +18,7 @@ public class ChartScript {
         this.fileName = fileName;
     }
 
-    public String getScript(String componentId) {
+    public String getScript(String componentId, String newHtmlObject) {
         try {
             JSON json = JsonUtils.getFileAsJson(fileName);
             if (json == null) {
@@ -27,11 +27,11 @@ public class ChartScript {
             
             String alias = "mydashboard";
             
-			return new RenderComponents().renderComponent(
+			String script = new RenderComponents().renderComponent(
 					JXPathContext.newContext(json), alias,
-					"render_" + alias + "_" + componentId); 
+					"render_" + alias + "_" + componentId);
 			
-			// FIXME ta trazendo mais coisas do que deveira
+			return script.replaceAll("htmlObject:(.*)+,", "htmlObject: \"" + newHtmlObject + "\" , ");
 			
         } catch (Exception e) {
             throw new RuntimeException(e);
