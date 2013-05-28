@@ -15,57 +15,75 @@ import pt.webdetails.cdf.dd.util.JsonUtils;
 
 public class ChartList {
 
-    private final String fileName;
+    private final String[] fileNames;
 
-    public ChartList(String fileName) {
-        this.fileName = fileName;
+    public ChartList(String... fileNames) {
+    	
+    	if (fileNames == null)
+    		throw new IllegalArgumentException("The fileNames array can not be null");
+    	
+        this.fileNames = fileNames;
     }
 
     @SuppressWarnings("rawtypes")
     public String toJSON() {
-        JSON json = JsonUtils.getFileAsJson(this.fileName);
-        if (json == null) {
-            return WebServiceCommons.JSON_FILE_DOES_NOT_EXIST;
-        }
+    	
+    	StringBuilder builder = new StringBuilder("");
+    	builder.append("[");
 
-        StringBuilder builder = new StringBuilder("[");
-        Iterator it = JXPathContext.newContext(json).iterate("components/rows[@parent='CHARTS']");
-        
-        while (it.hasNext()) {
-            JSONObject row = (JSONObject) it.next();
-            appendIdAndTitle(builder, getIdAndTitle(row));
-        }
-        builder.append("]");
+    	for (String fileName : this.fileNames) {
 
+	        JSON json = JsonUtils.getFileAsJson(fileName);
+	        if (json == null)
+	            return WebServiceCommons.JSON_FILE_DOES_NOT_EXIST;
+	
+	        String dashboardName = getDashboardName(fileName);
+	        Iterator it = JXPathContext.newContext(json).iterate("components/rows[@parent='CHARTS']");
+
+	        while (it.hasNext()) {
+	            buildOutputJSON(builder, getIdAndTitleFromJSON((JSONObject) it.next()), dashboardName);
+	        }
+    	}
+
+    	builder.append("]");
         return builder.toString();
     }
 
-    private void appendIdAndTitle(StringBuilder builder, String[] idaAndTile) {
-        if (idaAndTile[0] != null && idaAndTile[1] != null) {
+    private void buildOutputJSON(StringBuilder builder,
+    		String[] jsonComponentIdAndTitle, String dashboardName) {
+
+        if (jsonComponentIdAndTitle[0] != null && jsonComponentIdAndTitle[1] != null) {
             if (builder.length() > 1) {
                 builder.append(", ");
             }
-
-            builder.append(String.format("{\"id\":\"%s\", \"title\":\"%s\"}", idaAndTile[0], idaAndTile[1]));
+            
+            builder.append(String.format("{\"id\":\"%s\", \"title\":\"%s\", \"dashboard\" : \"%s\"}",
+            		jsonComponentIdAndTitle[0], jsonComponentIdAndTitle[1], dashboardName));
         }
     }
 
+	private String getDashboardName(String dashboardName) {
+		int begin = dashboardName.lastIndexOf("/");
+		int end = dashboardName.lastIndexOf(".cdfde");
+		return dashboardName.substring(begin + 1, end);
+	}
+
     @SuppressWarnings("rawtypes")
-    private String[] getIdAndTitle(JSONObject row) {
-        String[] idaAndTile = new String[2];
+    private String[] getIdAndTitleFromJSON(JSONObject row) {
+        String[] componentIdAndTitle = new String[2];
 
         Iterator itObj = row.getJSONArray("properties").iterator();
         while (itObj.hasNext()) {
             JSONObject props = (JSONObject) itObj.next();
 
             if ("Id".equalsIgnoreCase(props.getString("type"))) {
-                idaAndTile[0] = props.getString("value");
+                componentIdAndTitle[0] = props.getString("value");
             }
 
             if ("title".equalsIgnoreCase(props.getString("name"))) {
-                idaAndTile[1] = props.getString("value");
+                componentIdAndTitle[1] = props.getString("value");
             }
         }
-        return idaAndTile;
+        return componentIdAndTitle;
     }
 }

@@ -5,11 +5,11 @@ package pt.webdetails.cdf.dd.ws;
 
 public class CdeWebServices {
 
-	public String getScript(String file, String componentId, String newHtmlObject) {
-		return new ChartScript(file).getScript(componentId, newHtmlObject);
+	public String getScript(String componentId, String dashboardName, String newHtmlObject, String... files) {
+		return new ChartScript(files).getScript(componentId, dashboardName, newHtmlObject);
 	}
 
-    public String listCharts(String file) {
-        return new ChartList(file).toJSON();
+    public String listCharts(String... files) {
+        return new ChartList(files).toJSON();
     }
 }

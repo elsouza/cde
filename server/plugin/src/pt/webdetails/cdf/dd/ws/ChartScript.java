@@ -12,33 +12,41 @@ import pt.webdetails.cdf.dd.util.JsonUtils;
 
 public class ChartScript {
 
-    private final String fileName;
+    private final String[] fileNames;
 
     protected ChartScript() {
-    	this.fileName = "";
+    	this.fileNames = new String[] { };
     }
     
-    public ChartScript(String fileName) {
-        this.fileName = fileName;
+    public ChartScript(String... fileNames) {
+        this.fileNames = fileNames;
     }
 
-    public String getScript(String componentId, String newHtmlObject) {
-        try {
+    public String getScript(String componentId, String dashboardName, String newHtmlObject) {
 
-            JSON json = JsonUtils.getFileAsJson(fileName);
-            if (json == null) {
-                return WebServiceCommons.JSON_FILE_DOES_NOT_EXIST;
-            }
-            
-            String alias = "mydashboard";
-			return prepareScript(newHtmlObject,
-					new RenderComponents().renderComponent(JXPathContext.newContext
-							(json), alias, "render_"+ alias + "_" + componentId));
-			
+    	for (String fileName : fileNames) {
+    		if (fileName.endsWith(dashboardName + ".cdfde")) {
+    			return getComponentScript(componentId, newHtmlObject, fileName);
+    		}
+    	}
+    	return "";
+    }
+
+	private String getComponentScript(String componentId, String newHtmlObject, String fileName) {
+
+		JSON json = JsonUtils.getFileAsJson(fileName);
+		if (json == null) {
+			return WebServiceCommons.JSON_FILE_DOES_NOT_EXIST;
+		}
+		
+		try {
+			return prepareScript(newHtmlObject, new RenderComponents().renderComponent(JXPathContext.newContext(json),
+					"mydashboard", "render_mydashboard_" + componentId));
+
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-    }
+	}
 
 	private String prepareScript(String newHtmlObject, String javascript) {
 		javascript = replaceHTMLObject(newHtmlObject, javascript);

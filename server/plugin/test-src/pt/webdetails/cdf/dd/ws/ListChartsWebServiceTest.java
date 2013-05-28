@@ -15,21 +15,32 @@ public class ListChartsWebServiceTest {
     @Test
     public void listOneChart() {
         ChartList ws = new ChartList(this.testDirPath + "test-one-chart.cdfde");
-        Assert.assertEquals("[{\"id\":\"socialPie\", \"title\":\"Social Pie Chart\"}]", ws.toJSON());
+        Assert.assertEquals("[{\"id\":\"socialPie\", \"title\":\"Social Pie Chart\", \"dashboard\" : \"test-one-chart\"}]", ws.toJSON());
     }
 
     @Test
     public void listTwoCharts() {
         ChartList ws = new ChartList(this.testDirPath + "test-two-charts.cdfde");
-        Assert.assertEquals("[{\"id\":\"socialPie\", \"title\":\"Social Pie Chart\"}, "
-        		+ "{\"id\":\"socialBar\", \"title\":\"Social Bar Chart\"}]", ws.toJSON());
+        Assert.assertEquals("[{\"id\":\"socialPie\", \"title\":\"Social Pie Chart\", \"dashboard\" : \"test-two-charts\"}, "
+        		+ "{\"id\":\"socialBar\", \"title\":\"Social Bar Chart\", \"dashboard\" : \"test-two-charts\"}]", ws.toJSON());
     }
 
+    @Test 
+    public void listThreeChartsFromTwoFiles() {
+    	ChartList ws = new ChartList(this.testDirPath + "test-one-chart.cdfde", this.testDirPath + "test-two-charts.cdfde");
+    	
+    	Assert.assertEquals(
+    			"[{\"id\":\"socialPie\", \"title\":\"Social Pie Chart\", \"dashboard\" : \"test-one-chart\"}, " +
+    			 "{\"id\":\"socialPie\", \"title\":\"Social Pie Chart\", \"dashboard\" : \"test-two-charts\"}, " +
+    			 "{\"id\":\"socialBar\", \"title\":\"Social Bar Chart\", \"dashboard\" : \"test-two-charts\"}]", ws.toJSON());
+    }
+    
     @Test
     public void listComplete() {
         ChartList ws = new ChartList(this.testDirPath + "test-complete.cdfde");
-		Assert.assertEquals("[{\"id\":\"socialPie\", \"title\":\"Torta Social\"}," +
-				" {\"id\":\"socialBar\", \"title\":\"Barra social\"}, {\"id\":\"socialLine\", \"title\":\"Linha social\"}]",
+		Assert.assertEquals("[{\"id\":\"socialPie\", \"title\":\"Torta Social\", \"dashboard\" : \"test-complete\"}," +
+				" {\"id\":\"socialBar\", \"title\":\"Barra social\", \"dashboard\" : \"test-complete\"}," +
+				" {\"id\":\"socialLine\", \"title\":\"Linha social\", \"dashboard\" : \"test-complete\"}]",
 				ws.toJSON());
     }
 
@@ -54,7 +65,14 @@ public class ListChartsWebServiceTest {
 
     @Test
     public void listWithNullFileName() {
-        ChartList ws = new ChartList(null);
-        Assert.assertEquals("{\"error\": \"file does not exist\"}", ws.toJSON());
+    	
+    	try {
+    		String[] array = null;
+    		new ChartList(array);
+    		Assert.fail("should throw IllegalArgumentException");
+    	} catch (Exception ex) {
+    		Assert.assertTrue(ex instanceof IllegalArgumentException);
+    	}
+    	
     }
 }
