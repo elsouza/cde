@@ -3,19 +3,42 @@
   "title": "CDF - Sample structure",
   "rows": [
    {
-    "id": "fe834d46-ad16-631c-7f1f-bd7b2542bac9",
+    "id": "58793f31-db4e-4888-f8d5-547831333fd7",
     "type": "LayoutResourceFile",
     "typeDesc": "Resource",
     "parent": "UnIqEiD",
     "properties": [
      {
       "name": "name",
-      "value": "mainCSS",
+      "value": "jqueryDateFormat",
       "type": "Id"
      },
      {
       "name": "resourceFile",
-      "value": "${res:files/main.css}",
+      "value": "${res:../arquivos/jquery-dateformat.js}",
+      "type": "ResourceFile"
+     },
+     {
+      "name": "resourceType",
+      "value": "Javascript",
+      "type": "Label"
+     }
+    ]
+   },
+   {
+    "id": "87bb315e-933f-0d58-69de-199f4b29a0af",
+    "type": "LayoutResourceFile",
+    "typeDesc": "Resource",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "cssPrincipal",
+      "type": "Id"
+     },
+     {
+      "name": "resourceFile",
+      "value": "${res:../arquivos/estilo_principal.css}",
       "type": "ResourceFile"
      },
      {
@@ -26,14 +49,14 @@
     ]
    },
    {
-    "id": "656ca6d7-07b0-179f-bb26-7ee844fb7a29",
+    "id": "357cf0a0-ed62-2651-af1f-6c995671c091",
     "type": "LayoutRow",
     "typeDesc": "Row",
     "parent": "UnIqEiD",
     "properties": [
      {
       "name": "name",
-      "value": "overviewRow",
+      "value": "row_cabecalho",
       "type": "Id"
      },
      {
@@ -64,14 +87,14 @@
     ]
    },
    {
-    "id": "667cad5e-f5a2-5166-e2cc-1e1e335948ba",
+    "id": "1832ad33-e100-8d9b-d4b7-213824001e84",
     "type": "LayoutColumn",
     "typeDesc": "Column",
-    "parent": "656ca6d7-07b0-179f-bb26-7ee844fb7a29",
+    "parent": "357cf0a0-ed62-2651-af1f-6c995671c091",
     "properties": [
      {
       "name": "name",
-      "value": "overviewObj",
+      "value": "col_cabecalho",
       "type": "Id"
      },
      {
@@ -131,20 +154,20 @@
      },
      {
       "name": "cssClass",
-      "value": "overview",
+      "value": "cabecalho",
       "type": "String"
      }
     ]
    },
    {
-    "id": "e69567d6-c753-0ee3-3174-05aca6c41c06",
+    "id": "df4ba1f5-04d0-8d2f-b65e-3e662882f61b",
     "type": "LayoutRow",
     "typeDesc": "Row",
     "parent": "UnIqEiD",
     "properties": [
      {
       "name": "name",
-      "value": "topFiltersRow",
+      "value": "row_titulo",
       "type": "Id"
      },
      {
@@ -169,25 +192,25 @@
      },
      {
       "name": "cssClass",
-      "value": "filtersRow cell boxShadow",
+      "value": "",
       "type": "String"
      }
     ]
    },
    {
-    "id": "4a1a87f1-5700-567d-7d0b-1c17034d946a",
+    "id": "aeeac9c8-4dfa-98df-e3f8-6ffddd51a8a1",
     "type": "LayoutColumn",
     "typeDesc": "Column",
-    "parent": "e69567d6-c753-0ee3-3174-05aca6c41c06",
+    "parent": "df4ba1f5-04d0-8d2f-b65e-3e662882f61b",
     "properties": [
      {
       "name": "name",
-      "value": "",
+      "value": "col_titulo",
       "type": "Id"
      },
      {
       "name": "columnSpan",
-      "value": "16",
+      "value": "24",
       "type": "Integer"
      },
      {
@@ -242,560 +265,20 @@
      },
      {
       "name": "cssClass",
-      "value": "",
+      "value": "titulo",
       "type": "String"
      }
     ]
    },
    {
-    "id": "618d07a4-5299-cd4e-bf1a-4e935647181c",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "4a1a87f1-5700-567d-7d0b-1c17034d946a",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "selectorTitle",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "400493b2-a6e3-c876-d4e5-b53e72cfd9ce",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "618d07a4-5299-cd4e-bf1a-4e935647181c",
-    "properties": [
-     {
-      "name": "name",
-      "value": "locationSelectTitle",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "selectorTitle",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "d36fce9b-d13c-259c-b8e8-7ab88af757a3",
-    "type": "LayoutHtml",
-    "typeDesc": "Html",
-    "parent": "400493b2-a6e3-c876-d4e5-b53e72cfd9ce",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "html",
-      "value": "ctools training ",
-      "type": "Html"
-     },
-     {
-      "name": "fontSize",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "color",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "c36bae37-2463-dc7b-6d47-c0d56f9b75af",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "618d07a4-5299-cd4e-bf1a-4e935647181c",
-    "properties": [
-     {
-      "name": "name",
-      "value": "socialSelectTitle",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "28ce7afa-d434-cb55-2a5b-199316701de4",
-    "type": "LayoutHtml",
-    "typeDesc": "Html",
-    "parent": "c36bae37-2463-dc7b-6d47-c0d56f9b75af",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "html",
-      "value": "social network ",
-      "type": "Html"
-     },
-     {
-      "name": "fontSize",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "color",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "9ab6195d-1b1f-4ecd-373a-8d0e0898e560",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "4a1a87f1-5700-567d-7d0b-1c17034d946a",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "selectors",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "8b1a463a-6822-f6e9-0b8a-7c582aed6598",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "9ab6195d-1b1f-4ecd-373a-8d0e0898e560",
-    "properties": [
-     {
-      "name": "name",
-      "value": "locationSelectObj",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "499c2bf0-a4fa-496c-dc9a-524c5fb3376c",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "9ab6195d-1b1f-4ecd-373a-8d0e0898e560",
-    "properties": [
-     {
-      "name": "name",
-      "value": "socialSelectObj",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "26b82dee-737a-5c95-a022-756123a59562",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "e69567d6-c753-0ee3-3174-05aca6c41c06",
-    "properties": [
-     {
-      "name": "name",
-      "value": "logoContainer",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "6",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "logo",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "d26f7e6b-367c-ba36-0347-ceeeedff0907",
-    "type": "LayoutHtml",
-    "typeDesc": "Html",
-    "parent": "26b82dee-737a-5c95-a022-756123a59562",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "html",
-      "value": "&nbsp; ",
-      "type": "Html"
-     },
-     {
-      "name": "fontSize",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "color",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "c549f69d-5c6d-6b43-575f-f47031200db9",
+    "id": "5b853c0e-9925-f2c8-cea3-878d5ae7567b",
     "type": "LayoutRow",
     "typeDesc": "Row",
     "parent": "UnIqEiD",
     "properties": [
      {
       "name": "name",
-      "value": "widgetContainer",
+      "value": "row_indicadores",
       "type": "Id"
      },
      {
@@ -820,20 +303,20 @@
      },
      {
       "name": "cssClass",
-      "value": "widgetContainer",
+      "value": "containerDeIndicadores",
       "type": "String"
      }
     ]
    },
    {
-    "id": "33786c24-1467-3e7c-51dc-3980d973231f",
+    "id": "f86e0cc9-29fe-9a85-7e31-d5be719481ec",
     "type": "LayoutColumn",
     "typeDesc": "Column",
-    "parent": "c549f69d-5c6d-6b43-575f-f47031200db9",
+    "parent": "5b853c0e-9925-f2c8-cea3-878d5ae7567b",
     "properties": [
      {
       "name": "name",
-      "value": "",
+      "value": "col_indicadores",
       "type": "Id"
      },
      {
@@ -899,14 +382,14 @@
     ]
    },
    {
-    "id": "44afaf43-f6ee-9edc-cf93-7357cb143eb1",
+    "id": "37b076c2-d8bd-fd94-a3b0-1f7ca97e4875",
     "type": "LayoutRow",
     "typeDesc": "Row",
-    "parent": "33786c24-1467-3e7c-51dc-3980d973231f",
+    "parent": "f86e0cc9-29fe-9a85-7e31-d5be719481ec",
     "properties": [
      {
       "name": "name",
-      "value": "",
+      "value": "row_containerIndicadores_1",
       "type": "Id"
      },
      {
@@ -931,25 +414,25 @@
      },
      {
       "name": "cssClass",
-      "value": "widgetContainerRow",
+      "value": "linhaContainerDeIndicadores",
       "type": "String"
      }
     ]
    },
    {
-    "id": "dd3649b1-b46c-79bc-d8d7-8ac75516515e",
+    "id": "f7d68e9d-cad8-43a0-c2a7-d6601b1e4562",
     "type": "LayoutColumn",
     "typeDesc": "Column",
-    "parent": "44afaf43-f6ee-9edc-cf93-7357cb143eb1",
+    "parent": "37b076c2-d8bd-fd94-a3b0-1f7ca97e4875",
     "properties": [
      {
       "name": "name",
-      "value": "pieChartContainer",
+      "value": "col_mapaEmpresasUFContainer",
       "type": "Id"
      },
      {
       "name": "columnSpan",
-      "value": "8",
+      "value": "12",
       "type": "Integer"
      },
      {
@@ -1004,20 +487,20 @@
      },
      {
       "name": "cssClass",
-      "value": "cell",
+      "value": "",
       "type": "String"
      }
     ]
    },
    {
-    "id": "1e97c71c-8a35-7e4e-b3f8-05ec7f9e60b1",
+    "id": "72a1ecce-bf1d-3d31-7ef1-68281953ba81",
     "type": "LayoutRow",
     "typeDesc": "Row",
-    "parent": "dd3649b1-b46c-79bc-d8d7-8ac75516515e",
+    "parent": "f7d68e9d-cad8-43a0-c2a7-d6601b1e4562",
     "properties": [
      {
       "name": "name",
-      "value": "pieChartTitle",
+      "value": "mapaEmpresasUF_titulo",
       "type": "Id"
      },
      {
@@ -1042,16 +525,16 @@
      },
      {
       "name": "cssClass",
-      "value": "widgetTitle pieChart",
+      "value": "tituloIndicador",
       "type": "String"
      }
     ]
    },
    {
-    "id": "0b15ba87-1a82-e4dd-6b1a-1aff8377ca81",
+    "id": "c49bc455-df47-d9ac-b29c-a222ffedb5f2",
     "type": "LayoutHtml",
     "typeDesc": "Html",
-    "parent": "1e97c71c-8a35-7e4e-b3f8-05ec7f9e60b1",
+    "parent": "72a1ecce-bf1d-3d31-7ef1-68281953ba81",
     "properties": [
      {
       "name": "name",
@@ -1060,7 +543,7 @@
      },
      {
       "name": "html",
-      "value": "% of likes for Total Interactions ",
+      "value": "Empresas candidatas à certificação por Unidade Federativa ",
       "type": "Html"
      },
      {
@@ -1081,14 +564,14 @@
     ]
    },
    {
-    "id": "8e563338-e954-c233-70ec-25bff9484c4b",
+    "id": "1e0066c6-cd43-e1e8-ed3a-e9353902b655",
     "type": "LayoutRow",
     "typeDesc": "Row",
-    "parent": "dd3649b1-b46c-79bc-d8d7-8ac75516515e",
+    "parent": "f7d68e9d-cad8-43a0-c2a7-d6601b1e4562",
     "properties": [
      {
       "name": "name",
-      "value": "pieChartObj",
+      "value": "mapaEmpresasUF_obj",
       "type": "Id"
      },
      {
@@ -1113,25 +596,25 @@
      },
      {
       "name": "cssClass",
-      "value": "widgetChart pieChart",
+      "value": "indicadorGrafico",
       "type": "String"
      }
     ]
    },
    {
-    "id": "7c4e7b34-c3b0-4eb9-314e-9032fa5e1d89",
+    "id": "cdb7c235-8ceb-2aad-3bff-4afe30113e0f",
     "type": "LayoutColumn",
     "typeDesc": "Column",
-    "parent": "44afaf43-f6ee-9edc-cf93-7357cb143eb1",
+    "parent": "37b076c2-d8bd-fd94-a3b0-1f7ca97e4875",
     "properties": [
      {
       "name": "name",
-      "value": "barChartContainer",
+      "value": "col_softwareUFContainer",
       "type": "Id"
      },
      {
       "name": "columnSpan",
-      "value": "8",
+      "value": "12",
       "type": "Integer"
      },
      {
@@ -1186,20 +669,20 @@
      },
      {
       "name": "cssClass",
-      "value": "cell",
+      "value": "",
       "type": "String"
      }
     ]
    },
    {
-    "id": "7ab0ff35-50f6-74c6-37d8-fc8f1ddac96f",
+    "id": "ccdff59a-567f-988a-e61e-82d4d71e983f",
     "type": "LayoutRow",
     "typeDesc": "Row",
-    "parent": "7c4e7b34-c3b0-4eb9-314e-9032fa5e1d89",
+    "parent": "cdb7c235-8ceb-2aad-3bff-4afe30113e0f",
     "properties": [
      {
       "name": "name",
-      "value": "barChartTitle",
+      "value": "mapaSoftwaresUF_titulo",
       "type": "Id"
      },
      {
@@ -1224,16 +707,16 @@
      },
      {
       "name": "cssClass",
-      "value": "widgetTitle",
+      "value": "tituloIndicador",
       "type": "String"
      }
     ]
    },
    {
-    "id": "c0242330-81ca-5440-68b9-d92e8a196871",
+    "id": "cb3d734a-f82e-5571-3f19-ef4cdbdb582e",
     "type": "LayoutHtml",
     "typeDesc": "Html",
-    "parent": "7ab0ff35-50f6-74c6-37d8-fc8f1ddac96f",
+    "parent": "ccdff59a-567f-988a-e61e-82d4d71e983f",
     "properties": [
      {
       "name": "name",
@@ -1242,7 +725,7 @@
      },
      {
       "name": "html",
-      "value": "Comments on CTools Post ",
+      "value": "Softwares candidatos à certificação por Unidade Federativa ",
       "type": "Html"
      },
      {
@@ -1263,14 +746,14 @@
     ]
    },
    {
-    "id": "a613e029-a448-41ce-5ba0-3c91c8fe2f1f",
+    "id": "da24a58e-0380-19b0-c861-56a0ad95693b",
     "type": "LayoutRow",
     "typeDesc": "Row",
-    "parent": "7c4e7b34-c3b0-4eb9-314e-9032fa5e1d89",
+    "parent": "cdb7c235-8ceb-2aad-3bff-4afe30113e0f",
     "properties": [
      {
       "name": "name",
-      "value": "barChartObj",
+      "value": "mapaSoftwaresUF_obj",
       "type": "Id"
      },
      {
@@ -1295,25 +778,63 @@
      },
      {
       "name": "cssClass",
-      "value": "widgetChart",
+      "value": "indicadorGrafico",
       "type": "String"
      }
     ]
    },
    {
-    "id": "084ad65c-926b-1a35-81f5-b7b6188698be",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "44afaf43-f6ee-9edc-cf93-7357cb143eb1",
+    "id": "15a10c1d-d1e3-30a3-0726-f3beae61abe0",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "f86e0cc9-29fe-9a85-7e31-d5be719481ec",
     "properties": [
      {
       "name": "name",
-      "value": "lineChartContainer",
+      "value": "row_containerIndicadores_2",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "linhaContainerDeIndicadores",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "a05b0008-205c-ea8f-ae86-59bc509c0789",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "15a10c1d-d1e3-30a3-0726-f3beae61abe0",
+    "properties": [
+     {
+      "name": "name",
+      "value": "col_faixaFaturamentoContainer",
       "type": "Id"
      },
      {
       "name": "columnSpan",
-      "value": "8",
+      "value": "12",
       "type": "Integer"
      },
      {
@@ -1368,20 +889,20 @@
      },
      {
       "name": "cssClass",
-      "value": "cell",
+      "value": "",
       "type": "String"
      }
     ]
    },
    {
-    "id": "a7d59329-5495-77b4-0b9e-c5c803e78ae2",
+    "id": "212a167a-e967-a7d7-57c9-0867f9be0dea",
     "type": "LayoutRow",
     "typeDesc": "Row",
-    "parent": "084ad65c-926b-1a35-81f5-b7b6188698be",
+    "parent": "a05b0008-205c-ea8f-ae86-59bc509c0789",
     "properties": [
      {
       "name": "name",
-      "value": "lineChartTitle",
+      "value": "faixaFaturamento_titulo",
       "type": "Id"
      },
      {
@@ -1406,16 +927,16 @@
      },
      {
       "name": "cssClass",
-      "value": "widgetTitle",
+      "value": "tituloIndicador",
       "type": "String"
      }
     ]
    },
    {
-    "id": "c398134e-de10-2f56-f4d1-a75f55b0ab6f",
+    "id": "2ad1e4f3-13fb-f58f-f57a-c2f6cc5c2e71",
     "type": "LayoutHtml",
     "typeDesc": "Html",
-    "parent": "a7d59329-5495-77b4-0b9e-c5c803e78ae2",
+    "parent": "212a167a-e967-a7d7-57c9-0867f9be0dea",
     "properties": [
      {
       "name": "name",
@@ -1424,7 +945,7 @@
      },
      {
       "name": "html",
-      "value": "Likes for CTools Training Post ",
+      "value": "Faixa de faturamento das empresas candidatas ",
       "type": "Html"
      },
      {
@@ -1445,14 +966,14 @@
     ]
    },
    {
-    "id": "2eadba49-dfda-f5ec-c20d-f9000ef6b3ab",
+    "id": "555f7fc8-7192-6371-b007-2215fc4aebf6",
     "type": "LayoutRow",
     "typeDesc": "Row",
-    "parent": "084ad65c-926b-1a35-81f5-b7b6188698be",
+    "parent": "a05b0008-205c-ea8f-ae86-59bc509c0789",
     "properties": [
      {
       "name": "name",
-      "value": "lineChartObj",
+      "value": "faixaFaturamento_obj",
       "type": "Id"
      },
      {
@@ -1477,20 +998,93 @@
      },
      {
       "name": "cssClass",
-      "value": "widgetChart",
+      "value": "indicadorGrafico",
       "type": "String"
      }
     ]
    },
    {
-    "id": "05b3f9ce-680f-33ea-6ff4-77a5be1bc1b0",
+    "id": "c09c7131-170d-0b6e-f520-f2770b375961",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "15a10c1d-d1e3-30a3-0726-f3beae61abe0",
+    "properties": [
+     {
+      "name": "name",
+      "value": "col_numeroFuncEmpresaContainer",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "12",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "ffd229e9-d1ae-0d21-3d02-e60d6ee6dab2",
     "type": "LayoutRow",
     "typeDesc": "Row",
-    "parent": "33786c24-1467-3e7c-51dc-3980d973231f",
+    "parent": "c09c7131-170d-0b6e-f520-f2770b375961",
     "properties": [
      {
       "name": "name",
-      "value": "",
+      "value": "numeroFuncEmpresas_titulo",
       "type": "Id"
      },
      {
@@ -1515,25 +1109,134 @@
      },
      {
       "name": "cssClass",
-      "value": "widgetContainerRow",
+      "value": "tituloIndicador",
       "type": "String"
      }
     ]
    },
    {
-    "id": "2cbfcd8f-3cbf-c539-c719-10c8c37ddef8",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "05b3f9ce-680f-33ea-6ff4-77a5be1bc1b0",
+    "id": "25526c48-e0fb-f7b9-0b6f-0c9b9efb64b3",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "ffd229e9-d1ae-0d21-3d02-e60d6ee6dab2",
     "properties": [
      {
       "name": "name",
-      "value": "widget1Obj",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "Número de funcionários por empresa candidata ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "776b9eab-6e28-62fd-a23a-839dc8ed0e71",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "c09c7131-170d-0b6e-f520-f2770b375961",
+    "properties": [
+     {
+      "name": "name",
+      "value": "numeroFuncEmpresas_obj",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "indicadorGrafico",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "5e6ba86e-d023-3989-1961-c04d2978b532",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "f86e0cc9-29fe-9a85-7e31-d5be719481ec",
+    "properties": [
+     {
+      "name": "name",
+      "value": "row_containerIndicadores_3",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "0ea3157d-e9d1-e144-dd69-c2fe38f33682",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "5e6ba86e-d023-3989-1961-c04d2978b532",
+    "properties": [
+     {
+      "name": "name",
+      "value": "col_statusProcessoContainer",
       "type": "Id"
      },
      {
       "name": "columnSpan",
-      "value": "8",
+      "value": "12",
       "type": "Integer"
      },
      {
@@ -1588,25 +1291,134 @@
      },
      {
       "name": "cssClass",
-      "value": "cell",
+      "value": "",
       "type": "String"
      }
     ]
    },
    {
-    "id": "8405d9a2-07b3-0218-bc69-923b9a694346",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "05b3f9ce-680f-33ea-6ff4-77a5be1bc1b0",
+    "id": "41c9783b-4891-94e7-bb71-89f93a60d9dd",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "0ea3157d-e9d1-e144-dd69-c2fe38f33682",
     "properties": [
      {
       "name": "name",
-      "value": "widget2Obj",
+      "value": "statusProcesso_titulo",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "tituloIndicador",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "77e90881-cba5-1db6-0de4-cbe5a4ff7704",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "41c9783b-4891-94e7-bb71-89f93a60d9dd",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "Status dos Processos ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "a557e2df-3997-76af-1836-15782bccf12d",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "0ea3157d-e9d1-e144-dd69-c2fe38f33682",
+    "properties": [
+     {
+      "name": "name",
+      "value": "statusProcesso_obj",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "indicadorGrafico",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "067f0f0a-ce0a-f04a-033c-64bbac977e27",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "5e6ba86e-d023-3989-1961-c04d2978b532",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
       "type": "Id"
      },
      {
       "name": "columnSpan",
-      "value": "8",
+      "value": 5,
       "type": "Integer"
      },
      {
@@ -1661,93 +1473,20 @@
      },
      {
       "name": "cssClass",
-      "value": "cell",
+      "value": "",
       "type": "String"
      }
     ]
    },
    {
-    "id": "006fe91a-73c1-5c69-a4e0-bcb79d16fe04",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "05b3f9ce-680f-33ea-6ff4-77a5be1bc1b0",
-    "properties": [
-     {
-      "name": "name",
-      "value": "widget3Obj",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "8",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "cell",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "59fa1894-88f4-90e2-fa15-672742cd9f04",
+    "id": "b3467096-3aff-eba2-514e-adf8bae1b13c",
     "type": "LayoutRow",
     "typeDesc": "Row",
     "parent": "UnIqEiD",
     "properties": [
      {
       "name": "name",
-      "value": "tableBox",
+      "value": "row_rodape",
       "type": "Id"
      },
      {
@@ -1772,25 +1511,25 @@
      },
      {
       "name": "cssClass",
-      "value": "tableBox",
+      "value": "",
       "type": "String"
      }
     ]
    },
    {
-    "id": "24d18ee5-3375-b748-84d1-3a018c9c2fd1",
+    "id": "3388a2a3-cd86-57ee-c67f-1065bd25295a",
     "type": "LayoutColumn",
     "typeDesc": "Column",
-    "parent": "59fa1894-88f4-90e2-fa15-672742cd9f04",
+    "parent": "b3467096-3aff-eba2-514e-adf8bae1b13c",
     "properties": [
      {
       "name": "name",
-      "value": "",
+      "value": "col_rodape",
       "type": "Id"
      },
      {
       "name": "columnSpan",
-      "value": "23",
+      "value": "",
       "type": "Integer"
      },
      {
@@ -1851,14 +1590,14 @@
     ]
    },
    {
-    "id": "965d8d60-164e-96f0-b865-de6332dd86af",
+    "id": "e9c872fc-f129-a29a-53cf-89aae700e046",
     "type": "LayoutRow",
     "typeDesc": "Row",
-    "parent": "24d18ee5-3375-b748-84d1-3a018c9c2fd1",
+    "parent": "3388a2a3-cd86-57ee-c67f-1065bd25295a",
     "properties": [
      {
       "name": "name",
-      "value": "tableFilters",
+      "value": "linhaImagens",
       "type": "Id"
      },
      {
@@ -1883,16 +1622,198 @@
      },
      {
       "name": "cssClass",
-      "value": "filtersRow",
+      "value": "",
       "type": "String"
      }
     ]
    },
    {
-    "id": "baf586bc-f56e-351e-3a55-f4a478d0da78",
+    "id": "d9d5c9e6-875b-aa1c-302a-7ade8344c125",
     "type": "LayoutColumn",
     "typeDesc": "Column",
-    "parent": "965d8d60-164e-96f0-b865-de6332dd86af",
+    "parent": "e9c872fc-f129-a29a-53cf-89aae700e046",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "8",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "rodape",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "2b285b4d-69b2-30eb-aa3f-cdb097cc05a4",
+    "type": "LayoutImage",
+    "typeDesc": "Image",
+    "parent": "d9d5c9e6-875b-aa1c-302a-7ade8344c125",
+    "properties": [
+     {
+      "name": "url",
+      "value": "${res:../arquivos/images/cti.png}",
+      "type": "String"
+     },
+     {
+      "name": "cssClass",
+      "value": "direita",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "29cf9f44-8bc7-1507-8dbf-cda2156aee86",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "e9c872fc-f129-a29a-53cf-89aae700e046",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "7",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "rodape",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "b9cdaa26-76aa-621f-922d-497a9d4a7d96",
+    "type": "LayoutImage",
+    "typeDesc": "Image",
+    "parent": "29cf9f44-8bc7-1507-8dbf-cda2156aee86",
+    "properties": [
+     {
+      "name": "url",
+      "value": "${res:../arquivos/images/mcti.png}",
+      "type": "String"
+     },
+     {
+      "name": "cssClass",
+      "value": "centro",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "963a97a0-bdf3-d545-39ed-414c23cf4132",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "e9c872fc-f129-a29a-53cf-89aae700e046",
     "properties": [
      {
       "name": "name",
@@ -1956,403 +1877,25 @@
      },
      {
       "name": "cssClass",
-      "value": "minititle",
+      "value": "rodape",
       "type": "String"
      }
     ]
    },
    {
-    "id": "0c6293ee-ea9c-c33a-5d86-10e40976f906",
-    "type": "LayoutHtml",
-    "typeDesc": "Html",
-    "parent": "baf586bc-f56e-351e-3a55-f4a478d0da78",
+    "id": "6037d0ca-d47c-4402-983c-d257abece13c",
+    "type": "LayoutImage",
+    "typeDesc": "Image",
+    "parent": "963a97a0-bdf3-d545-39ed-414c23cf4132",
     "properties": [
      {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "html",
-      "value": "Trainees Description ",
-      "type": "Html"
-     },
-     {
-      "name": "fontSize",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "color",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
+      "name": "url",
+      "value": "${res:../arquivos/images/brasil-um-pais-de-todos.png}",
       "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "5e55ff7e-718c-47dc-6143-9220a003eea5",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "965d8d60-164e-96f0-b865-de6332dd86af",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "right",
-      "type": "TextAlign"
      },
      {
       "name": "cssClass",
-      "value": "selectorTitle",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "5f4f4c3a-339d-0823-f09c-1dce02aff4e4",
-    "type": "LayoutHtml",
-    "typeDesc": "Html",
-    "parent": "5e55ff7e-718c-47dc-6143-9220a003eea5",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "html",
-      "value": "ctools training ",
-      "type": "Html"
-     },
-     {
-      "name": "fontSize",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "color",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "687521e3-ce62-085a-75de-a3e1f0162f8b",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "965d8d60-164e-96f0-b865-de6332dd86af",
-    "properties": [
-     {
-      "name": "name",
-      "value": "locationBottomObj",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "selectors",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "c495213e-c500-683c-abb2-63af84903935",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "965d8d60-164e-96f0-b865-de6332dd86af",
-    "properties": [
-     {
-      "name": "name",
-      "value": "exportObj",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "4",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "export",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "b8380b58-8c7a-0c31-448b-132990de7b64",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "24d18ee5-3375-b748-84d1-3a018c9c2fd1",
-    "properties": [
-     {
-      "name": "name",
-      "value": "tableContainerRow",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "ccb835ae-7493-c2a2-2e9e-c479345defdc",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "b8380b58-8c7a-0c31-448b-132990de7b64",
-    "properties": [
-     {
-      "name": "name",
-      "value": "tableObj",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "23",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "table",
+      "value": "esquerda",
       "type": "String"
      }
     ]
@@ -2362,39 +1905,49 @@
  "components": {
   "rows": [
    {
-    "id": "SELECTORS",
-    "name": "Selects",
+    "id": "OTHERCOMPONENTS",
+    "name": "Others",
     "type": "Label",
     "typeDesc": "<i>Group</i>",
     "parent": "UnIqEiD",
     "properties": [
      {
       "name": "Group",
-      "value": "Selects",
+      "value": "Others",
       "type": "Label"
      }
     ]
    },
    {
-    "id": "068ec8b3-f90d-2a23-c896-9fa055d45726",
-    "type": "ComponentsSelect",
-    "typeDesc": "Select Component",
-    "parent": "SELECTORS",
+    "id": "bcba022c-e211-b1e4-2ce4-289ed7503455",
+    "type": "Componentsxaction",
+    "typeDesc": "Xaction Component",
+    "parent": "OTHERCOMPONENTS",
     "properties": [
      {
       "name": "name",
-      "value": "locationSelector",
+      "value": "mapa_empresasUF",
       "type": "Id"
      },
      {
-      "name": "parameter",
-      "value": "${p:locationParam}",
-      "type": "Parameter"
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
      },
      {
-      "name": "listeners",
-      "value": "['${p:locationParam}']",
-      "type": "Listeners"
+      "name": "solution",
+      "value": "facti_politicsys",
+      "type": "String"
+     },
+     {
+      "name": "path",
+      "value": "dashboards/dashboard/xactions",
+      "type": "String"
+     },
+     {
+      "name": "action",
+      "value": "empresas_uf.xaction",
+      "type": "String"
      },
      {
       "name": "xActionArrayParameter",
@@ -2407,33 +1960,13 @@
       "type": "Boolean"
      },
      {
-      "name": "externalPlugin",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "dataSource",
-      "type": "Datasource",
-      "value": "locationListQuery"
-     },
-     {
-      "name": "valuesArray",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
       "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
+      "value": "1",
       "type": "Integer"
      },
      {
       "name": "htmlObject",
-      "value": "${p:locationSelectObj}",
+      "value": "${p:mapaEmpresasUF_obj}",
       "type": "HtmlObject"
      },
      {
@@ -2443,12 +1976,7 @@
      },
      {
       "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postFetch",
-      "value": "",
+      "value": "function d(){\n    this.iframe = true;\n}",
       "type": "JavaScript"
      },
      {
@@ -2470,34 +1998,39 @@
       "name": "tooltip",
       "value": "",
       "type": "Html"
-     },
-     {
-      "name": "extraOptions",
-      "value": "[]",
-      "type": "OptionArray"
      }
     ]
    },
    {
-    "id": "3d17f8cf-c6c0-786d-aeeb-0351b14b50b8",
-    "type": "ComponentsSelect",
-    "typeDesc": "Select Component",
-    "parent": "SELECTORS",
+    "id": "923d4831-da57-0c6b-6f12-24d502fdfdeb",
+    "type": "Componentsxaction",
+    "typeDesc": "Xaction Component",
+    "parent": "OTHERCOMPONENTS",
     "properties": [
      {
       "name": "name",
-      "value": "locationSelectorBottom",
+      "value": "mapa_softwaresUF",
       "type": "Id"
      },
      {
-      "name": "parameter",
-      "value": "${p:locationParam}",
-      "type": "Parameter"
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
      },
      {
-      "name": "listeners",
-      "value": "['${p:locationParam}']",
-      "type": "Listeners"
+      "name": "solution",
+      "value": "facti_politicsys",
+      "type": "String"
+     },
+     {
+      "name": "path",
+      "value": "dashboards/dashboard/xactions",
+      "type": "String"
+     },
+     {
+      "name": "action",
+      "value": "softwares_uf.xaction",
+      "type": "String"
      },
      {
       "name": "xActionArrayParameter",
@@ -2510,33 +2043,13 @@
       "type": "Boolean"
      },
      {
-      "name": "externalPlugin",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "dataSource",
-      "type": "Datasource",
-      "value": "locationListQuery"
-     },
-     {
-      "name": "valuesArray",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
       "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
+      "value": "1",
       "type": "Integer"
      },
      {
       "name": "htmlObject",
-      "value": "locationBottomObj",
+      "value": "${p:mapaSoftwaresUF_obj}",
       "type": "HtmlObject"
      },
      {
@@ -2546,12 +2059,7 @@
      },
      {
       "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postFetch",
-      "value": "",
+      "value": "function d(){\n    this.iframe = true;\n}",
       "type": "JavaScript"
      },
      {
@@ -2573,29 +2081,19 @@
       "name": "tooltip",
       "value": "",
       "type": "Html"
-     },
-     {
-      "name": "extraOptions",
-      "value": "[]",
-      "type": "OptionArray"
      }
     ]
    },
    {
-    "id": "6586b749-01a3-fea6-1e5b-20610d9d50c9",
-    "type": "ComponentsSelect",
-    "typeDesc": "Select Component",
-    "parent": "SELECTORS",
+    "id": "f7561d4e-39c6-e571-db59-602dcaa34a50",
+    "type": "ComponentstextComponent",
+    "typeDesc": "Text Component",
+    "parent": "OTHERCOMPONENTS",
     "properties": [
      {
       "name": "name",
-      "value": "socialSelector",
+      "value": "texto_cabecalho",
       "type": "Id"
-     },
-     {
-      "name": "parameter",
-      "value": "${p:socialParam}",
-      "type": "Parameter"
      },
      {
       "name": "listeners",
@@ -2603,29 +2101,9 @@
       "type": "Listeners"
      },
      {
-      "name": "xActionArrayParameter",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "valueAsId",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "externalPlugin",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "dataSource",
-      "type": "Datasource",
-      "value": "socialQuery"
-     },
-     {
-      "name": "valuesArray",
-      "value": "[]",
-      "type": "ValuesArray"
+      "name": "expression",
+      "value": "function preencheCabecalho(){\n    return \"<b>Politicsys</b> - gerado em: \" + $.format.date(new Date(), \"dd/MM/yyyy HH:mm:ss\")\n}\n",
+      "type": "JavaScript"
      },
      {
       "name": "priority",
@@ -2639,7 +2117,7 @@
      },
      {
       "name": "htmlObject",
-      "value": "${p:socialSelectObj}",
+      "value": "${p:col_cabecalho}",
       "type": "HtmlObject"
      },
      {
@@ -2653,7 +2131,60 @@
       "type": "JavaScript"
      },
      {
-      "name": "postFetch",
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "5287688f-26d7-f8d4-cc52-4b8f0dded544",
+    "type": "ComponentstextComponent",
+    "typeDesc": "Text Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "texto_titulo",
+      "type": "Id"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function preencheTitulo() {\n    return \"Indicadores de demanda por certificação CERTICS\"\n}\n",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:col_titulo}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
       "value": "",
       "type": "JavaScript"
      },
@@ -2663,178 +2194,9 @@
       "type": "JavaScript"
      },
      {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
       "name": "tooltip",
       "value": "",
       "type": "Html"
-     },
-     {
-      "name": "extraOptions",
-      "value": "[]",
-      "type": "OptionArray"
-     }
-    ]
-   },
-   {
-    "id": "GENERIC",
-    "name": "Generic",
-    "type": "Label",
-    "typeDesc": "<i>Group</i>",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "Group",
-      "value": "Generic",
-      "type": "Label"
-     }
-    ]
-   },
-   {
-    "id": "59deb278-2489-57ad-ddb2-b2ccac847c61",
-    "type": "ComponentsParameter",
-    "typeDesc": "Parameter",
-    "parent": "GENERIC",
-    "properties": [
-     {
-      "name": "name",
-      "value": "locationParam",
-      "type": "Id"
-     },
-     {
-      "name": "propertyValue",
-      "value": "Brazil",
-      "type": "String"
-     },
-     {
-      "name": "parameterViewRole",
-      "value": "unused",
-      "type": "parameterViewRoleCustom"
-     },
-     {
-      "name": "bookmarkable",
-      "value": "false",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
-    "id": "8e4341dc-e3ed-7982-8b57-9ccd131a4df3",
-    "type": "ComponentsParameter",
-    "typeDesc": "Parameter",
-    "parent": "GENERIC",
-    "properties": [
-     {
-      "name": "name",
-      "value": "socialParam",
-      "type": "Id"
-     },
-     {
-      "name": "propertyValue",
-      "value": "Facebook",
-      "type": "String"
-     },
-     {
-      "name": "parameterViewRole",
-      "value": "unused",
-      "type": "parameterViewRoleCustom"
-     },
-     {
-      "name": "bookmarkable",
-      "value": "false",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
-    "id": "104e3a6a-3b88-3d7f-a86b-deb5dbe74b2d",
-    "type": "ComponentsParameter",
-    "typeDesc": "Parameter",
-    "parent": "GENERIC",
-    "properties": [
-     {
-      "name": "name",
-      "value": "likes",
-      "type": "Id"
-     },
-     {
-      "name": "propertyValue",
-      "value": "likes",
-      "type": "String"
-     },
-     {
-      "name": "parameterViewRole",
-      "value": "unused",
-      "type": "parameterViewRoleCustom"
-     },
-     {
-      "name": "bookmarkable",
-      "value": "false",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
-    "id": "4d18d61b-5e83-f3c3-11e9-2aed16c56e06",
-    "type": "ComponentsParameter",
-    "typeDesc": "Parameter",
-    "parent": "GENERIC",
-    "properties": [
-     {
-      "name": "name",
-      "value": "comments",
-      "type": "Id"
-     },
-     {
-      "name": "propertyValue",
-      "value": "comments",
-      "type": "String"
-     },
-     {
-      "name": "parameterViewRole",
-      "value": "unused",
-      "type": "parameterViewRoleCustom"
-     },
-     {
-      "name": "bookmarkable",
-      "value": "false",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
-    "id": "9249df9a-a970-41e3-077c-8b8cb6453560",
-    "type": "ComponentsParameter",
-    "typeDesc": "Parameter",
-    "parent": "GENERIC",
-    "properties": [
-     {
-      "name": "name",
-      "value": "fans",
-      "type": "Id"
-     },
-     {
-      "name": "propertyValue",
-      "value": "fans",
-      "type": "String"
-     },
-     {
-      "name": "parameterViewRole",
-      "value": "unused",
-      "type": "parameterViewRoleCustom"
-     },
-     {
-      "name": "bookmarkable",
-      "value": "false",
-      "type": "Boolean"
      }
     ]
    },
@@ -2853,30 +2215,30 @@
     ]
    },
    {
-    "id": "bc6a4c88-337d-3342-95fc-9c873f5285e5",
-    "type": "ComponentscccPieChart",
-    "typeDesc": "CCC Pie Chart",
+    "id": "ab7e4640-86e3-4b10-952d-e040dc3afc61",
+    "type": "ComponentscccBarChart",
+    "typeDesc": "CCC Bar Chart",
     "meta_cdwSupport": "true",
     "parent": "CHARTS",
     "properties": [
      {
       "name": "name",
-      "value": "socialPie",
+      "value": "graficoBarra_faturamentoEmpresas",
       "type": "Id"
      },
      {
       "name": "title",
-      "value": "Torta Social",
+      "value": "",
       "type": "String"
      },
      {
       "name": "listeners",
-      "value": "['${p:locationParam}','${p:socialParam}']",
+      "value": "[]",
       "type": "Listeners"
      },
      {
       "name": "xActionArrayParameter",
-      "value": "[[\"socialParam\",\"socialParam\"],[\"locationParam\",\"locationParam\"]]",
+      "value": "[]",
       "type": "ValuesArray"
      },
      {
@@ -2887,17 +2249,7 @@
      {
       "name": "dataSource",
       "type": "Datasource",
-      "value": "pieChartQuery"
-     },
-     {
-      "name": "width",
-      "value": "200",
-      "type": "Integer"
-     },
-     {
-      "name": "height",
-      "value": "200",
-      "type": "Integer"
+      "value": "dsMDX_faturamentoEmpresas"
      },
      {
       "name": "priority",
@@ -2905,13 +2257,28 @@
       "type": "Integer"
      },
      {
+      "name": "width",
+      "value": "300",
+      "type": "Integer"
+     },
+     {
+      "name": "height",
+      "value": "300",
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
       "name": "cccColors",
-      "value": "[\"#00C089\",\"#FFFFFF\"]",
+      "value": "[\"green\"]",
       "type": "Array"
      },
      {
       "name": "htmlObject",
-      "value": "${p:pieChartObj}",
+      "value": "${p:faixaFaturamento_obj}",
       "type": "HtmlObject"
      },
      {
@@ -2925,12 +2292,12 @@
       "type": "JavaScript"
      },
      {
-      "name": "postFetch",
-      "value": "function f(data){\n    //Dashboards.log(\"Debug\");\n    var value = data.resultset[0][1]/(data.resultset[1][1]+data.resultset[0][1])*100;\n    var div = $(\"<div>\").addClass(\"pieFloat\").text(sprintf(\"%d%%\",value));\n    $('#'+this.htmlObject).empty().append(div);\n    \n    return data;\n}",
+      "name": "postExecution",
+      "value": "",
       "type": "JavaScript"
      },
      {
-      "name": "postExecution",
+      "name": "postFetch",
       "value": "",
       "type": "JavaScript"
      },
@@ -2946,7 +2313,7 @@
      },
      {
       "name": "cccExtensionPoints",
-      "value": "[[\"slice_innerRadiusEx\",\"80%\"]]",
+      "value": "[]",
       "type": "ValuesArray"
      },
      {
@@ -2955,12 +2322,122 @@
       "type": "Html"
      },
      {
-      "name": "cccActiveSliceRadius",
-      "value": "5%",
+      "name": "cccAnimate",
+      "value": true,
+      "type": "Boolean"
+     },
+     {
+      "name": "cccBarSizeMax",
+      "value": 2000,
+      "type": "Float"
+     },
+     {
+      "name": "cccBarSizeRatio",
+      "value": 0.9,
+      "type": "Float"
+     },
+     {
+      "name": "cccBarStackedMargin",
+      "value": 0,
+      "type": "Float"
+     },
+     {
+      "name": "cccBaseAxisClickAction",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "cccBaseAxisDoubleClickAction",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "cccBaseAxisGrid",
+      "value": false,
+      "type": "Boolean"
+     },
+     {
+      "name": "cccBaseAxisLabelSpacingMin",
+      "value": "",
+      "type": "Float"
+     },
+     {
+      "name": "cccBaseAxisOffset",
+      "value": 0,
+      "type": "Float"
+     },
+     {
+      "name": "cccBaseAxisOverlappedLabelsMode",
+      "value": "hide",
+      "type": "cccBaseAxisOverlappedLabelsModeCustom"
+     },
+     {
+      "name": "cccBaseAxisPosition",
+      "value": "",
+      "type": "cccBaseAxisPositionCustom"
+     },
+     {
+      "name": "cccBaseAxisSize",
+      "value": "",
       "type": "String"
      },
      {
-      "name": "cccAnimate",
+      "name": "cccBaseAxisSizeMax",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "cccBaseAxisTicks",
+      "value": true,
+      "type": "Boolean"
+     },
+     {
+      "name": "cccBaseAxisTitle",
+      "value": "Faturamento (em milhões - R$)",
+      "type": "String"
+     },
+     {
+      "name": "cccBaseAxisTitleAlign",
+      "value": "center",
+      "type": "cccBaseAxisTitleAlignCustom"
+     },
+     {
+      "name": "cccBaseAxisTitleFont",
+      "value": "12px sans-serif",
+      "type": "String"
+     },
+     {
+      "name": "cccBaseAxisTitleMargins",
+      "value": "0",
+      "type": "String"
+     },
+     {
+      "name": "cccBaseAxisTitleSize",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "cccBaseAxisTitleSizeMax",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "cccBaseAxisTooltipAutoContent",
+      "value": "value",
+      "type": "cccBaseAxisTooltipAutoContentCustom"
+     },
+     {
+      "name": "cccBaseAxisTooltipEnabled",
+      "value": true,
+      "type": "Boolean"
+     },
+     {
+      "name": "cccBaseAxisTooltipFormat",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "cccBaseAxisVisible",
       "value": true,
       "type": "Boolean"
      },
@@ -2985,6 +2462,46 @@
       "type": "JavaScript"
      },
      {
+      "name": "cccColor2AxisColors",
+      "value": "[]",
+      "type": "Array"
+     },
+     {
+      "name": "cccColor2AxisLegendClickMode",
+      "value": "toggleVisible",
+      "type": "cccColor2AxisLegendClickModeCustom"
+     },
+     {
+      "name": "cccColor2AxisLegendDrawLine",
+      "value": "",
+      "type": "Boolean"
+     },
+     {
+      "name": "cccColor2AxisLegendDrawMarker",
+      "value": "",
+      "type": "Boolean"
+     },
+     {
+      "name": "cccColor2AxisLegendShape",
+      "value": "",
+      "type": "cccColor2AxisLegendShapeCustom"
+     },
+     {
+      "name": "cccColor2AxisLegendVisible",
+      "value": true,
+      "type": "Boolean"
+     },
+     {
+      "name": "cccColor2AxisTransform",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "cccColor2AxisUnbound",
+      "value": "",
+      "type": "String"
+     },
+     {
       "name": "cccColorRole",
       "value": "",
       "type": "String"
@@ -2993,6 +2510,11 @@
       "name": "cccColorTransform",
       "value": "",
       "type": "JavaScript"
+     },
+     {
+      "name": "cccColorUnbound",
+      "value": "",
+      "type": "String"
      },
      {
       "name": "cccCompatVersion",
@@ -3011,7 +2533,7 @@
      },
      {
       "name": "cccCrosstabMode",
-      "value": "true",
+      "value": "false",
       "type": "Boolean"
      },
      {
@@ -3025,24 +2547,29 @@
       "type": "Float"
      },
      {
+      "name": "cccDataIgnoreMetadataLabels",
+      "value": false,
+      "type": "Boolean"
+     },
+     {
       "name": "cccDataMeasuresInColumns",
       "value": false,
       "type": "Boolean"
      },
      {
+      "name": "cccDataPartRole",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "cccDataSeparator",
+      "value": "~",
+      "type": "String"
+     },
+     {
       "name": "cccDoubleClickAction",
       "value": "",
       "type": "JavaScript"
-     },
-     {
-      "name": "cccExplodedSliceIndex",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "cccExplodedSliceRadius",
-      "value": "0",
-      "type": "String"
      },
      {
       "name": "cccGroupedLabelSep",
@@ -3051,7 +2578,7 @@
      },
      {
       "name": "cccHoverable",
-      "value": "false",
+      "value": false,
       "type": "Boolean"
      },
      {
@@ -3060,13 +2587,23 @@
       "type": "Boolean"
      },
      {
+      "name": "cccInteractive",
+      "value": "",
+      "type": "Boolean"
+     },
+     {
       "name": "cccIsMultiValued",
       "value": false,
       "type": "Boolean"
      },
      {
+      "name": "cccLeafContentOverflow",
+      "value": "auto",
+      "type": "cccLeafContentOverflowCustom"
+     },
+     {
       "name": "cccLegend",
-      "value": "false",
+      "value": true,
       "type": "Boolean"
      },
      {
@@ -3145,36 +2682,6 @@
       "type": "Boolean"
      },
      {
-      "name": "cccLinkHandleWidth",
-      "value": 0.5,
-      "type": "Float"
-     },
-     {
-      "name": "cccLinkInsetRadius",
-      "value": "5%",
-      "type": "String"
-     },
-     {
-      "name": "cccLinkLabelSize",
-      "value": "15%",
-      "type": "String"
-     },
-     {
-      "name": "cccLinkLabelSpacingMin",
-      "value": 0.5,
-      "type": "Float"
-     },
-     {
-      "name": "cccLinkMargin",
-      "value": "2.5%",
-      "type": "String"
-     },
-     {
-      "name": "cccLinkOutsetRadius",
-      "value": "2.5%",
-      "type": "String"
-     },
-     {
       "name": "cccMargins",
       "value": "3",
       "type": "String"
@@ -3215,14 +2722,379 @@
       "type": "Boolean"
      },
      {
+      "name": "cccNullInterpolationMode",
+      "value": "none",
+      "type": "cccNullInterpolationModeCustom"
+     },
+     {
+      "name": "cccOrientation",
+      "value": "vertical",
+      "type": "cccOrientationCustom"
+     },
+     {
+      "name": "cccOrtho2AxisDesiredTickCount",
+      "value": "",
+      "type": "Float"
+     },
+     {
+      "name": "cccOrtho2AxisDomainRoundMode",
+      "value": "nice",
+      "type": "cccOrtho2AxisDomainRoundModeCustom"
+     },
+     {
+      "name": "cccOrtho2AxisDomainScope",
+      "value": "global",
+      "type": "cccOrtho2AxisDomainScopeCustom"
+     },
+     {
+      "name": "cccOrtho2AxisFixedMax",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "cccOrtho2AxisFixedMin",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "cccOrtho2AxisGrid",
+      "value": false,
+      "type": "Boolean"
+     },
+     {
+      "name": "cccOrtho2AxisLabelSpacingMin",
+      "value": "",
+      "type": "Float"
+     },
+     {
+      "name": "cccOrtho2AxisMinorTicks",
+      "value": true,
+      "type": "Boolean"
+     },
+     {
+      "name": "cccOrtho2AxisOffset",
+      "value": 0,
+      "type": "Float"
+     },
+     {
+      "name": "cccOrtho2AxisOriginIsZero",
+      "value": "",
+      "type": "Boolean"
+     },
+     {
+      "name": "cccOrtho2AxisOverlappedLabelsMode",
+      "value": "hide",
+      "type": "cccOrtho2AxisOverlappedLabelsModeCustom"
+     },
+     {
+      "name": "cccOrtho2AxisPosition",
+      "value": "",
+      "type": "cccOrtho2AxisPositionCustom"
+     },
+     {
+      "name": "cccOrtho2AxisSize",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "cccOrtho2AxisSizeMax",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "cccOrtho2AxisTickExponentMax",
+      "value": "",
+      "type": "Float"
+     },
+     {
+      "name": "cccOrtho2AxisTickExponentMin",
+      "value": "",
+      "type": "Float"
+     },
+     {
+      "name": "cccOrtho2AxisTickFormatter",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "cccOrtho2AxisTicks",
+      "value": true,
+      "type": "Boolean"
+     },
+     {
+      "name": "cccOrtho2AxisTitle",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "cccOrtho2AxisTitleAlign",
+      "value": "",
+      "type": "cccOrtho2AxisTitleAlignCustom"
+     },
+     {
+      "name": "cccOrtho2AxisTitleFont",
+      "value": "12px sans-serif",
+      "type": "String"
+     },
+     {
+      "name": "cccOrtho2AxisTitleMargins",
+      "value": "0",
+      "type": "String"
+     },
+     {
+      "name": "cccOrtho2AxisTitleSize",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "cccOrtho2AxisTitleSizeMax",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "cccOrtho2AxisVisible",
+      "value": true,
+      "type": "Boolean"
+     },
+     {
+      "name": "cccOrtho2AxisZeroLine",
+      "value": true,
+      "type": "Boolean"
+     },
+     {
+      "name": "cccOrthoAxisDesiredTickCount",
+      "value": "",
+      "type": "Float"
+     },
+     {
+      "name": "cccOrthoAxisDomainRoundMode",
+      "value": "tick",
+      "type": "cccOrthoAxisDomainRoundModeCustom"
+     },
+     {
+      "name": "cccOrthoAxisDomainScope",
+      "value": "global",
+      "type": "cccOrthoAxisDomainScopeCustom"
+     },
+     {
+      "name": "cccOrthoAxisFixedMax",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "cccOrthoAxisFixedMin",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "cccOrthoAxisGrid",
+      "value": false,
+      "type": "Boolean"
+     },
+     {
+      "name": "cccOrthoAxisLabelSpacingMin",
+      "value": "",
+      "type": "Float"
+     },
+     {
+      "name": "cccOrthoAxisMinorTicks",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "cccOrthoAxisOffset",
+      "value": 0,
+      "type": "Float"
+     },
+     {
+      "name": "cccOrthoAxisOriginIsZero",
+      "value": "",
+      "type": "Boolean"
+     },
+     {
+      "name": "cccOrthoAxisOverlappedLabelsMode",
+      "value": "hide",
+      "type": "cccOrthoAxisOverlappedLabelsModeCustom"
+     },
+     {
+      "name": "cccOrthoAxisPosition",
+      "value": "",
+      "type": "cccOrthoAxisPositionCustom"
+     },
+     {
+      "name": "cccOrthoAxisSize",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "cccOrthoAxisSizeMax",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "cccOrthoAxisTickExponentMax",
+      "value": "",
+      "type": "Float"
+     },
+     {
+      "name": "cccOrthoAxisTickExponentMin",
+      "value": "",
+      "type": "Float"
+     },
+     {
+      "name": "cccOrthoAxisTickFormatter",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "cccOrthoAxisTicks",
+      "value": true,
+      "type": "Boolean"
+     },
+     {
+      "name": "cccOrthoAxisTitle",
+      "value": "Quantidade de empresas",
+      "type": "String"
+     },
+     {
+      "name": "cccOrthoAxisTitleAlign",
+      "value": "center",
+      "type": "cccOrthoAxisTitleAlignCustom"
+     },
+     {
+      "name": "cccOrthoAxisTitleFont",
+      "value": "12px sans-serif",
+      "type": "String"
+     },
+     {
+      "name": "cccOrthoAxisTitleMargins",
+      "value": "1",
+      "type": "String"
+     },
+     {
+      "name": "cccOrthoAxisTitleSize",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "cccOrthoAxisTitleSizeMax",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "cccOrthoAxisVisible",
+      "value": true,
+      "type": "Boolean"
+     },
+     {
+      "name": "cccOrthoAxisZeroLine",
+      "value": true,
+      "type": "Boolean"
+     },
+     {
+      "name": "cccOverflowMarkersVisible",
+      "value": true,
+      "type": "Boolean"
+     },
+     {
       "name": "cccPaddings",
       "value": "0",
       "type": "String"
      },
      {
+      "name": "cccPanelSizeRatio",
+      "value": 0.9,
+      "type": "Float"
+     },
+     {
       "name": "cccPercentValueFormat",
       "value": "",
       "type": "JavaScript"
+     },
+     {
+      "name": "cccPlot2",
+      "value": false,
+      "type": "Boolean"
+     },
+     {
+      "name": "cccPlot2AreasVisible",
+      "value": false,
+      "type": "Boolean"
+     },
+     {
+      "name": "cccPlot2ColorAxis",
+      "value": 2,
+      "type": "Float"
+     },
+     {
+      "name": "cccPlot2DotsVisible",
+      "value": true,
+      "type": "Boolean"
+     },
+     {
+      "name": "cccPlot2LinesVisible",
+      "value": true,
+      "type": "Boolean"
+     },
+     {
+      "name": "cccPlot2NullInterpolationMode",
+      "value": "none",
+      "type": "cccPlot2NullInterpolationModeCustom"
+     },
+     {
+      "name": "cccPlot2OrthoAxis",
+      "value": 1,
+      "type": "Float"
+     },
+     {
+      "name": "cccPlot2Series",
+      "value": "[]",
+      "type": "Array"
+     },
+     {
+      "name": "cccPlot2SeriesIndexes",
+      "value": -1,
+      "type": "Array"
+     },
+     {
+      "name": "cccPlot2Stacked",
+      "value": false,
+      "type": "Boolean"
+     },
+     {
+      "name": "cccPlot2TrendLabel",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "cccPlot2TrendType",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "cccPlot2ValuesAnchor",
+      "value": "",
+      "type": "cccPlot2ValuesAnchorCustom"
+     },
+     {
+      "name": "cccPlot2ValuesFont",
+      "value": "10px sans-serif",
+      "type": "String"
+     },
+     {
+      "name": "cccPlot2ValuesMask",
+      "value": "{value}",
+      "type": "String"
+     },
+     {
+      "name": "cccPlot2ValuesVisible",
+      "value": false,
+      "type": "Boolean"
+     },
+     {
+      "name": "cccPlotFrameVisible",
+      "value": true,
+      "type": "Boolean"
      },
      {
       "name": "cccRenderCallback",
@@ -3243,6 +3115,11 @@
       "name": "cccSeriesInRows",
       "value": "false",
       "type": "Boolean"
+     },
+     {
+      "name": "cccSeriesRole",
+      "value": "",
+      "type": "String"
      },
      {
       "name": "cccSmallAspectRatio",
@@ -3313,6 +3190,11 @@
       "name": "cccSmallWidth",
       "value": "",
       "type": "String"
+     },
+     {
+      "name": "cccStacked",
+      "value": false,
+      "type": "Boolean"
      },
      {
       "name": "cccTimeSeries",
@@ -3410,6 +3292,66 @@
       "type": "Boolean"
      },
      {
+      "name": "cccTrendAreasVisible",
+      "value": false,
+      "type": "Boolean"
+     },
+     {
+      "name": "cccTrendColorAxis",
+      "value": "5",
+      "type": "Float"
+     },
+     {
+      "name": "cccTrendDotsVisible",
+      "value": false,
+      "type": "Boolean"
+     },
+     {
+      "name": "cccTrendLabel",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "cccTrendLinesVisible",
+      "value": true,
+      "type": "Boolean"
+     },
+     {
+      "name": "cccTrendOrthoAxis",
+      "value": 1,
+      "type": "Float"
+     },
+     {
+      "name": "cccTrendStacked",
+      "value": false,
+      "type": "Boolean"
+     },
+     {
+      "name": "cccTrendType",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "cccTrendValuesAnchor",
+      "value": "right",
+      "type": "cccTrendValuesAnchorCustom"
+     },
+     {
+      "name": "cccTrendValuesFont",
+      "value": "10px sans-serif",
+      "type": "String"
+     },
+     {
+      "name": "cccTrendValuesMask",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "cccTrendValuesVisible",
+      "value": false,
+      "type": "Boolean"
+     },
+     {
       "name": "cccUserSelectionAction",
       "value": "",
       "type": "JavaScript"
@@ -3435,24 +3377,19 @@
       "type": "String"
      },
      {
-      "name": "cccValuesLabelStyle",
-      "value": "inside",
-      "type": "cccValuesLabelStyleCustom"
-     },
-     {
       "name": "cccValuesMask",
       "value": "",
       "type": "String"
      },
      {
       "name": "cccValuesVisible",
-      "value": "false",
+      "value": "",
       "type": "Boolean"
      }
     ]
    },
    {
-    "id": "8ac4a633-7120-f781-82fc-20ab4428595e",
+    "id": "f70c789e-e5ef-15f0-89dd-e2b2a627cf41",
     "type": "ComponentscccBarChart",
     "typeDesc": "CCC Bar Chart",
     "meta_cdwSupport": "true",
@@ -3460,22 +3397,22 @@
     "properties": [
      {
       "name": "name",
-      "value": "socialBar",
+      "value": "graficoBarra_funcionariosEmpresas",
       "type": "Id"
      },
      {
       "name": "title",
-      "value": "Barra social",
+      "value": "",
       "type": "String"
      },
      {
       "name": "listeners",
-      "value": "['${p:locationParam}','${p:socialParam}']",
+      "value": "[]",
       "type": "Listeners"
      },
      {
       "name": "xActionArrayParameter",
-      "value": "[[\"locationParam\",\"locationParam\"],[\"socialParam\",\"socialParam\"]]",
+      "value": "[]",
       "type": "ValuesArray"
      },
      {
@@ -3486,17 +3423,7 @@
      {
       "name": "dataSource",
       "type": "Datasource",
-      "value": "barChartQuery"
-     },
-     {
-      "name": "width",
-      "value": "250",
-      "type": "Integer"
-     },
-     {
-      "name": "height",
-      "value": "200",
-      "type": "Integer"
+      "value": "dsMDX_funcionariosEmpresas"
      },
      {
       "name": "priority",
@@ -3504,13 +3431,28 @@
       "type": "Integer"
      },
      {
+      "name": "width",
+      "value": "300",
+      "type": "Integer"
+     },
+     {
+      "name": "height",
+      "value": "300",
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
       "name": "cccColors",
-      "value": "[\"#00C089\",\"#00FDB5\",\"#FFFFFF\"]",
+      "value": "[]",
       "type": "Array"
      },
      {
       "name": "htmlObject",
-      "value": "${p:barChartObj}",
+      "value": "${p:numeroFuncEmpresas_obj}",
       "type": "HtmlObject"
      },
      {
@@ -3524,12 +3466,12 @@
       "type": "JavaScript"
      },
      {
-      "name": "postFetch",
+      "name": "postExecution",
       "value": "",
       "type": "JavaScript"
      },
      {
-      "name": "postExecution",
+      "name": "postFetch",
       "value": "",
       "type": "JavaScript"
      },
@@ -3545,7 +3487,7 @@
      },
      {
       "name": "cccExtensionPoints",
-      "value": "[[\"orthoAxisRule_strokeStyle\",\"#F9F9F9\"],[\"orthoAxisTicks_strokeStyle\",\"#F9F9F9\"],[\"baseAxisTicks_strokeStyle\",\"#F9F9F9\"],[\"baseAxisRule_strokeStyle\",\"#D9D9D9\"],[\"bar_fillStyle\",\"linear-gradient(0deg, #00C089, #00FDB5)\"],[\"label_bottom\",\"function(scene){return this.pvMark.target.height() + 8; }\"],[\"label_top\",null]]",
+      "value": "[[\"label_bottom\",\"function(scene){return this.pvMark.target.height() + 8; }\"],[\"label_top\",null]]",
       "type": "ValuesArray"
      },
      {
@@ -3555,7 +3497,7 @@
      },
      {
       "name": "cccAnimate",
-      "value": "true",
+      "value": true,
       "type": "Boolean"
      },
      {
@@ -3600,7 +3542,7 @@
      },
      {
       "name": "cccBaseAxisOverlappedLabelsMode",
-      "value": "hide",
+      "value": "leave",
       "type": "cccBaseAxisOverlappedLabelsModeCustom"
      },
      {
@@ -3620,17 +3562,17 @@
      },
      {
       "name": "cccBaseAxisTicks",
-      "value": "false",
+      "value": true,
       "type": "Boolean"
      },
      {
       "name": "cccBaseAxisTitle",
-      "value": "",
+      "value": "Número de funcionários",
       "type": "String"
      },
      {
       "name": "cccBaseAxisTitleAlign",
-      "value": "",
+      "value": "center",
       "type": "cccBaseAxisTitleAlignCustom"
      },
      {
@@ -3654,6 +3596,21 @@
       "type": "String"
      },
      {
+      "name": "cccBaseAxisTooltipAutoContent",
+      "value": "value",
+      "type": "cccBaseAxisTooltipAutoContentCustom"
+     },
+     {
+      "name": "cccBaseAxisTooltipEnabled",
+      "value": true,
+      "type": "Boolean"
+     },
+     {
+      "name": "cccBaseAxisTooltipFormat",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
       "name": "cccBaseAxisVisible",
       "value": "true",
       "type": "Boolean"
@@ -3670,12 +3627,12 @@
      },
      {
       "name": "cccClickable",
-      "value": "true",
+      "value": false,
       "type": "Boolean"
      },
      {
       "name": "cccClickAction",
-      "value": "function f(estado){\n    \n    alert(\"Carregou na categoria \" + estado.vars.category.value);\n    \n}",
+      "value": "",
       "type": "JavaScript"
      },
      {
@@ -3714,6 +3671,11 @@
       "type": "JavaScript"
      },
      {
+      "name": "cccColor2AxisUnbound",
+      "value": "",
+      "type": "String"
+     },
+     {
       "name": "cccColorRole",
       "value": "",
       "type": "String"
@@ -3722,6 +3684,11 @@
       "name": "cccColorTransform",
       "value": "",
       "type": "JavaScript"
+     },
+     {
+      "name": "cccColorUnbound",
+      "value": "",
+      "type": "String"
      },
      {
       "name": "cccCompatVersion",
@@ -3754,6 +3721,11 @@
       "type": "Float"
      },
      {
+      "name": "cccDataIgnoreMetadataLabels",
+      "value": false,
+      "type": "Boolean"
+     },
+     {
       "name": "cccDataMeasuresInColumns",
       "value": false,
       "type": "Boolean"
@@ -3761,6 +3733,11 @@
      {
       "name": "cccDataPartRole",
       "value": "",
+      "type": "String"
+     },
+     {
+      "name": "cccDataSeparator",
+      "value": "~",
       "type": "String"
      },
      {
@@ -3775,12 +3752,17 @@
      },
      {
       "name": "cccHoverable",
-      "value": false,
+      "value": "false",
       "type": "Boolean"
      },
      {
       "name": "cccIgnoreNulls",
       "value": true,
+      "type": "Boolean"
+     },
+     {
+      "name": "cccInteractive",
+      "value": "",
       "type": "Boolean"
      },
      {
@@ -3795,7 +3777,7 @@
      },
      {
       "name": "cccLegend",
-      "value": "false",
+      "value": true,
       "type": "Boolean"
      },
      {
@@ -3920,7 +3902,7 @@
      },
      {
       "name": "cccOrientation",
-      "value": "vertical",
+      "value": "horizontal",
       "type": "cccOrientationCustom"
      },
      {
@@ -3960,7 +3942,7 @@
      },
      {
       "name": "cccOrtho2AxisMinorTicks",
-      "value": "false",
+      "value": true,
       "type": "Boolean"
      },
      {
@@ -4010,7 +3992,7 @@
      },
      {
       "name": "cccOrtho2AxisTicks",
-      "value": "false",
+      "value": true,
       "type": "Boolean"
      },
      {
@@ -4045,7 +4027,7 @@
      },
      {
       "name": "cccOrtho2AxisVisible",
-      "value": "false",
+      "value": true,
       "type": "Boolean"
      },
      {
@@ -4055,7 +4037,7 @@
      },
      {
       "name": "cccOrthoAxisDesiredTickCount",
-      "value": "5",
+      "value": "",
       "type": "Float"
      },
      {
@@ -4080,7 +4062,7 @@
      },
      {
       "name": "cccOrthoAxisGrid",
-      "value": "true",
+      "value": false,
       "type": "Boolean"
      },
      {
@@ -4090,7 +4072,7 @@
      },
      {
       "name": "cccOrthoAxisMinorTicks",
-      "value": "true",
+      "value": true,
       "type": "Boolean"
      },
      {
@@ -4140,12 +4122,12 @@
      },
      {
       "name": "cccOrthoAxisTicks",
-      "value": "false",
+      "value": true,
       "type": "Boolean"
      },
      {
       "name": "cccOrthoAxisTitle",
-      "value": "",
+      "value": "Quantidade de empresas",
       "type": "String"
      },
      {
@@ -4175,7 +4157,7 @@
      },
      {
       "name": "cccOrthoAxisVisible",
-      "value": "true",
+      "value": true,
       "type": "Boolean"
      },
      {
@@ -4244,6 +4226,11 @@
       "type": "Array"
      },
      {
+      "name": "cccPlot2SeriesIndexes",
+      "value": -1,
+      "type": "Array"
+     },
+     {
       "name": "cccPlot2Stacked",
       "value": false,
       "type": "Boolean"
@@ -4280,7 +4267,7 @@
      },
      {
       "name": "cccPlotFrameVisible",
-      "value": "false",
+      "value": true,
       "type": "Boolean"
      },
      {
@@ -4570,36 +4557,36 @@
      },
      {
       "name": "cccValuesVisible",
-      "value": "true",
+      "value": "",
       "type": "Boolean"
      }
     ]
    },
    {
-    "id": "323f2e50-9aa8-730d-70a4-583297963cc1",
-    "type": "ComponentscccLineChart",
-    "typeDesc": "CCC Line Chart",
+    "id": "2fcd1117-a422-694f-33d6-bb15a6e01640",
+    "type": "ComponentscccBarChart",
+    "typeDesc": "CCC Bar Chart",
     "meta_cdwSupport": "true",
     "parent": "CHARTS",
     "properties": [
      {
       "name": "name",
-      "value": "socialLine",
+      "value": "graficoBarra_statusProcesso",
       "type": "Id"
      },
      {
       "name": "title",
-      "value": "Linha social",
+      "value": "",
       "type": "String"
      },
      {
       "name": "listeners",
-      "value": "['${p:locationParam}','${p:socialParam}']",
+      "value": "[]",
       "type": "Listeners"
      },
      {
       "name": "xActionArrayParameter",
-      "value": "[[\"locationParam\",\"locationParam\"],[\"socialParam\",\"socialParam\"]]",
+      "value": "[]",
       "type": "ValuesArray"
      },
      {
@@ -4610,12 +4597,7 @@
      {
       "name": "dataSource",
       "type": "Datasource",
-      "value": "lineChartQuery"
-     },
-     {
-      "name": "width",
-      "value": "250",
-      "type": "Integer"
+      "value": "dsSQL_statusProcesso"
      },
      {
       "name": "priority",
@@ -4623,18 +4605,28 @@
       "type": "Integer"
      },
      {
+      "name": "width",
+      "value": "300",
+      "type": "Integer"
+     },
+     {
       "name": "height",
-      "value": "200",
+      "value": "300",
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
       "type": "Integer"
      },
      {
       "name": "cccColors",
-      "value": "[\"#00C089\",\"#00FDB5\",\"#FFFFFF\"]",
+      "value": "[]",
       "type": "Array"
      },
      {
       "name": "htmlObject",
-      "value": "${p:lineChartObj}",
+      "value": "${p:statusProcesso_obj}",
       "type": "HtmlObject"
      },
      {
@@ -4669,7 +4661,7 @@
      },
      {
       "name": "cccExtensionPoints",
-      "value": "[[\"orthoAxisRule_strokeStyle\",\"#F9F9F9\"],[\"orthoAxisTicks_strokeStyle\",\"#F9F9F9\"],[\"baseAxisRule_strokeStyle\",\"#D6D6D6\"],[\"baseAxisTicks_strokeStyle\",\"#F9F9F9\"],[\"line_lineWidth\",\"function(){return 6;}\"]]",
+      "value": "[]",
       "type": "ValuesArray"
      },
      {
@@ -4683,9 +4675,19 @@
       "type": "Boolean"
      },
      {
-      "name": "cccAreasVisible",
-      "value": "",
-      "type": "Boolean"
+      "name": "cccBarSizeMax",
+      "value": 2000,
+      "type": "Float"
+     },
+     {
+      "name": "cccBarSizeRatio",
+      "value": 0.9,
+      "type": "Float"
+     },
+     {
+      "name": "cccBarStackedMargin",
+      "value": 0,
+      "type": "Float"
      },
      {
       "name": "cccBaseAxisClickAction",
@@ -4693,34 +4695,9 @@
       "type": "JavaScript"
      },
      {
-      "name": "cccBaseAxisDesiredTickCount",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "cccBaseAxisDomainRoundMode",
-      "value": "tick",
-      "type": "cccBaseAxisDomainRoundModeCustom"
-     },
-     {
-      "name": "cccBaseAxisDomainScope",
-      "value": "global",
-      "type": "cccBaseAxisDomainScopeCustom"
-     },
-     {
       "name": "cccBaseAxisDoubleClickAction",
       "value": "",
       "type": "JavaScript"
-     },
-     {
-      "name": "cccBaseAxisFixedMax",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "cccBaseAxisFixedMin",
-      "value": "",
-      "type": "String"
      },
      {
       "name": "cccBaseAxisGrid",
@@ -4733,19 +4710,9 @@
       "type": "Float"
      },
      {
-      "name": "cccBaseAxisMinorTicks",
-      "value": true,
-      "type": "Boolean"
-     },
-     {
       "name": "cccBaseAxisOffset",
       "value": 0,
       "type": "Float"
-     },
-     {
-      "name": "cccBaseAxisOriginIsZero",
-      "value": "",
-      "type": "Boolean"
      },
      {
       "name": "cccBaseAxisOverlappedLabelsMode",
@@ -4766,21 +4733,6 @@
       "name": "cccBaseAxisSizeMax",
       "value": "",
       "type": "String"
-     },
-     {
-      "name": "cccBaseAxisTickExponentMax",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "cccBaseAxisTickExponentMin",
-      "value": "",
-      "type": "Float"
-     },
-     {
-      "name": "cccBaseAxisTickFormatter",
-      "value": "",
-      "type": "JavaScript"
      },
      {
       "name": "cccBaseAxisTicks",
@@ -4818,12 +4770,22 @@
       "type": "String"
      },
      {
-      "name": "cccBaseAxisVisible",
+      "name": "cccBaseAxisTooltipAutoContent",
+      "value": "value",
+      "type": "cccBaseAxisTooltipAutoContentCustom"
+     },
+     {
+      "name": "cccBaseAxisTooltipEnabled",
       "value": true,
       "type": "Boolean"
      },
      {
-      "name": "cccBaseAxisZeroLine",
+      "name": "cccBaseAxisTooltipFormat",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "cccBaseAxisVisible",
       "value": true,
       "type": "Boolean"
      },
@@ -4839,7 +4801,7 @@
      },
      {
       "name": "cccClickable",
-      "value": false,
+      "value": "true",
       "type": "Boolean"
      },
      {
@@ -4883,6 +4845,11 @@
       "type": "JavaScript"
      },
      {
+      "name": "cccColor2AxisUnbound",
+      "value": "",
+      "type": "String"
+     },
+     {
       "name": "cccColorRole",
       "value": "",
       "type": "String"
@@ -4891,6 +4858,11 @@
       "name": "cccColorTransform",
       "value": "",
       "type": "JavaScript"
+     },
+     {
+      "name": "cccColorUnbound",
+      "value": "",
+      "type": "String"
      },
      {
       "name": "cccCompatVersion",
@@ -4923,6 +4895,11 @@
       "type": "Float"
      },
      {
+      "name": "cccDataIgnoreMetadataLabels",
+      "value": false,
+      "type": "Boolean"
+     },
+     {
       "name": "cccDataMeasuresInColumns",
       "value": false,
       "type": "Boolean"
@@ -4933,9 +4910,9 @@
       "type": "String"
      },
      {
-      "name": "cccDotsVisible",
-      "value": false,
-      "type": "Boolean"
+      "name": "cccDataSeparator",
+      "value": "~",
+      "type": "String"
      },
      {
       "name": "cccDoubleClickAction",
@@ -4958,6 +4935,11 @@
       "type": "Boolean"
      },
      {
+      "name": "cccInteractive",
+      "value": "",
+      "type": "Boolean"
+     },
+     {
       "name": "cccIsMultiValued",
       "value": false,
       "type": "Boolean"
@@ -4969,7 +4951,7 @@
      },
      {
       "name": "cccLegend",
-      "value": "false",
+      "value": true,
       "type": "Boolean"
      },
      {
@@ -5229,7 +5211,7 @@
      },
      {
       "name": "cccOrthoAxisDesiredTickCount",
-      "value": "5",
+      "value": "",
       "type": "Float"
      },
      {
@@ -5254,7 +5236,7 @@
      },
      {
       "name": "cccOrthoAxisGrid",
-      "value": "true",
+      "value": false,
       "type": "Boolean"
      },
      {
@@ -5358,9 +5340,19 @@
       "type": "Boolean"
      },
      {
+      "name": "cccOverflowMarkersVisible",
+      "value": true,
+      "type": "Boolean"
+     },
+     {
       "name": "cccPaddings",
       "value": "0",
       "type": "String"
+     },
+     {
+      "name": "cccPanelSizeRatio",
+      "value": 0.9,
+      "type": "Float"
      },
      {
       "name": "cccPercentValueFormat",
@@ -5408,6 +5400,11 @@
       "type": "Array"
      },
      {
+      "name": "cccPlot2SeriesIndexes",
+      "value": -1,
+      "type": "Array"
+     },
+     {
       "name": "cccPlot2Stacked",
       "value": false,
       "type": "Boolean"
@@ -5444,7 +5441,7 @@
      },
      {
       "name": "cccPlotFrameVisible",
-      "value": "false",
+      "value": true,
       "type": "Boolean"
      },
      {
@@ -5464,7 +5461,7 @@
      },
      {
       "name": "cccSeriesInRows",
-      "value": false,
+      "value": "true",
       "type": "Boolean"
      },
      {
@@ -5541,6 +5538,11 @@
       "name": "cccSmallWidth",
       "value": "",
       "type": "String"
+     },
+     {
+      "name": "cccStacked",
+      "value": false,
+      "type": "Boolean"
      },
      {
       "name": "cccTimeSeries",
@@ -5733,561 +5735,6 @@
       "type": "Boolean"
      }
     ]
-   },
-   {
-    "id": "OTHERCOMPONENTS",
-    "name": "Others",
-    "type": "Label",
-    "typeDesc": "<i>Group</i>",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "Group",
-      "value": "Others",
-      "type": "Label"
-     }
-    ]
-   },
-   {
-    "id": "3e37bd46-b184-bfc1-ed8a-f8833a0e469b",
-    "type": "ComponentsTable",
-    "typeDesc": "table Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "table",
-      "type": "Id"
-     },
-     {
-      "name": "expandContainerObject",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "listeners",
-      "value": "['${p:locationParam}']",
-      "type": "Listeners"
-     },
-     {
-      "name": "oLanguage",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "colWidths",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
-      "name": "colSortable",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
-      "name": "expandParameters",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "xActionArrayParameter",
-      "value": "[[\"locationParam\",\"locationParam\"]]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "colHeaders",
-      "value": "[\"Date\",\"User Type\",\"Activity\",\"# fans\",\"# comments\",\"# likes\"]",
-      "type": "Array"
-     },
-     {
-      "name": "colTypes",
-      "value": "[\"formattedText\",\"formattedText\",\"formattedText\",\"formattedText\",\"formattedText\",\"formattedText\"]",
-      "type": "colTypesCustom"
-     },
-     {
-      "name": "colFormats",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
-      "name": "displayLength",
-      "value": "6",
-      "type": "Integer"
-     },
-     {
-      "name": "lengthChange",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "expandOnClick",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "paginate",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "filter",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "info",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "sort",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "colSearchable",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
-      "name": "drawCallback",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "dataSource",
-      "type": "Datasource",
-      "value": "tableQuery"
-     },
-     {
-      "name": "sortBy",
-      "value": "[]",
-      "type": "SortByArray"
-     },
-     {
-      "name": "sDom",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "paginationType",
-      "value": "full_numbers",
-      "type": "PaginationType"
-     },
-     {
-      "name": "tableStyle",
-      "value": "classic",
-      "type": "TableStyle"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:tableObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "paginateServerside",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postFetch",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "preChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postChange",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     },
-     {
-      "name": "extraOptions",
-      "value": "[]",
-      "type": "OptionArray"
-     },
-     {
-      "name": "cccClickAction",
-      "value": "",
-      "type": "JavaScript"
-     }
-    ]
-   },
-   {
-    "id": "34430856-98d0-2669-959c-c793dd528d68",
-    "type": "ComponentsexportButton",
-    "typeDesc": "Export Button Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "export",
-      "type": "Id"
-     },
-     {
-      "name": "label",
-      "value": "Export",
-      "type": "String"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "xActionArrayParameter",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "componentName",
-      "value": "table",
-      "type": "String"
-     },
-     {
-      "name": "outputType",
-      "value": "csv",
-      "type": "String"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:exportObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "b06b3959-075c-6125-f5a8-e1580ef64333",
-    "type": "ComponentstextComponent",
-    "typeDesc": "Text Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "overview",
-      "type": "Id"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "expression",
-      "value": "function f(){\n    return \"<b>Overview </b>\"+new Date();\n}\n",
-      "type": "JavaScript"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "htmlObject",
-      "value": "overviewObj",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "ca01261f-9c93-491e-fb14-1013e9e74d1f",
-    "type": "Componentspopup",
-    "typeDesc": "Popup Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "listeners",
-      "value": "[]",
-      "type": "Listeners"
-     },
-     {
-      "name": "gravity",
-      "value": "S",
-      "type": "Gravity"
-     },
-     {
-      "name": "xActionArrayParameter",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "draggable",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "horizontalScroll",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "verticalScroll",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "closeOnClickOutside",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "htmlObject",
-      "value": "",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
-    "id": "WIDGETS",
-    "name": "Widgets",
-    "type": "Label",
-    "typeDesc": "<i>Group</i>",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "Group",
-      "value": "Widgets",
-      "type": "Label"
-     }
-    ]
-   },
-   {
-    "id": "b41548c9-5a50-ffc8-154b-fa9cb996756a",
-    "type": "ComponentstextWidget",
-    "typeDesc": "textWidget Widget",
-    "meta_wcdf": "/cde/widgets/customWidget.wcdf",
-    "meta_widget": "true",
-    "parent": "WIDGETS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "widget1",
-      "type": "Id"
-     },
-     {
-      "name": "socialParam",
-      "value": "${p:socialParam}",
-      "type": "Parameter"
-     },
-     {
-      "name": "locationParam",
-      "value": "${p:locationParam}",
-      "type": "Parameter"
-     },
-     {
-      "name": "measureParam",
-      "value": "${p:likes}",
-      "type": "Parameter"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:widget1Obj}",
-      "type": "HtmlObject"
-     }
-    ]
-   },
-   {
-    "id": "1962ab35-d6c3-d6c2-2f88-53ffe53649d5",
-    "type": "ComponentstextWidget",
-    "typeDesc": "textWidget Widget",
-    "meta_wcdf": "/cde/widgets/customWidget.wcdf",
-    "meta_widget": "true",
-    "parent": "WIDGETS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "widget2",
-      "type": "Id"
-     },
-     {
-      "name": "socialParam",
-      "value": "${p:socialParam}",
-      "type": "Parameter"
-     },
-     {
-      "name": "locationParam",
-      "value": "${p:locationParam}",
-      "type": "Parameter"
-     },
-     {
-      "name": "measureParam",
-      "value": "${p:fans}",
-      "type": "Parameter"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:widget2Obj}",
-      "type": "HtmlObject"
-     }
-    ]
-   },
-   {
-    "id": "b729ce64-8ff5-2590-4e34-5bd1d3301046",
-    "type": "ComponentstextWidget",
-    "typeDesc": "textWidget Widget",
-    "meta_wcdf": "/cde/widgets/customWidget.wcdf",
-    "meta_widget": "true",
-    "parent": "WIDGETS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "widget3",
-      "type": "Id"
-     },
-     {
-      "name": "socialParam",
-      "value": "${p:socialParam}",
-      "type": "Parameter"
-     },
-     {
-      "name": "locationParam",
-      "value": "${p:locationParam}",
-      "type": "Parameter"
-     },
-     {
-      "name": "measureParam",
-      "value": "${p:comments}",
-      "type": "Parameter"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:widget3Obj}",
-      "type": "HtmlObject"
-     }
-    ]
    }
   ]
  },
@@ -6308,7 +5755,7 @@
     ]
    },
    {
-    "id": "33a1a57c-8a1b-cc75-1575-c64969698d1d",
+    "id": "64825327-b993-8eac-500d-84575df94d04",
     "type": "Componentsmdx_mondrianJndi",
     "typeDesc": "mdx over mondrianJndi",
     "meta": "CDA",
@@ -6318,7 +5765,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "pieChartQuery",
+      "value": "dsMDX_faturamentoEmpresas",
       "type": "Id"
      },
      {
@@ -6328,397 +5775,17 @@
      },
      {
       "name": "jndi",
-      "value": "ctools_training",
+      "value": "POLITICSYS",
       "type": "Jndi"
      },
      {
       "name": "catalog",
-      "value": "/SyncBR3/f_training.mondrian.xml",
+      "value": "/facti_politicsys/empresas.xml",
       "type": "MondrianCatalog"
      },
      {
       "name": "query",
-      "value": "with \nmember [Measures].[others] as [Measures].[fans]+[Measures].[comments]\n\n\nSELECT \n  NON EMPTY {[User Type].[All]} ON COLUMNS,\n  NON EMPTY {[Measures].[likes],[Measures].[others]} ON ROWS\nFROM [f_training]\nWHERE ([Social Network].[${socialParam}], [Location].[${locationParam}],[Date].[${yearParam}])\n",
-      "type": "SqlQuery"
-     },
-     {
-      "name": "parameters",
-      "value": "[[\"socialParam\",\"Blog\",\"String\",\"\"],[\"yearParam\",\"2011\",\"String\",\"\"],[\"locationParam\",\"Brazil\",\"String\",\"\"]]",
-      "type": "CdaParameters"
-     },
-     {
-      "name": "output",
-      "value": "[]",
-      "type": "IndexArray"
-     },
-     {
-      "name": "outputMode",
-      "value": "include",
-      "type": "OutputMode"
-     },
-     {
-      "name": "cdacolumns",
-      "value": "[]",
-      "type": "CdaColumnsArray"
-     },
-     {
-      "name": "cdacalculatedcolumns",
-      "value": "[]",
-      "type": "CdaCalculatedColumnsArray"
-     },
-     {
-      "name": "bandedMode",
-      "value": "compact",
-      "type": "BandedMode"
-     },
-     {
-      "name": "cacheDuration",
-      "value": 3600,
-      "type": "Integer"
-     },
-     {
-      "name": "cache",
-      "value": "true",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
-    "id": "41503bf0-0487-7129-0e7e-9b48fb9269ff",
-    "type": "Componentsmdx_mondrianJndi",
-    "typeDesc": "mdx over mondrianJndi",
-    "meta": "CDA",
-    "meta_conntype": "mondrian.jndi",
-    "meta_datype": "mdx",
-    "parent": "MDX",
-    "properties": [
-     {
-      "name": "name",
-      "value": "barChartQuery",
-      "type": "Id"
-     },
-     {
-      "name": "access",
-      "value": "public",
-      "type": "Access"
-     },
-     {
-      "name": "jndi",
-      "value": "ctools_training",
-      "type": "Jndi"
-     },
-     {
-      "name": "catalog",
-      "value": "/SyncBR3/f_training.mondrian.xml",
-      "type": "MondrianCatalog"
-     },
-     {
-      "name": "query",
-      "value": "SELECT \n  NON EMPTY {[Measures].[comments]} ON COLUMNS,\n  NON EMPTY {([Date].[${yearParam}].Children)} ON ROWS\nFROM [f_training]\nWHERE ([Social Network].[${socialParam}], [Location].[${locationParam}])\n",
-      "type": "SqlQuery"
-     },
-     {
-      "name": "parameters",
-      "value": "[[\"socialParam\",\"Blog\",\"String\",\"\"],[\"yearParam\",\"2011\",\"String\",\"\"],[\"locationParam\",\"Brazil\",\"String\",\"\"]]",
-      "type": "CdaParameters"
-     },
-     {
-      "name": "output",
-      "value": "[]",
-      "type": "IndexArray"
-     },
-     {
-      "name": "outputMode",
-      "value": "include",
-      "type": "OutputMode"
-     },
-     {
-      "name": "cdacolumns",
-      "value": "[]",
-      "type": "CdaColumnsArray"
-     },
-     {
-      "name": "cdacalculatedcolumns",
-      "value": "[]",
-      "type": "CdaCalculatedColumnsArray"
-     },
-     {
-      "name": "bandedMode",
-      "value": "compact",
-      "type": "BandedMode"
-     },
-     {
-      "name": "cacheDuration",
-      "value": 3600,
-      "type": "Integer"
-     },
-     {
-      "name": "cache",
-      "value": "true",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
-    "id": "c4fe9acf-d1ef-ea59-6e2d-6d0c7365c5eb",
-    "type": "Componentsmdx_mondrianJndi",
-    "typeDesc": "mdx over mondrianJndi",
-    "meta": "CDA",
-    "meta_conntype": "mondrian.jndi",
-    "meta_datype": "mdx",
-    "parent": "MDX",
-    "properties": [
-     {
-      "name": "name",
-      "value": "lineChartQuery",
-      "type": "Id"
-     },
-     {
-      "name": "access",
-      "value": "public",
-      "type": "Access"
-     },
-     {
-      "name": "jndi",
-      "value": "ctools_training",
-      "type": "Jndi"
-     },
-     {
-      "name": "catalog",
-      "value": "/SyncBR3/f_training.mondrian.xml",
-      "type": "MondrianCatalog"
-     },
-     {
-      "name": "query",
-      "value": "SELECT \n  NON EMPTY {[Measures].[likes]} ON COLUMNS,\n  NON EMPTY {([Date].[${yearParam}].Children)} ON ROWS\nFROM [f_training]\nWHERE ([Social Network].[${socialParam}], [Location].[${locationParam}])\n",
-      "type": "SqlQuery"
-     },
-     {
-      "name": "parameters",
-      "value": "[[\"socialParam\",\"Blog\",\"String\",\"\"],[\"yearParam\",\"2011\",\"String\",\"\"],[\"locationParam\",\"Brazil\",\"String\",\"\"]]",
-      "type": "CdaParameters"
-     },
-     {
-      "name": "output",
-      "value": "[]",
-      "type": "IndexArray"
-     },
-     {
-      "name": "outputMode",
-      "value": "include",
-      "type": "OutputMode"
-     },
-     {
-      "name": "cdacolumns",
-      "value": "[]",
-      "type": "CdaColumnsArray"
-     },
-     {
-      "name": "cdacalculatedcolumns",
-      "value": "[]",
-      "type": "CdaCalculatedColumnsArray"
-     },
-     {
-      "name": "bandedMode",
-      "value": "compact",
-      "type": "BandedMode"
-     },
-     {
-      "name": "cacheDuration",
-      "value": 3600,
-      "type": "Integer"
-     },
-     {
-      "name": "cache",
-      "value": "true",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
-    "id": "f9fcddc5-9ff2-f1d0-4165-4f4b7067c062",
-    "type": "Componentsmdx_mondrianJndi",
-    "typeDesc": "mdx over mondrianJndi",
-    "meta": "CDA",
-    "meta_conntype": "mondrian.jndi",
-    "meta_datype": "mdx",
-    "parent": "MDX",
-    "properties": [
-     {
-      "name": "name",
-      "value": "trendQuery",
-      "type": "Id"
-     },
-     {
-      "name": "access",
-      "value": "public",
-      "type": "Access"
-     },
-     {
-      "name": "jndi",
-      "value": "ctools_training",
-      "type": "Jndi"
-     },
-     {
-      "name": "catalog",
-      "value": "/SyncBR3/f_training.mondrian.xml",
-      "type": "MondrianCatalog"
-     },
-     {
-      "name": "query",
-      "value": "WITH\n\nMEMBER [Measures].[likesLast] as ([Date].[${yearParam}].prevMember,[Measures].[${measureParam}])\nMEMBER [Measures].[ratio] as [Measures].[${measureParam}]/[Measures].[likesLast]*100\n\n\nSELECT \n  NON EMPTY {[Measures].[ratio]} ON COLUMNS\nFROM [f_training]\nWHERE ([Social Network].[${socialParam}], [Location].[${locationParam}], [Date].[${yearParam}])\n",
-      "type": "SqlQuery"
-     },
-     {
-      "name": "parameters",
-      "value": "[[\"locationParam\",\"Brazil\",\"String\",\"\"],[\"yearParam\",\"2011\",\"String\",\"\"],[\"measureParam\",\"likes\",\"String\",\"\"],[\"socialParam\",\"Blog\",\"String\",\"\"]]",
-      "type": "CdaParameters"
-     },
-     {
-      "name": "output",
-      "value": "[]",
-      "type": "IndexArray"
-     },
-     {
-      "name": "outputMode",
-      "value": "include",
-      "type": "OutputMode"
-     },
-     {
-      "name": "cdacolumns",
-      "value": "[]",
-      "type": "CdaColumnsArray"
-     },
-     {
-      "name": "cdacalculatedcolumns",
-      "value": "[]",
-      "type": "CdaCalculatedColumnsArray"
-     },
-     {
-      "name": "bandedMode",
-      "value": "compact",
-      "type": "BandedMode"
-     },
-     {
-      "name": "cacheDuration",
-      "value": 3600,
-      "type": "Integer"
-     },
-     {
-      "name": "cache",
-      "value": "true",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
-    "id": "983a432f-6951-9b97-3804-dca9eb6f2061",
-    "type": "Componentsmdx_mondrianJndi",
-    "typeDesc": "mdx over mondrianJndi",
-    "meta": "CDA",
-    "meta_conntype": "mondrian.jndi",
-    "meta_datype": "mdx",
-    "parent": "MDX",
-    "properties": [
-     {
-      "name": "name",
-      "value": "tableQuery",
-      "type": "Id"
-     },
-     {
-      "name": "access",
-      "value": "public",
-      "type": "Access"
-     },
-     {
-      "name": "jndi",
-      "value": "ctools_training",
-      "type": "Jndi"
-     },
-     {
-      "name": "catalog",
-      "value": "/SyncBR3/f_training.mondrian.xml",
-      "type": "MondrianCatalog"
-     },
-     {
-      "name": "query",
-      "value": "select \n  NON EMPTY {[Measures].[fans], [Measures].[comments], [Measures].[likes]} ON COLUMNS,\n  NON EMPTY {[Date].[2011].Children}*{[User Type].Children}*{[Activity].Children} ON ROWS\nfrom [f_training]\nwhere ([Location].[${locationParam}])\n",
-      "type": "SqlQuery"
-     },
-     {
-      "name": "parameters",
-      "value": "[[\"locationParam\",\"Brazil\",\"String\",\"\"]]",
-      "type": "CdaParameters"
-     },
-     {
-      "name": "output",
-      "value": "[]",
-      "type": "IndexArray"
-     },
-     {
-      "name": "outputMode",
-      "value": "include",
-      "type": "OutputMode"
-     },
-     {
-      "name": "cdacolumns",
-      "value": "[]",
-      "type": "CdaColumnsArray"
-     },
-     {
-      "name": "cdacalculatedcolumns",
-      "value": "[]",
-      "type": "CdaCalculatedColumnsArray"
-     },
-     {
-      "name": "bandedMode",
-      "value": "compact",
-      "type": "BandedMode"
-     },
-     {
-      "name": "cacheDuration",
-      "value": 3600,
-      "type": "Integer"
-     },
-     {
-      "name": "cache",
-      "value": "true",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
-    "id": "5ffc0e97-246c-2b7e-7bde-3ecb2d7596ad",
-    "type": "Componentsmdx_mondrianJndi",
-    "typeDesc": "mdx over mondrianJndi",
-    "meta": "CDA",
-    "meta_conntype": "mondrian.jndi",
-    "meta_datype": "mdx",
-    "parent": "MDX",
-    "properties": [
-     {
-      "name": "name",
-      "value": "locationListQuery",
-      "type": "Id"
-     },
-     {
-      "name": "access",
-      "value": "public",
-      "type": "Access"
-     },
-     {
-      "name": "jndi",
-      "value": "ctools_training",
-      "type": "Jndi"
-     },
-     {
-      "name": "catalog",
-      "value": "/SyncBR3/f_training.mondrian.xml",
-      "type": "MondrianCatalog"
-     },
-     {
-      "name": "query",
-      "value": "select NON EMPTY {[Measures].[fans]} ON COLUMNS,\n  NON EMPTY {[Location].[Country].Members} ON ROWS\nfrom [f_training]\n",
+      "value": "SELECT\nNON EMPTY {Hierarchize({[Measures].[Quantidade]})} ON COLUMNS,\nNON EMPTY {Hierarchize({[faixa_faturamento].[dezenas].Members})} ON ROWS\nFROM [Empresas]",
       "type": "SqlQuery"
      },
      {
@@ -6764,7 +5831,7 @@
     ]
    },
    {
-    "id": "d29eeda9-3e0c-ff8e-88a6-e526b01c811e",
+    "id": "aea1c606-51b2-3d7d-9e4e-f23f18074589",
     "type": "Componentsmdx_mondrianJndi",
     "typeDesc": "mdx over mondrianJndi",
     "meta": "CDA",
@@ -6774,7 +5841,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "socialQuery",
+      "value": "dsMDX_funcionariosEmpresas",
       "type": "Id"
      },
      {
@@ -6784,17 +5851,17 @@
      },
      {
       "name": "jndi",
-      "value": "ctools_training",
+      "value": "POLITICSYS",
       "type": "Jndi"
      },
      {
       "name": "catalog",
-      "value": "/SyncBR3/f_training.mondrian.xml",
+      "value": "/facti_politicsys/empresas.xml",
       "type": "MondrianCatalog"
      },
      {
       "name": "query",
-      "value": "select NON EMPTY {[Measures].[fans]} ON COLUMNS,\n  NON EMPTY {[Social Network].Members} ON ROWS\nfrom [f_training]\n",
+      "value": "SELECT\nNON EMPTY {Hierarchize({[Measures].[Quantidade]})} ON COLUMNS,\nNON EMPTY {Hierarchize({[faixa_qte_colaboradores].[centenas].Members})} ON ROWS\nFROM [Empresas]",
       "type": "SqlQuery"
      },
      {
@@ -6826,6 +5893,86 @@
       "name": "bandedMode",
       "value": "compact",
       "type": "BandedMode"
+     },
+     {
+      "name": "cacheDuration",
+      "value": 3600,
+      "type": "Integer"
+     },
+     {
+      "name": "cache",
+      "value": "true",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "SQL",
+    "name": "SQL Queries",
+    "type": "Label",
+    "typeDesc": "<i>Group</i>",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "Group",
+      "value": "SQL Queries",
+      "type": "Label"
+     }
+    ]
+   },
+   {
+    "id": "f68b6a85-21b2-d78f-15c2-233144ab3f2c",
+    "type": "Componentssql_sqlJndi",
+    "typeDesc": "sql over sqlJndi",
+    "meta": "CDA",
+    "meta_conntype": "sql.jndi",
+    "meta_datype": "sql",
+    "parent": "SQL",
+    "properties": [
+     {
+      "name": "name",
+      "value": "dsSQL_statusProcesso",
+      "type": "Id"
+     },
+     {
+      "name": "access",
+      "value": "public",
+      "type": "Access"
+     },
+     {
+      "name": "jndi",
+      "value": "INTALIO",
+      "type": "Jndi"
+     },
+     {
+      "name": "query",
+      "value": "SELECT \nstatus,count(*) AS \"Processos\"\nFROM processo\nGROUP BY status",
+      "type": "SqlQuery"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
+      "type": "CdaParameters"
+     },
+     {
+      "name": "output",
+      "value": "[]",
+      "type": "IndexArray"
+     },
+     {
+      "name": "outputMode",
+      "value": "include",
+      "type": "OutputMode"
+     },
+     {
+      "name": "cdacolumns",
+      "value": "[]",
+      "type": "CdaColumnsArray"
+     },
+     {
+      "name": "cdacalculatedcolumns",
+      "value": "[]",
+      "type": "CdaCalculatedColumnsArray"
      },
      {
       "name": "cacheDuration",
@@ -6841,5 +5988,5 @@
    }
   ]
  },
- "filename": "/SyncBR3/Lab10/training.cdfde"
+ "filename": "/bla/dashboards/dashboard/bla.cdfde"
 }

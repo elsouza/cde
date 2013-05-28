@@ -38,9 +38,13 @@ public class ListChartsWebServiceTest {
     @Test
     public void listComplete() {
         ChartList ws = new ChartList(this.testDirPath + "test-complete.cdfde");
-		Assert.assertEquals("[{\"id\":\"socialPie\", \"title\":\"Torta Social\", \"dashboard\" : \"test-complete\"}," +
-				" {\"id\":\"socialBar\", \"title\":\"Barra social\", \"dashboard\" : \"test-complete\"}," +
-				" {\"id\":\"socialLine\", \"title\":\"Linha social\", \"dashboard\" : \"test-complete\"}]",
+        
+		Assert.assertEquals(
+				"[{\"id\":\"mapa_empresasUF\", \"title\":\"null\", \"dashboard\" : \"test-complete\"}," +
+				" {\"id\":\"mapa_softwaresUF\", \"title\":\"null\", \"dashboard\" : \"test-complete\"}," +
+				" {\"id\":\"graficoBarra_faturamentoEmpresas\", \"title\":\"\", \"dashboard\" : \"test-complete\"}," +
+				" {\"id\":\"graficoBarra_funcionariosEmpresas\", \"title\":\"\", \"dashboard\" : \"test-complete\"}," +
+				" {\"id\":\"graficoBarra_statusProcesso\", \"title\":\"\", \"dashboard\" : \"test-complete\"}]",
 				ws.toJSON());
     }
 

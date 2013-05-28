@@ -38,11 +38,12 @@ public class ChartList {
 	            return WebServiceCommons.JSON_FILE_DOES_NOT_EXIST;
 	
 	        String dashboardName = getDashboardName(fileName);
-	        Iterator it = JXPathContext.newContext(json).iterate("components/rows[@parent='CHARTS']");
-
+	        Iterator it = JXPathContext.newContext(json).iterate("components/rows[parent='CHARTS' or type='Componentsxaction']");
+	        
 	        while (it.hasNext()) {
 	            buildOutputJSON(builder, getIdAndTitleFromJSON((JSONObject) it.next()), dashboardName);
 	        }
+
     	}
 
     	builder.append("]");
@@ -50,16 +51,14 @@ public class ChartList {
     }
 
     private void buildOutputJSON(StringBuilder builder,
-    		String[] jsonComponentIdAndTitle, String dashboardName) {
+		String[] jsonComponentIdAndTitle, String dashboardName) {
 
-        if (jsonComponentIdAndTitle[0] != null && jsonComponentIdAndTitle[1] != null) {
-            if (builder.length() > 1) {
-                builder.append(", ");
-            }
-            
-            builder.append(String.format("{\"id\":\"%s\", \"title\":\"%s\", \"dashboard\" : \"%s\"}",
-            		jsonComponentIdAndTitle[0], jsonComponentIdAndTitle[1], dashboardName));
+        if (builder.length() > 1) {
+            builder.append(", ");
         }
+        
+        builder.append(String.format("{\"id\":\"%s\", \"title\":\"%s\", \"dashboard\" : \"%s\"}",
+        		jsonComponentIdAndTitle[0], jsonComponentIdAndTitle[1], dashboardName));
     }
 
 	private String getDashboardName(String dashboardName) {
