@@ -11,9 +11,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.util.List;
 import java.util.Scanner;
 
 import net.sf.json.JSON;
+import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import net.sf.json.JSONSerializer;
 
@@ -21,6 +23,8 @@ import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+
+import pt.webdetails.cdf.dd.ws.MyDashboardComponent;
 
 /**
  * @author pedro
@@ -100,4 +104,16 @@ public class JsonUtils {
           return null;
       }
   }
+
+	public static JSONArray buildMyDashboardJSON(List<MyDashboardComponent> dashboardComponents) {
+		JSONArray array = new JSONArray();
+		for (MyDashboardComponent dc : dashboardComponents) {
+			JSONObject obj = new JSONObject();
+			obj.put("originalDashboard", dc.getOriginalDashboard());
+			obj.put("idComponent", dc.getIdComponent());
+			obj.put("htmlObject", dc.getHtmlObject());
+			array.add(obj);
+		}
+		return array;
+	}
 }
