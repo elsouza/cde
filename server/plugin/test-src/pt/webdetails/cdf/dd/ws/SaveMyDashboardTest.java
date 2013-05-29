@@ -1,8 +1,6 @@
 package pt.webdetails.cdf.dd.ws;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 
 import junit.framework.Assert;
 
@@ -15,22 +13,15 @@ public class SaveMyDashboardTest {
 		
 		String myDashboardPath = null;
 
-		List<MyDashboardComponent> dashboardComponents = new ArrayList<MyDashboardComponent>();
-		MyDashboardComponent dc = new MyDashboardComponent("A", "b", "C");
-		MyDashboardComponent dc2 = new MyDashboardComponent("AAAA", "VVVb", "saDFC");
-		dashboardComponents.add(dc);
-		dashboardComponents.add(dc2);
-		
-		new MyDashboard().save(myDashboardPath, dashboardComponents);
+		String expected = "[{\"originalDashboard\":\"A\",\"idComponent\":\"b\",\"htmlObject\":\"C\"}," +
+				"{\"originalDashboard\":\"AAAA\",\"idComponent\":\"VVVb\",\"htmlObject\":\"saDFC\"}]";
+
+		new MyDashboard().save(myDashboardPath, expected);
 		
 		File f = new File("usuario_dashboard.json");
 		try {
 			Assert.assertTrue("File not created", f.exists());
-			Assert.assertEquals(
-					"[{\"originalDashboard\":\"A\",\"idComponent\":\"b\",\"htmlObject\":\"C\"}," +
-				  	 "{\"originalDashboard\":\"AAAA\",\"idComponent\":\"VVVb\",\"htmlObject\":\"saDFC\"}]",
-					conteudoJSON());
-		
+			Assert.assertEquals(expected, conteudoJSON());
 		} finally {
 			f.delete();
 		}
@@ -39,4 +30,5 @@ public class SaveMyDashboardTest {
 	private String conteudoJSON() {
 		return new MyDashboard().findMyDashboardComponents().toString();
 	}
+	
 }

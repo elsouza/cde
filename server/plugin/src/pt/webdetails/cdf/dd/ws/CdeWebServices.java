@@ -3,9 +3,8 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 package pt.webdetails.cdf.dd.ws;
 
-import java.util.List;
-
 import net.sf.json.JSON;
+
 
 public class CdeWebServices {
 
@@ -17,11 +16,15 @@ public class CdeWebServices {
         return new ChartList(files).toJSON();
     }
 
-    public void saveMyDashboard(String myDashboardPath, List<MyDashboardComponent> dashboardComponents) {
-    	new MyDashboard().save(myDashboardPath, dashboardComponents);
+    public boolean saveMyDashboard(String myDashboardPath, String dashboardComponents) {
+    	return new MyDashboard().save(myDashboardPath, dashboardComponents);
     }
 
-    public JSON findMyDashboardComponents() {
-    	return new MyDashboard().findMyDashboardComponents();
+    public String findMyDashboardComponents() {
+    	JSON json = new MyDashboard().findMyDashboardComponents();
+    	if (json == null)
+    		return "";
+    	
+    	return json.toString();
     }
 }
