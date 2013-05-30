@@ -5,6 +5,7 @@ package pt.webdetails.cdf.dd.ws;
 
 import junit.framework.Assert;
 
+import org.junit.Before;
 import org.junit.Test;
 
 
@@ -12,6 +13,11 @@ public class ListChartsWebServiceTest {
 
     private final String testDirPath = getClass().getClassLoader().getResource("").getPath();
 
+    @Before
+    public void setUp() {
+    	System.setProperty("mock.path", "true");
+    }
+    
     @Test
     public void listOneChart() {
         ChartList ws = new ChartList(this.testDirPath + "test-one-chart.cdfde");

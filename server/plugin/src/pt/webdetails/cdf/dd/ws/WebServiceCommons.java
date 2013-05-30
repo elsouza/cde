@@ -8,4 +8,7 @@ public final class WebServiceCommons {
 
     public static final String JSON_FILE_DOES_NOT_EXIST = "{\"error\": \"file does not exist\"}";
 
+	static boolean isUnitTest() {
+		return System.getProperty("mock.path") != null;
+	}
 }

@@ -9,8 +9,10 @@ import net.sf.json.JSON;
 import net.sf.json.JSONObject;
 
 import org.apache.commons.jxpath.JXPathContext;
+import org.pentaho.platform.engine.core.system.PentahoSystem;
 
 import pt.webdetails.cdf.dd.util.JsonUtils;
+import pt.webdetails.cdf.dd.util.Utils;
 
 
 public class ChartList {
@@ -32,6 +34,9 @@ public class ChartList {
     	builder.append("[");
 
     	for (String fileName : this.fileNames) {
+    		
+    		if (!WebServiceCommons.isUnitTest())
+    			fileName = Utils.joinPath(PentahoSystem.getApplicationContext().getSolutionPath(""), fileName);
 
 	        JSON json = JsonUtils.getFileAsJson(fileName);
 	        if (json == null)

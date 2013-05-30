@@ -17,11 +17,11 @@ public class CdeWebServices {
     }
 
     public boolean saveMyDashboard(String myDashboardPath, String dashboardComponents) {
-    	return new MyDashboard().save(myDashboardPath, dashboardComponents);
+    	return new MyDashboard(myDashboardPath).save(dashboardComponents);
     }
 
-    public String findMyDashboardComponents() {
-    	JSON json = new MyDashboard().findMyDashboardComponents();
+    public String findMyDashboardComponents(String myDashboardPath) {
+    	JSON json = new MyDashboard(myDashboardPath).findMyDashboardComponents();
     	if (json == null)
     		return "";
     	

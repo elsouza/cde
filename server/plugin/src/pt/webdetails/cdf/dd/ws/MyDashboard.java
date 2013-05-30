@@ -3,20 +3,30 @@ package pt.webdetails.cdf.dd.ws;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import org.pentaho.platform.engine.core.system.PentahoSystem;
+
 import net.sf.json.JSON;
 import pt.webdetails.cdf.dd.util.JsonUtils;
+import pt.webdetails.cdf.dd.util.Utils;
 
 public class MyDashboard {
 
-	public JSON findMyDashboardComponents() {
-		return JsonUtils.getFileAsJson("usuario_dashboard.json");
+	private String myDashboardPath = ""; 
+	
+	public MyDashboard(String myDashboardPath) {
+		if (!WebServiceCommons.isUnitTest())
+			this.myDashboardPath = Utils.joinPath(PentahoSystem.getApplicationContext().getSolutionPath(""), myDashboardPath);
 	}
 	
-	public boolean save(String myDashboardPath, String dashboardComponentsJSON) {
+	public JSON findMyDashboardComponents() {
+		return JsonUtils.getFileAsJson(getFilePath());
+	}
+	
+	public boolean save(String dashboardComponentsJSON) {
 
 		try {
-			// FIXME pegar o nome do usuario
-			FileWriter file = new FileWriter("usuario_dashboard.json");
+			
+			FileWriter file = new FileWriter(getFilePath());
 			try {
 				file.write(dashboardComponentsJSON);
 				file.flush();
@@ -29,10 +39,18 @@ public class MyDashboard {
 		}
 
 		return true;
-		// PentahoSystem.getApplicationContext().
-		// PentahoSystem.getApplicationContext().getSolutionPath(PLUGIN_PATH);
-		// TODO se funcionar esse pentahoSystem get Bla, usar isso nos outros
+
+		// FIXME usuario!!
 		// PentahoSystem.getUserDetailsRoleListService().getAllUsers();
+	}
+
+
+	private String getFilePath() {
+		String filePath = "usuario_dashboard.json";
+		if (!this.myDashboardPath.isEmpty()) {
+			filePath = Utils.joinPath(myDashboardPath, filePath);
+		}
+		return filePath;
 	}
 
 

@@ -11,12 +11,13 @@ public class SaveMyDashboardTest {
 	@Test
 	public void testSaveDashboard() {
 		
-		String myDashboardPath = null;
+		System.setProperty("mock.path", "true");
+		String myDashboardPath = "";
 
 		String expected = "[{\"originalDashboard\":\"A\",\"idComponent\":\"b\",\"htmlObject\":\"C\"}," +
 				"{\"originalDashboard\":\"AAAA\",\"idComponent\":\"VVVb\",\"htmlObject\":\"saDFC\"}]";
 
-		new MyDashboard().save(myDashboardPath, expected);
+		new MyDashboard(myDashboardPath).save(expected);
 		
 		File f = new File("usuario_dashboard.json");
 		try {
@@ -28,7 +29,7 @@ public class SaveMyDashboardTest {
 	}
 
 	private String conteudoJSON() {
-		return new MyDashboard().findMyDashboardComponents().toString();
+		return new MyDashboard("").findMyDashboardComponents().toString();
 	}
 	
 }

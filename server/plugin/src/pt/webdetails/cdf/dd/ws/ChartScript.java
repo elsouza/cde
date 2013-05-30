@@ -6,9 +6,11 @@ package pt.webdetails.cdf.dd.ws;
 import net.sf.json.JSON;
 
 import org.apache.commons.jxpath.JXPathContext;
+import org.pentaho.platform.engine.core.system.PentahoSystem;
 
 import pt.webdetails.cdf.dd.render.RenderComponents;
 import pt.webdetails.cdf.dd.util.JsonUtils;
+import pt.webdetails.cdf.dd.util.Utils;
 
 public class ChartScript {
 
@@ -34,6 +36,9 @@ public class ChartScript {
 
 	private String getComponentScript(String componentId, String newHtmlObject, String fileName) {
 
+		if (!WebServiceCommons.isUnitTest())
+			fileName = Utils.joinPath(PentahoSystem.getApplicationContext().getSolutionPath(""), fileName);
+		
 		JSON json = JsonUtils.getFileAsJson(fileName);
 		if (json == null) {
 			return WebServiceCommons.JSON_FILE_DOES_NOT_EXIST;
