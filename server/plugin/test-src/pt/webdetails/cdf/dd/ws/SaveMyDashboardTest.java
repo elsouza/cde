@@ -14,8 +14,8 @@ public class SaveMyDashboardTest {
 		System.setProperty("mock.path", "true");
 		String myDashboardPath = "";
 
-		String expected = "[{\"originalDashboard\":\"A\",\"idComponent\":\"b\",\"htmlObject\":\"C\"}," +
-				"{\"originalDashboard\":\"AAAA\",\"idComponent\":\"VVVb\",\"htmlObject\":\"saDFC\"}]";
+		String expected = "[{\"originalDashboard\":\"A\",\"idComponent\":\"b\",\"htmlObject\":\"C\",\"componentTitle\":\"titulo\"}," +
+				"{\"originalDashboard\":\"AAAA\",\"idComponent\":\"VVVb\",\"htmlObject\":\"saDFC\",\"componentTitle\":\"titulo\"}]";
 
 		new MyDashboard(myDashboardPath).save(expected);
 		
