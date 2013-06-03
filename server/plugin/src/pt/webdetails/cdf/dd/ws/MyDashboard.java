@@ -18,15 +18,14 @@ public class MyDashboard {
 			this.myDashboardPath = Utils.joinPath(PentahoSystem.getApplicationContext().getSolutionPath(""), myDashboardPath);
 	}
 	
-	public JSON findMyDashboardComponents() {
-		return JsonUtils.getFileAsJson(getFilePath());
+	public JSON findMyDashboardComponents(String user) {
+		return JsonUtils.getFileAsJson(getFilePath(user));
 	}
 	
-	public boolean save(String dashboardComponentsJSON) {
+	public boolean save(String user, String dashboardComponentsJSON) {
 
 		try {
-			
-			FileWriter file = new FileWriter(getFilePath());
+			FileWriter file = new FileWriter(getFilePath(user));
 			try {
 				file.write(dashboardComponentsJSON);
 				file.flush();
@@ -37,16 +36,12 @@ public class MyDashboard {
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
-
 		return true;
-
-		// FIXME usuario!!
-		// PentahoSystem.getUserDetailsRoleListService().getAllUsers();
 	}
 
 
-	private String getFilePath() {
-		String filePath = "usuario_dashboard.json";
+	private String getFilePath(String user) {
+		String filePath = user + "_dashboard.json";
 		if (!this.myDashboardPath.isEmpty()) {
 			filePath = Utils.joinPath(myDashboardPath, filePath);
 		}

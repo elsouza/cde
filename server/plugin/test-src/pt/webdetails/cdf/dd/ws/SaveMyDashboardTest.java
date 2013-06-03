@@ -17,7 +17,7 @@ public class SaveMyDashboardTest {
 		String expected = "[{\"originalDashboard\":\"A\",\"idComponent\":\"b\",\"htmlObject\":\"C\",\"componentTitle\":\"titulo\"}," +
 				"{\"originalDashboard\":\"AAAA\",\"idComponent\":\"VVVb\",\"htmlObject\":\"saDFC\",\"componentTitle\":\"titulo\"}]";
 
-		new MyDashboard(myDashboardPath).save(expected);
+		new MyDashboard(myDashboardPath).save("usuario", expected);
 		
 		File f = new File("usuario_dashboard.json");
 		try {
@@ -29,7 +29,7 @@ public class SaveMyDashboardTest {
 	}
 
 	private String conteudoJSON() {
-		return new MyDashboard("").findMyDashboardComponents().toString();
+		return new MyDashboard("").findMyDashboardComponents("usuario").toString();
 	}
 	
 }

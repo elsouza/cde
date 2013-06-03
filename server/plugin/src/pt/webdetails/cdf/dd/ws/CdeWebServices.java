@@ -16,12 +16,12 @@ public class CdeWebServices {
         return new ChartList(files).toJSON();
     }
 
-    public boolean saveMyDashboard(String myDashboardPath, String dashboardComponents) {
-    	return new MyDashboard(myDashboardPath).save(dashboardComponents);
+    public boolean saveMyDashboard(String user, String myDashboardPath, String dashboardComponents) {
+    	return new MyDashboard(myDashboardPath).save(user, dashboardComponents);
     }
 
-    public String findMyDashboardComponents(String myDashboardPath) {
-    	JSON json = new MyDashboard(myDashboardPath).findMyDashboardComponents();
+    public String findMyDashboardComponents(String user, String myDashboardPath) {
+    	JSON json = new MyDashboard(myDashboardPath).findMyDashboardComponents(user);
     	if (json == null)
     		return "";
     	

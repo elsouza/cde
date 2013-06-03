@@ -48,7 +48,7 @@
 	<classpathentry kind="lib" path="/home/elias.souza/warzone/projetos/politicsys/cde/server/plugin/lib/spring-security-core-2.0.5.RELEASE.jar"/>
 	<classpathentry kind="lib" path="/home/elias.souza/warzone/projetos/politicsys/cde/server/plugin/lib/xalan-2.4.1.jar"/>
 	<classpathentry kind="lib" path="/home/elias.souza/warzone/projetos/politicsys/cde/server/plugin/lib/xercesImpl-2.5.0.jar"/>
-	<classpathentry kind="lib" path="/home/elias.souza/warzone/projetos/politicsys/cde-webdetails/lib_ivan/cpf-TRUNK-SNAPSHOT.jar"/>
 	<classpathentry kind="lib" path="/home/elias.souza/.m2/repository/commons-beanutils/commons-beanutils/1.8.0/commons-beanutils-1.8.0.jar"/>
+	<classpathentry kind="lib" path="/home/elias.souza/pentaho/biserver-ce/pentaho-solutions/system/pentaho-cdf-dd/lib/cpf-TRUNK-SNAPSHOT.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
