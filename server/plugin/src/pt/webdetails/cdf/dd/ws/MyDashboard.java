@@ -43,7 +43,7 @@ public class MyDashboard {
 	private String getFilePath(String user) {
 		String filePath = user + "_dashboard.json";
 		if (!this.myDashboardPath.isEmpty()) {
-			filePath = Utils.joinPath(myDashboardPath, filePath);
+			filePath = Utils.joinPath(this.myDashboardPath, filePath);
 		}
 		return filePath;
 	}

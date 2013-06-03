@@ -42,9 +42,17 @@ public class ChartScriptTest extends ChartScript {
 	}
 	
 	@Test
+	public void testAddUpdateAll2() {
+		String script = "var render_table = { 	type: \"Table\", 	name: \"render_table\", 	priority: \"5\", 	htmlObject: \"table\", 	listeners: ['territory'], 	parameters: [[\"territory\",\"territory\"]], 	chartDefinition: { 		dataAccessId: \"table\", path: \"/SyncBR3/exemploCickAction/example_01.cda\", 		colHeaders: [], 		colTypes: [], 		colFormats: [], 		colWidths: [], 		colSortable: [], 		colSearchable: [], 		paginate: true, 		paginateServerside: false, 		paginationType: \"two_button\", 		filter: true, 		info: true, 		sort: true, 		sortBy: [], 		lengthChange: true, 		tableStyle: \"themeroller\" 	}, 	executeAtStart: true, 	extraOptions: [], 	expandParameters: [], 	expandOnClick: false  };  var territory = \"All Markets\"; Dashboards.setParameterViewMode('territory','unused');Dashboards.addComponents([render_pie,render_table]);";
+		Assert.assertEquals(script + " Dashboards.updateAll([render_pie,render_table]);",
+				super.addUpdateAll(script));
+	}
+	
+	@Test
 	public void testReplaceHTMLObject() {
 		String script = "var render_graficoBarra_funcionariosEmpresas = {type: \"cccBarChart\",	name: \"render_graficoBarra_funcionariosEmpresas\",	htmlObject: \"numeroFuncEmpresas_obj\", listeners: []";		
 		Assert.assertEquals("var render_graficoBarra_funcionariosEmpresas = {type: \"cccBarChart\",	name: \"render_graficoBarra_funcionariosEmpresas\",	htmlObject: \"NovoHTML\",  listeners: []",
 				super.replaceHTMLObject("NovoHTML", script));
 	}
+	
 }

@@ -71,7 +71,11 @@ public class ChartScript {
 	protected String extractComponentName(String javascript) {
 		int i = javascript.lastIndexOf("([");
 		int f = javascript.lastIndexOf("])");
-		return javascript.substring(i + 2, f);
+		
+		if (i >= 0 && f > 0)
+			return javascript.substring(i + 2, f);
+		
+		return "";
 	}
 
 	protected String removeTagScript(String script) {
