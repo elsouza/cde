@@ -56,6 +56,7 @@ public class ChartScript {
 	private String prepareScript(String newHtmlObject, String javascript) {
 		javascript = replaceHTMLObject(newHtmlObject, javascript);
 		javascript = removeTagScript(javascript);
+		javascript = emptyTitleProperty(javascript);
 		javascript = addUpdateAll(javascript);
 		return javascript;
 	}
@@ -68,6 +69,9 @@ public class ChartScript {
 		return javascript.replaceAll("htmlObject:(.*)+,", "htmlObject: \"" + newHtmlObject + "\", ");
 	}
 
+	protected String emptyTitleProperty(String javascript) {
+		return javascript.replaceAll("title:(.*)+,", "title: \"\",");
+	}
 	protected String extractComponentName(String javascript) {
 		int i = javascript.lastIndexOf("([");
 		int f = javascript.lastIndexOf("])");
