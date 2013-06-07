@@ -14,8 +14,12 @@ public class SaveMyDashboardTest {
 		System.setProperty("mock.path", "true");
 		String myDashboardPath = "";
 
-		String expected = "[{\"originalDashboard\":\"A\",\"idComponent\":\"b\",\"htmlObject\":\"C\",\"componentTitle\":\"titulo\"}," +
-				"{\"originalDashboard\":\"AAAA\",\"idComponent\":\"VVVb\",\"htmlObject\":\"saDFC\",\"componentTitle\":\"titulo\"}]";
+		String expected = "{\"numberOfLines\":2,\"myComponents\":[{\"originalDashboard\":\"PoliticSys_dashboard\"," +
+				"\"idComponent\":\"graficoBarra_faturamentoEmpresas\",\"htmlObject\":\"conteudo_22\"," +
+				"\"componentTitle\":\"Barra de faturamento das empresas lorem upsum mussimis\"}," +
+				"{\"originalDashboard\":\"PoliticSys_dashboard\",\"idComponent\":\"graficoBarra_faturamentoEmpresas\"," +
+				"\"htmlObject\":\"conteudo_11\",\"componentTitle\":\"Barra de faturamento das empresas lorem upsum mussimis\"}]}";
+		
 
 		new MyDashboard(myDashboardPath).save("usuario", expected);
 		

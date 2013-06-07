@@ -72,6 +72,7 @@ public class ChartScript {
 	protected String emptyTitleProperty(String javascript) {
 		return javascript.replaceAll("title:(.*)+,", "title: \"\",");
 	}
+
 	protected String extractComponentName(String javascript) {
 		int i = javascript.lastIndexOf("([");
 		int f = javascript.lastIndexOf("])");
