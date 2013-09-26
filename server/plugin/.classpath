@@ -31,16 +31,6 @@
 	<classpathentry kind="lib" path="/home/elias.souza/warzone/projetos/politicsys/cde/server/plugin/lib/log4j-1.2.9.jar"/>
 	<classpathentry kind="lib" path="/home/elias.souza/warzone/projetos/politicsys/cde/server/plugin/lib/mondrian-3.3.0.14703.jar"/>
 	<classpathentry kind="lib" path="/home/elias.souza/warzone/projetos/politicsys/cde/server/plugin/lib/olap4j-1.0.0.445.jar"/>
-	<classpathentry kind="lib" path="/home/elias.souza/warzone/projetos/politicsys/cde/server/plugin/lib/pentaho-bi-platform-api-4.5.0-stable.jar"/>
-	<classpathentry kind="lib" path="/home/elias.souza/warzone/projetos/politicsys/cde/server/plugin/lib/pentaho-bi-platform-engine-core-4.5.0-stable.jar"/>
-	<classpathentry kind="lib" path="/home/elias.souza/warzone/projetos/politicsys/cde/server/plugin/lib/pentaho-bi-platform-engine-security-4.5.0-stable.jar"/>
-	<classpathentry kind="lib" path="/home/elias.souza/warzone/projetos/politicsys/cde/server/plugin/lib/pentaho-bi-platform-engine-services-4.5.0-stable.jar"/>
-	<classpathentry kind="lib" path="/home/elias.souza/warzone/projetos/politicsys/cde/server/plugin/lib/pentaho-bi-platform-plugin-actions-4.5.0-stable.jar"/>
-	<classpathentry kind="lib" path="/home/elias.souza/warzone/projetos/politicsys/cde/server/plugin/lib/pentaho-bi-platform-plugin-services-4.5.0-stable.jar"/>
-	<classpathentry kind="lib" path="/home/elias.souza/warzone/projetos/politicsys/cde/server/plugin/lib/pentaho-bi-platform-repository-4.5.0-stable.jar"/>
-	<classpathentry kind="lib" path="/home/elias.souza/warzone/projetos/politicsys/cde/server/plugin/lib/pentaho-bi-platform-util-4.5.0-stable.jar"/>
-	<classpathentry kind="lib" path="/home/elias.souza/warzone/projetos/politicsys/cde/server/plugin/lib/pentaho-bi-platform-web-4.5.0-stable.jar"/>
-	<classpathentry kind="lib" path="/home/elias.souza/warzone/projetos/politicsys/cde/server/plugin/lib/pentaho-bi-platform-web-servlet-4.5.0-stable.jar"/>
 	<classpathentry kind="lib" path="/home/elias.souza/warzone/projetos/politicsys/cde/server/plugin/lib/pentaho-connections-2.2.3.jar"/>
 	<classpathentry kind="lib" path="/home/elias.souza/warzone/projetos/politicsys/cde/server/plugin/lib/servlet-api-2.4.jar"/>
 	<classpathentry kind="lib" path="/home/elias.souza/warzone/projetos/politicsys/cde/server/plugin/lib/spring-2.5.6.jar"/>
@@ -49,6 +39,16 @@
 	<classpathentry kind="lib" path="/home/elias.souza/warzone/projetos/politicsys/cde/server/plugin/lib/xalan-2.4.1.jar"/>
 	<classpathentry kind="lib" path="/home/elias.souza/warzone/projetos/politicsys/cde/server/plugin/lib/xercesImpl-2.5.0.jar"/>
 	<classpathentry kind="lib" path="/home/elias.souza/.m2/repository/commons-beanutils/commons-beanutils/1.8.0/commons-beanutils-1.8.0.jar"/>
-	<classpathentry kind="lib" path="/home/elias.souza/pentaho/biserver-ce/pentaho-solutions/system/pentaho-cdf-dd/lib/cpf-TRUNK-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="/home/elias.souza/warzone/projetos/politicsys/cde/server/plugin/lib/pentaho-bi-platform-api-4.8.0-stable.jar"/>
+	<classpathentry kind="lib" path="/home/elias.souza/warzone/projetos/politicsys/cde/server/plugin/lib/pentaho-bi-platform-engine-core-4.8.0-stable.jar"/>
+	<classpathentry kind="lib" path="/home/elias.souza/warzone/projetos/politicsys/cde/server/plugin/lib/pentaho-bi-platform-engine-security-4.8.0-stable.jar"/>
+	<classpathentry kind="lib" path="/home/elias.souza/warzone/projetos/politicsys/cde/server/plugin/lib/pentaho-bi-platform-engine-services-4.8.0-stable.jar"/>
+	<classpathentry kind="lib" path="/home/elias.souza/warzone/projetos/politicsys/cde/server/plugin/lib/pentaho-bi-platform-plugin-actions-4.8.0-stable.jar"/>
+	<classpathentry kind="lib" path="/home/elias.souza/warzone/projetos/politicsys/cde/server/plugin/lib/pentaho-bi-platform-plugin-services-4.8.0-stable.jar"/>
+	<classpathentry kind="lib" path="/home/elias.souza/warzone/projetos/politicsys/cde/server/plugin/lib/pentaho-bi-platform-repository-4.8.0-stable.jar"/>
+	<classpathentry kind="lib" path="/home/elias.souza/warzone/projetos/politicsys/cde/server/plugin/lib/pentaho-bi-platform-util-4.8.0-stable.jar"/>
+	<classpathentry kind="lib" path="/home/elias.souza/warzone/projetos/politicsys/cde/server/plugin/lib/pentaho-bi-platform-web-4.8.0-stable.jar"/>
+	<classpathentry kind="lib" path="/home/elias.souza/warzone/projetos/politicsys/cde/server/plugin/lib/pentaho-bi-platform-web-servlet-4.8.0-stable.jar"/>
+	<classpathentry kind="lib" path="/home/elias.souza/warzone/projetos/politicsys/cde/server/plugin/dev-lib/cpf-TRUNK-SNAPSHOT.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
